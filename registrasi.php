@@ -98,7 +98,7 @@
             <i class="tf-icons bx bx-menu bx-lg align-middle text-heading fw-medium"></i>
           </button>
           <!-- Mobile menu toggle: End-->
-          <a href="index" class="app-brand-link">
+          <a href="/" class="app-brand-link">
             <!-- <span class="app-brand-logo demo">
                             <img src="{{ \Storage::url(settings()->get('app_logo')) }}" alt="Logo" width="50">
                         </span> -->
@@ -115,16 +115,16 @@
           </button>
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link fw-medium" aria-current="page" href="index">Beranda</a>
+              <a class="nav-link fw-medium" aria-current="page" href="/">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" aria-current="page" href="index#profil">Profil</a>
+              <a class="nav-link fw-medium" aria-current="page" href="/#profil">Profil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" aria-current="page" href="index#syarat">Syarat Pendaftaran</a>
+              <a class="nav-link fw-medium" aria-current="page" href="/#syarat">Syarat Pendaftaran</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="index#kontak">Kontak</a>
+              <a class="nav-link fw-medium" href="/#kontak">Kontak</a>
             </li>
             <li>
               <a href="cekdata" class="btn btn-primary d-block d-md-none"><span
@@ -666,7 +666,7 @@ Misal KIP : 123456789, KIS : 123456789, KKS : 123456789"></textarea>
                       <div class="col-md-12">
                         <div class="mb-3 d-flex gap-4">
                           <button type="submit" class="btn btn-primary">Kirim Formulir</button>
-                          <a href="index" class="btn  btn-danger ">Kembali</a>
+                          <a href="/" class="btn  btn-danger ">Kembali</a>
                         </div>
                       </div>
                     </div>

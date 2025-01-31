@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin </title>
+  <title>Cetak Formulir | PSB Pondok Ngujur</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -98,7 +98,7 @@ while ($data = mysqli_fetch_array($sql)) {
                 </div>
                 <div class="text-center">
                   <button type="submit" name="submit" class="btn btn-primary ">CETAK</button>
-                  <a href="index" class="btn btn-warning">KEMBALI</a>
+                  <a href="/admin" class="btn btn-warning">KEMBALI</a>
                 </div>
             </form>
             <br>

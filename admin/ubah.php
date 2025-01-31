@@ -17,7 +17,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard</title>
+    <title>Pengaturan | PSB Pondok Ngujur</title>
 
     <meta name="description" content="" />
 
@@ -117,7 +117,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
             <!-- Menu -->
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
-                    <a href="index" class="app-brand-link">
+                    <a href="/admin" class="app-brand-link">
                         <img src="../gambar/PSBONLINE.png" alt="logopsb" width="200">
                     </a>
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -130,7 +130,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item active open">
-                        <a href="index" class="menu-link">
+                        <a href="/admin" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
@@ -289,7 +289,6 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                             // Load file koneksi.php
                             include "../koneksi.php";
 
-                            // Ambil data NIS yang dikirim oleh index melalui URL
                             $id = $_GET['id'];
 
                             // Query untuk menampilkan data siswa berdasarkan NIS yang dikirim
@@ -312,11 +311,11 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                                                         </div>
                                                         <div class="mb-3">
                                                             <label class="form-label" for="visi">Visi Lembaga</label>
-                                                            <input type="text" name="visi" class="form-control" value="<?php echo $data['visi']; ?>" autocomplete="off" required="">
+                                                            <textarea type="text" name="visi" class="form-control" value="<?php echo $data['visi']; ?>" autocomplete="off" required=""><?php echo $data['visi']; ?></textarea>
                                                         </div>
                                                         <div class="mb-3">
                                                             <label class="form-label" for="misi">Misi Lembaga</label>
-                                                            <input type="text" name="misi" class="form-control" value="<?php echo $data['misi']; ?>" autocomplete="off" required="">
+                                                            <textarea type="text" name="misi" class="form-control" value="<?php echo $data['misi']; ?>" autocomplete="off" required=""><?php echo $data['misi']; ?></textarea>
                                                         </div>
                                                         <div class="mb-3">
                                                             <label class="form-label" for="tahun">Tahun Pelajaran</label>
@@ -387,17 +386,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                                     document.write(new Date().getFullYear());
                                 </script>
                                 , made with ❤️ by
-                                <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                            </div>
-                            <div>
-                                <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                                <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank"
-                                    class="footer-link me-4">Documentation</a>
-
-                                <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
-                                    class="footer-link me-4">Support</a>
+                                <a href="https://www.instagram.com/mezaafsopsepoken" target="_blank" class="footer-link fw-bolder">Mezaaf</a>
                             </div>
                         </div>
                     </footer>

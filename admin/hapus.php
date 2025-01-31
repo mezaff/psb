@@ -19,5 +19,5 @@ if ($sql2) { // Cek jika proses simpan ke database sukses atau tidak
 	header("location: datasantri"); // Redirect ke halaman index
 } else {
 	// Jika Gagal, Lakukan :
-	echo "Data gagal dihapus. <a href='index'>Kembali</a>";
+	echo "Data gagal dihapus. <a href='/admin'>Kembali</a>";
 }

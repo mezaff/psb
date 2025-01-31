@@ -16,7 +16,7 @@ if (isset($login)) {
         $_SESSION['pass'] = $data['pass'];
 
         $_SESSION['status_login'] = "sudah_login";
-        header('location:index');
+        header('location:/admin');
     } else {
         header("location:login?id=Login Gagal!!!");
     }

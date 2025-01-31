@@ -5,6 +5,7 @@ ob_start();
 if (empty($_SESSION['status_login'])) {
     header("location:login");
 }
+$id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ if (empty($_SESSION['status_login'])) {
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard</title>
+    <title>Data Santri | PSB Pondok Ngujur</title>
 
     <meta name="description" content="" />
 
@@ -116,8 +117,8 @@ if (empty($_SESSION['status_login'])) {
             <!-- Menu -->
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
-                    <a href="index.html" class="app-brand-link">
-                        <a href="index" class="app-brand-link">
+                    <a href="/admin" class="app-brand-link">
+                        <a href="/ss=" app-brand-link">
                             <img src="../gambar/PSBONLINE.png" alt="logopsb" width="200">
                         </a>
                     </a>
@@ -132,7 +133,7 @@ if (empty($_SESSION['status_login'])) {
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item">
-                        <a href="index" class="menu-link">
+                        <a href="/admin" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
@@ -347,17 +348,7 @@ if (empty($_SESSION['status_login'])) {
                                     document.write(new Date().getFullYear());
                                 </script>
                                 , made with ❤️ by
-                                <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                            </div>
-                            <div>
-                                <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                                <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank"
-                                    class="footer-link me-4">Documentation</a>
-
-                                <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
-                                    class="footer-link me-4">Support</a>
+                                <a href="https://www.instagram.com/mezaafsopsepoken" target="_blank" class="footer-link fw-bolder">Mezaaf</a>
                             </div>
                         </div>
                     </footer>

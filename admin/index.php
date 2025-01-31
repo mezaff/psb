@@ -17,7 +17,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard</title>
+    <title>Dashboard Admin | PSB Pondok Ngujur</title>
 
     <meta name="description" content="" />
 
@@ -117,7 +117,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
             <!-- Menu -->
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
-                    <a href="index" class="app-brand-link">
+                    <a href="/admin" class="app-brand-link">
                         <img src="../gambar/PSBONLINE.png" alt="logopsb" width="200">
                     </a>
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -130,7 +130,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item active open">
-                        <a href="index" class="menu-link">
+                        <a href="/admin" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
@@ -287,9 +287,9 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                             <div class="col-md-6 mb-4 order-0">
                                 <div class="card">
                                     <div class="d-flex align-items-end row">
-                                        <div class="col-md-8">
+                                        <div class="col-md-12">
                                             <div class="card-body">
-                                                <h5 class="card-title text-primary">Selamat Datang <?php echo $_SESSION['user']; ?>! 🎉</h5>
+                                                <h5 class="card-title text-primary">Selamat Datang <?php echo ucwords($_SESSION['user']); ?>! 🎉</h5>
                                                 <p class="mb-4">
                                                     Pada hari ini <?php
                                                                     // Set zona waktu ke Indonesia
@@ -335,7 +335,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
 
                                                                     echo $tanggal_hari_ini;
                                                                     ?>
-                                                    Penyelenggaraan Penerimaan Santri Baru PP. Tarbiyatul Mutathowi'in telah memperoleh
+                                                    Penyelenggaraan Penerimaan Santri Baru Tahun Pelajaran 2025/2026 PP Tarbiyatul Mutathowi'in telah memperoleh
                                                     <span class="fw-bold">
                                                         <?php
                                                         include '../koneksi.php';
@@ -354,16 +354,6 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                                                 </p>
 
                                                 <a href="datasantri2" class="btn btn-sm btn-primary">Selengkapnya</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 text-center text-sm-left">
-                                            <div class="card-body pb-0 px-0 px-md-4">
-                                                <img
-                                                    src="../assets/sneat/assets/img/illustrations/man-with-laptop-light.png"
-                                                    height="140"
-                                                    alt="View Badge User"
-                                                    data-app-dark-img="illustrations/man-with-laptop-dark.png"
-                                                    data-app-light-img="illustrations/man-with-laptop-light.png" />
                                             </div>
                                         </div>
                                     </div>
@@ -506,17 +496,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                                     document.write(new Date().getFullYear());
                                 </script>
                                 , made with ❤️ by
-                                <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                            </div>
-                            <div>
-                                <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                                <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank"
-                                    class="footer-link me-4">Documentation</a>
-
-                                <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
-                                    class="footer-link me-4">Support</a>
+                                <a href="https://www.instagram.com/mezaafsopsepoken" target="_blank" class="footer-link fw-bolder">Mezaaf</a>
                             </div>
                         </div>
                     </footer>

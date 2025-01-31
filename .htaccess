@@ -1,30 +1,20 @@
 RewriteEngine On
 
-# Ganti 'siswa' dengan 'santri' dalam URL
-# RewriteRule ^(.*)siswa(.*)$ $1santri$2 [R=301,L]
-# RewriteRule ^admin/(.*)siswa(.*)$ admin/$1santri$2 [R=301,L]
-
 # Menghapus ekstensi .php untuk halaman umum
-RewriteRule ^cekdata$ cekdata.php [L]
-RewriteRule ^gagal$ gagal.php [L]
-RewriteRule ^prosespd$ prosespd.php [L]
-RewriteRule ^index$ index.php [L]
-RewriteRule ^registrasi$ registrasi.php [L]
-RewriteRule ^sukses$ sukses.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/.]+)$ $1.php [L]
 
-# Direktori admin - Menyembunyikan ekstensi .php untuk file admin
-RewriteRule ^admin/batalkan$ admin/batalkan.php [L]
-RewriteRule ^admin/cetakdata$ admin/cetakdata.php [L]
-RewriteRule ^admin/datasantri$ admin/datasantri.php [L]
-RewriteRule ^admin/datasantri2$ admin/datasantri2.php [L]
-RewriteRule ^admin/export$ admin/export.php [L]
-RewriteRule ^admin/hapus$ admin/hapus.php [L]
-RewriteRule ^admin/index$ admin/index.php [L]
-RewriteRule ^admin/login$ admin/login.php [L]
-RewriteRule ^admin/logout$ admin/logout.php [L]
-RewriteRule ^admin/pengaturan$ admin/pengaturan.php [L]
-RewriteRule ^admin/print$ admin/print.php [L]
-RewriteRule ^admin/proses$ admin/proses.php [L]
-RewriteRule ^admin/ubah$ admin/ubah.php [L]
-RewriteRule ^admin/verifikasi$ admin/verifikasi.php [L]
-RewriteRule ^admin/koneksi$ admin/koneksi.php [L]
+# Menghapus ekstensi .php untuk halaman admin
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^admin/([^/.]+)$ admin/$1.php [L]
+
+# Redirect akses index.php ke root (menghilangkan index.php di URL)
+RewriteCond %{THE_REQUEST} /index\.php [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+# Pastikan request yang bukan file/folder diarahkan ke index.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]

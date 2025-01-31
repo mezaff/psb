@@ -6,6 +6,7 @@ $sql = mysqli_query($connect, $query);
 
 $data = mysqli_fetch_array($sql);
 $wa = $data['wa'];
+$email = $data['email'];
 
 $phoneNumber = $wa;
 ?>
@@ -110,7 +111,7 @@ $phoneNumber = $wa;
                         <i class="tf-icons bx bx-menu bx-lg align-middle text-heading fw-medium"></i>
                     </button>
                     <!-- Mobile menu toggle: End-->
-                    <a href="index" class="app-brand-link">
+                    <a href="/" class="app-brand-link">
                         <!-- <span class="app-brand-logo demo">
                             <img src="{{ \Storage::url(settings()->get('app_logo')) }}" alt="Logo" width="50">
                         </span> -->
@@ -127,19 +128,19 @@ $phoneNumber = $wa;
                     </button>
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page" href="index">Beranda</a>
+                            <a class="nav-link fw-medium" aria-current="page" href="/">Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page" href="index#profil">Profil</a>
+                            <a class="nav-link fw-medium" aria-current="page" href="/#profil">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page" href="index#syarat">Syarat Pendaftaran</a>
+                            <a class="nav-link fw-medium" aria-current="page" href="/#syarat">Syarat Pendaftaran</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="index#kontak">Kontak</a>
+                            <a class="nav-link fw-medium" href="/#kontak">Kontak</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="index#sosmed">Sosmed</a>
+                            <a class="nav-link fw-medium" href="/#sosmed">Sosmed</a>
                         </li>
                         <li>
                             <a href="cekdata" class="btn btn-primary d-block d-md-none"><span
@@ -408,7 +409,7 @@ $phoneNumber = $wa;
                     </span>
                 </h4>
                 <p class="text-center mb-12">
-                    Penerimaan Santri Baru PP Tarbiyatul Mutathowi'in Tahun 2025.
+                    Santri Baru PP Tarbiyatul Mutathowi'in Tahun Pelajaran 2025/2026.
                 </p>
                 <div class="row g-6 pt-lg-5">
                     <!-- Favourite Plan: Start -->
@@ -815,8 +816,8 @@ $phoneNumber = $wa;
                                                 <p class="mb-0">Email</p>
                                                 <h6 class="mb-0">
                                                     <a
-                                                        href="mailto:pondokngujur46@gmail.com"
-                                                        class="text-heading" target="_blank">pondokngujur46@gmail.com</a>
+                                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=<?php echo $email; ?>"
+                                                        class="text-heading" target="_blank"><?php echo $email; ?></a>
                                                 </h6>
                                             </div>
                                         </div>
@@ -952,22 +953,22 @@ $phoneNumber = $wa;
                             <ul class="list-unstyled">
                                 <li class="mb-4">
                                     <a
-                                        href="index"
+                                        href="/"
                                         class="footer-link">Beranda</a>
                                 </li>
                                 <li class="mb-4">
                                     <a
-                                        href="index#profil"
+                                        href="/#profil"
                                         class="footer-link">Profil</a>
                                 </li>
                                 <li class="mb-4">
                                     <a
-                                        href="index#syarat"
+                                        href="/#syarat"
                                         class="footer-link">Syarat Pendaftaran</a>
                                 </li>
                                 <li class="mb-4">
                                     <a
-                                        href="index#kontak"
+                                        href="/#kontak"
                                         class="footer-link">Kontak</a>
                                 </li>
                             </ul>
