@@ -128,7 +128,7 @@
             </li>
             <li>
               <a href="cekdata" class="btn btn-primary d-block d-md-none"><span
-                  class="d-block d-md-none">Check Data</span></a>
+                  class="d-block d-md-none">Cek Data</span></a>
             </li>
           </ul>
         </div>
