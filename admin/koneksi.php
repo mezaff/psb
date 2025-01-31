@@ -10,8 +10,8 @@ $connect = mysqli_connect($host, $username, $password, $database);
 
 
 // LOCAL
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "psb";
-$connect = mysqli_connect($host, $username, $password, $database);
+// $host = "localhost";
+// $username = "root";
+// $password = "";
+// $database = "psb";
+// $connect = mysqli_connect($host, $username, $password, $database);
