@@ -70,5 +70,5 @@ if ($sql) { // Cek jika proses simpan ke database sukses atau tidak
 } else {
 	// Jika Gagal, Lakukan :
 	echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
-	echo "<br><a href='form_ubah'>Kembali Ke Form</a>";
+	echo "<br><a href='/psb/admin'>Kembali</a>";
 }

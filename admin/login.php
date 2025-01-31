@@ -16,9 +16,9 @@ if (isset($login)) {
         $_SESSION['pass'] = $data['pass'];
 
         $_SESSION['status_login'] = "sudah_login";
-        header('location:/admin');
+        header('location:/psb/admin');
     } else {
-        header("location:login?id=Login Gagal!!!");
+        header("location:/psb/admin/login?id=Login Gagal!!!");
     }
 }
 ?>
@@ -85,7 +85,7 @@ if (isset($login)) {
                     <div class="card-body">
                         <!-- Logo -->
                         <div class="app-brand justify-content-center">
-                            <a href="login" class="app-brand-link gap-2">
+                            <a href="/psb" class="app-brand-link gap-2">
                                 <img src="../gambar/PSBONLINE.png" alt="logopsb" width="200">
                             </a>
                         </div>

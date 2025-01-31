@@ -98,7 +98,7 @@ while ($data = mysqli_fetch_array($sql)) {
                 </div>
                 <div class="text-center">
                   <button type="submit" name="submit" class="btn btn-primary ">CETAK</button>
-                  <a href="/admin" class="btn btn-warning">KEMBALI</a>
+                  <a href="/psb/admin" class="btn btn-warning">KEMBALI</a>
                 </div>
             </form>
             <br>
