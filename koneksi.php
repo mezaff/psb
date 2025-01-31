@@ -3,15 +3,15 @@
 // HOSTING
 $host = "localhost";
 $username = "pondokng_psb";
-$password = "(5EowXGOSTiu";
-$database = "pondokng_psb_db";
+$password = "f2yB{thXvzpM";
+$database = "pondokng_psb";
 $connect = mysqli_connect($host, $username, $password, $database); 
 
 
 
 // LOCAL
-// $host = "localhost"; 
-// $username = "root"; 
-// $password = ""; 
-// $database = "psb"; 
+// $host = "localhost";
+// $username = "root";
+// $password = "";
+// $database = "psb";
 // $connect = mysqli_connect($host, $username, $password, $database);
