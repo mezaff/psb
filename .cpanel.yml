@@ -1,0 +1,6 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/pondokng/public_html/psb
+    - cd $DEPLOYPATH
+    - git pull origin master
+    - chmod -R 755 $DEPLOYPATH/uploads
