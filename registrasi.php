@@ -8,7 +8,7 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>PSB Online</title>
+  <title>Formulir | PSB Pondok Ngujur</title>
 
 
   <meta name="description"
@@ -165,7 +165,7 @@
           <div class="hero-text-box text-center position-relative">
             <h1 class="text-primary hero-title display-6 fw-extrabold text-nowrap">FORMULIR PENDAFTARAN</h1>
             <h2 class="hero-sub-title h6 mb-6">
-              Pondok Pesantren Tarbiyatul Mutathowi'in Ngujur Rejosari Kebonsari Madiun.
+              Santri Baru Pondok Pesantren Tarbiyatul Mutathowi'in Ngujur Rejosari Kebonsari Madiun. Tahun Pelajaran 2025/2026
             </h2>
           </div>
 
@@ -184,8 +184,8 @@
                           <label class="form-label" for="jenispd">Jenis Pendaftaran</label>
                           <select name="jenispd" id="jenispd" class="form-select" required="">
                             <option value="" disabled selected>Pilih Jenis Pendaftaran</option>
-                            <option value="Peserta Didik Baru">Peserta Didik Baru</option>
-                            <option value="Peserta Didik Pindahan">Peserta Didik Pindahan</option>
+                            <option value="Santri Baru">Santri Baru</option>
+                            <option value="Santri Pindahan">Santri Pindahan</option>
                           </select>
                         </div>
                       </div>
@@ -194,8 +194,8 @@
                           <label class="form-label" for="jenjang">Jenjang Pendidikan</label>
                           <select name="jenjang" id="jenjang" class="form-select" required="">
                             <option value="" disabled selected>Pilih Jenjang Pendidikan</option>
-                            <option value="Tsanawiyah"> Tsanawiyah</option>
-                            <option value="Aliyah"> Aliyah</option>
+                            <option value="Tsanawiyah"> Tsanawiyah (MTs)</option>
+                            <option value="Aliyah"> Aliyah (MA)</option>
                           </select>
                         </div>
                       </div>
@@ -471,8 +471,27 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="pekerjaanayah">Pekerjaan</label>
-                          <input type="text" autocomplete="" name="pekerjaanayah" class="form-control" required="" value="" placeholder="Pekerjaan Ayah " />
-                          <div class="validate"></div>
+                          <select name="pekerjaanayah" id="pekerjaanayah" class="form-select" required="">
+                            <option value="" disabled selected> Pilih Pekerjaan Ayah</option>
+                            <option value="Tidak Bekerja">Tidak Bekerja</option>
+                            <option value="Pensiunan">Pensiunan</option>
+                            <option value="PNS">PNS</option>
+                            <option value="TNI/Polisi">TNI/Polisi</option>
+                            <option value="Guru/Dosen">Guru/Dosen</option>
+                            <option value="Pegawai Swasta">Pegawai Swasta</option>
+                            <option value="Wiraswasta">Wiraswasta</option>
+                            <option value="Pengacara/Jaksa/Hakim/Notaris">Pengacara/Jaksa/Hakim/Notaris</option>
+                            <option value="Seniman/Pelukis/Artis/Sejenis">Seniman/Pelukis/Artis/Sejenis</option>
+                            <option value="Dokter/Bidan/Perawat">Dokter/Bidan/Perawat</option>
+                            <option value="Pilot/Pramugara">Pilot/Pramugara</option>
+                            <option value="Pedagang">Pedagang</option>
+                            <option value="Petani/Peternak">Petani/Peternak</option>
+                            <option value="Nelayan">Nelayan</option>
+                            <option value="Buruh (Tani/Pabrik/Bangunan)">Buruh (Tani/Pabrik/Bangunan)</option>
+                            <option value="Sopir/Masinis/Kondektur">Sopir/Masinis/Kondektur</option>
+                            <option value="Politikus">Politikus</option>
+                            <option value="Lainnya"> Lainnya</option>
+                          </select>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -543,8 +562,27 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="pekerjaanibu">Pekerjaan</label>
-                          <input type="text" autocomplete="" name="pekerjaanibu" class="form-control" required="" value="" placeholder="Pekerjaan Ibu " />
-                          <div class="validate"></div>
+                          <select name="pekerjaanibu" id="pekerjaanibu" class="form-select" required="">
+                            <option value="" disabled selected> Pilih Pekerjaan Ibu</option>
+                            <option value="Tidak Bekerja">Tidak Bekerja</option>
+                            <option value="Pensiunan">Pensiunan</option>
+                            <option value="PNS">PNS</option>
+                            <option value="TNI/Polisi">TNI/Polisi</option>
+                            <option value="Guru/Dosen">Guru/Dosen</option>
+                            <option value="Pegawai Swasta">Pegawai Swasta</option>
+                            <option value="Wiraswasta">Wiraswasta</option>
+                            <option value="Pengacara/Jaksa/Hakim/Notaris">Pengacara/Jaksa/Hakim/Notaris</option>
+                            <option value="Seniman/Pelukis/Artis/Sejenis">Seniman/Pelukis/Artis/Sejenis</option>
+                            <option value="Dokter/Bidan/Perawat">Dokter/Bidan/Perawat</option>
+                            <option value="Pilot/Pramugara">Pilot/Pramugara</option>
+                            <option value="Pedagang">Pedagang</option>
+                            <option value="Petani/Peternak">Petani/Peternak</option>
+                            <option value="Nelayan">Nelayan</option>
+                            <option value="Buruh (Tani/Pabrik/Bangunan)">Buruh (Tani/Pabrik/Bangunan)</option>
+                            <option value="Sopir/Masinis/Kondektur">Sopir/Masinis/Kondektur</option>
+                            <option value="Politikus">Politikus</option>
+                            <option value="Lainnya"> Lainnya</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -585,8 +623,8 @@
                     <div class="row">
                       <div class="col-md-4">
                         <div class="mb-3">
-                          <label class="form-label" for="jaminan">Kartu Indonesia Pintar (KIP)</label>
-                          <select name="jaminan" id="jaminan" class="form-select" required="">
+                          <label class="form-label" for="bantuan">Kartu Indonesia Pintar (KIP)</label>
+                          <select name="bantuan" id="bantuan" class="form-select" required="">
                             <option value="" disabled selected>Pilih Status Bantuan</option>
                             <option value="Tidak Mempunyai">Tidak Mempunyai</option>
                             <option value=" Mempunyai"> Mempunyai</option>
@@ -595,8 +633,8 @@
                       </div>
                       <div class="col-md-4">
                         <div class="mb-3">
-                          <label class="form-label" for="nomorbantuan">Kartu Indonesia Sehat (KIS)</label>
-                          <select name="nomorbantuan" id="nomorbantuan" class="form-select" required="">
+                          <label class="form-label" for="jaminan">Kartu Indonesia Sehat (KIS)</label>
+                          <select name="jaminan" id="jaminan" class="form-select" required="">
                             <option value="" disabled selected>Pilih Status Bantuan</option>
                             <option value="Tidak Mempunyai">Tidak Mempunyai</option>
                             <option value=" Mempunyai"> Mempunyai</option>
@@ -617,8 +655,9 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="mb-3">
-                          <label class="form-label" for="bantuan">NOMOR KIP/KIS/KKS (Isi dengan tanda (-) strip jika tidak ada)</label>
-                          <textarea class="form-control" name="bantuan" rows="2" placeholder="Ketikan Nomor KIP/KIS/KKS Jika ada"></textarea>
+                          <label class="form-label" for="nomorbantuan">NOMOR KIP/KIS/KKS (Isi dengan tanda (-) strip jika tidak ada)</label>
+                          <textarea class="form-control" name="nomorbantuan" rows="2" placeholder="Ketikan Nomor KIP/KIS/KKS Jika ada
+Misal KIP : 123456789, KIS : 123456789, KKS : 123456789"></textarea>
                           <div class="validate"></div>
                         </div>
                       </div>
@@ -639,7 +678,7 @@
           </div>
         </div>
       </div>
-      <div class="landing-hero-blank"></div>
+      <!-- <div class="landing-hero-blank"></div> -->
     </section>
     <!-- Hero: End -->
   </div>

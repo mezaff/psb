@@ -20,7 +20,7 @@ $phoneNumber = $wa;
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>PSB Online</title>
+    <title>Beranda | PSB Pondok Ngujur</title>
 
 
     <meta name="description"
@@ -374,7 +374,7 @@ $phoneNumber = $wa;
             <div class="container">
                 <div class="row align-items-center gy-12">
                     <div
-                        class="col-lg-6 text-start text-sm-center text-lg-start">
+                        class="col-lg-6 text-center text-sm-center text-lg-start">
                         <h3 class="cta-title text-primary fw-bold mb-1">
                             Ayo Mondok !
                         </h3>
@@ -891,14 +891,14 @@ $phoneNumber = $wa;
                 alt="footer bg"
                 class="footer-bg banner-bg-img z-n1" />
             <div class="container">
-                <div class="row gx-0 gy-6 g-lg-10 d-flex justify-content-center">
-                    <div class="col-lg-5">
+                <div class="row gx-0">
+                    <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center">
                         <a
                             href="landing-page.html"
-                            class="app-brand-link mb-6">
+                            class="app-brand-link mb-6 d-flex align-items-center justify-content-center">
                             <img src="gambar/logopondok.png" alt="logo pondok" class="footer-logo w-20">
                         </a>
-                        <p class="footer-text footer-logo-description mb-6">
+                        <p class="footer-text text-center d-flex footer-logo-description mb-6">
                             Pondok Pesantren Tarbiyatul Mutathowi'in Ngujur Rejosari Kebonsari Madiun
                         </p>
                         <!-- <form class="footer-form">
@@ -917,59 +917,61 @@ $phoneNumber = $wa;
                             </div>
                         </form> -->
                     </div>
-                    <div class="col-lg-2 col-md-4 col-sm-6">
-                        <h6 class="footer-title mb-6">Sosial Media</h6>
-                        <ul class="list-unstyled">
-                            <li class="mb-4">
-                                <a
-                                    href="https://www.instagram.com/pondokngujur/"
-                                    target="_blank"
-                                    class="footer-link">Instagram</a>
-                            </li>
-                            <li class="mb-4">
-                                <a
-                                    href="https://www.youtube.com/@pondokngujur"
-                                    target="_blank"
-                                    class="footer-link">Youtube</a>
-                            </li>
-                            <li class="mb-4">
-                                <a
-                                    href="https://www.tiktok.com/@pondokngujur_?_t=8ngkzwhNeUi&_r=1"
-                                    target="_blank"
-                                    class="footer-link">Tiktok</a>
-                            </li>
-                            <li class="mb-4">
-                                <a
-                                    href="https://www.pondokngujur.com"
-                                    target="_blank"
-                                    class="footer-link">Sites</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-6">
-                        <h6 class="footer-title mb-6">Halaman</h6>
-                        <ul class="list-unstyled">
-                            <li class="mb-4">
-                                <a
-                                    href="index"
-                                    class="footer-link">Beranda</a>
-                            </li>
-                            <li class="mb-4">
-                                <a
-                                    href="index#profil"
-                                    class="footer-link">Profil</a>
-                            </li>
-                            <li class="mb-4">
-                                <a
-                                    href="index#syarat"
-                                    class="footer-link">Syarat Pendaftaran</a>
-                            </li>
-                            <li class="mb-4">
-                                <a
-                                    href="index#kontak"
-                                    class="footer-link">Kontak</a>
-                            </li>
-                        </ul>
+                    <div class="col-12 col-lg-6 d-flex gap-5  justify-content-center">
+                        <div class="col-lg-6 col-md-4 text-end text-sm-end text-lg-start col-sm-6">
+                            <h6 class="footer-title mb-6">Sosial Media</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-4">
+                                    <a
+                                        href="https://www.instagram.com/pondokngujur/"
+                                        target="_blank"
+                                        class="footer-link">Instagram</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a
+                                        href="https://www.youtube.com/@pondokngujur"
+                                        target="_blank"
+                                        class="footer-link">Youtube</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a
+                                        href="https://www.tiktok.com/@pondokngujur_?_t=8ngkzwhNeUi&_r=1"
+                                        target="_blank"
+                                        class="footer-link">Tiktok</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a
+                                        href="https://www.pondokngujur.com"
+                                        target="_blank"
+                                        class="footer-link">Sites</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-4 col-sm-6">
+                            <h6 class="footer-title mb-6">Halaman</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-4">
+                                    <a
+                                        href="index"
+                                        class="footer-link">Beranda</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a
+                                        href="index#profil"
+                                        class="footer-link">Profil</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a
+                                        href="index#syarat"
+                                        class="footer-link">Syarat Pendaftaran</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a
+                                        href="index#kontak"
+                                        class="footer-link">Kontak</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <!-- <div class="col-lg-3 col-md-4">
                         <h6 class="footer-title mb-6">Download our app</h6>

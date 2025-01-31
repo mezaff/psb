@@ -11,7 +11,7 @@ require_once 'koneksi.php';
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>PSB Online</title>
+  <title>Cek NISN | PSB Pondok Ngujur</title>
 
 
   <meta name="description"
@@ -239,7 +239,7 @@ require_once 'koneksi.php';
                 <!-- Striped Rows -->
                 <div class="card">
                   <h3 class="card-header text-center py-1">Hasil Pencarian</h3>
-                  <div class="table-responsive text-nowrap">
+                  <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
@@ -274,7 +274,7 @@ require_once 'koneksi.php';
                             if ($statusx > 1) {
                               echo "Selamat,  Anda Sudah diterima sebagai Santri Baru PP Tarbiyatul Mutathowi'in.";
                             } else {
-                              echo "Formulir Pendaftaran sudah kami terima, lengkapi persyaratan dan serahkan kepada panitia PSB <br/> untuk melakukan Daftar Ulang";
+                              echo "Formulir Pendaftaran sudah kami terima, lengkapi persyaratan dan serahkan kepada panitia PSB untuk melakukan Daftar Ulang";
                             }
                             echo "</td>"; ?>
                           </td>
