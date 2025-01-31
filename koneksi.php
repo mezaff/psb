@@ -1,6 +1,17 @@
 <?php
-$host = "localhost"; // Nama hostnya
-$username = "pondokng_psb"; // Username
-$password = "E&~#DQBtsd3E"; // Password (Isi jika menggunakan password)
-$database = "psb"; // Nama databasenya
-$connect = mysqli_connect($host, $username, $password, $database); // Koneksi ke MySQL
+
+// HOSTING
+$host = "localhost";
+$username = "pondokng_psb";
+$password = "(5EowXGOSTiu";
+$database = "pondokng_psb_db";
+$connect = mysqli_connect($host, $username, $password, $database); 
+
+
+
+// LOCAL
+// $host = "localhost"; 
+// $username = "root"; 
+// $password = ""; 
+// $database = "psb"; 
+// $connect = mysqli_connect($host, $username, $password, $database);
