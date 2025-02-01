@@ -16,9 +16,9 @@ if (isset($login)) {
         $_SESSION['pass'] = $data['pass'];
 
         $_SESSION['status_login'] = "sudah_login";
-        header('location:/psb/admin');
+        header('location:/santribaru/admin');
     } else {
-        header("location:/psb/admin/login?id=Login Gagal!!!");
+        header("location:/santribaru/admin/login?id=Login Gagal!!!");
     }
 }
 ?>
