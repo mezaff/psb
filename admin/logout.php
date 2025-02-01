@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_destroy();
-header('location:/psb/admin/login');
+header('location:/santribaru/admin/login');

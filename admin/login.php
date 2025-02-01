@@ -85,7 +85,7 @@ if (isset($login)) {
                     <div class="card-body">
                         <!-- Logo -->
                         <div class="app-brand justify-content-center">
-                            <a href="/psb" class="app-brand-link gap-2">
+                            <a href="/santribaru/admin" class="app-brand-link gap-2">
                                 <img src="../gambar/PSBONLINE.png" alt="logopsb" width="200">
                             </a>
                         </div>

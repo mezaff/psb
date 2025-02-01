@@ -111,7 +111,7 @@ $phoneNumber = $wa;
                         <i class="tf-icons bx bx-menu bx-lg align-middle text-heading fw-medium"></i>
                     </button>
                     <!-- Mobile menu toggle: End-->
-                    <a href="/psb/" class="app-brand-link">
+                    <a href="/santribaru/" class="app-brand-link">
                         <!-- <span class="app-brand-logo demo">
                             <img src="{{ \Storage::url(settings()->get('app_logo')) }}" alt="Logo" width="50">
                         </span> -->
@@ -128,19 +128,19 @@ $phoneNumber = $wa;
                     </button>
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page" href="/psb/">Beranda</a>
+                            <a class="nav-link fw-medium" aria-current="page" href="/santribaru/">Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page" href="/psb/#profil">Profil</a>
+                            <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#profil">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page" href="/psb/#syarat">Syarat Pendaftaran</a>
+                            <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#syarat">Syarat Pendaftaran</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="/psb/#kontak">Kontak</a>
+                            <a class="nav-link fw-medium" href="/santribaru/#kontak">Kontak</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="/psb/#sosmed">Sosmed</a>
+                            <a class="nav-link fw-medium" href="/santribaru/#sosmed">Sosmed</a>
                         </li>
                         <li>
                             <a href="cekdata" class="btn btn-primary d-block d-md-none"><span
@@ -863,22 +863,22 @@ $phoneNumber = $wa;
                             <ul class="list-unstyled">
                                 <li class="mb-4">
                                     <a
-                                        href="/psb/"
+                                        href="/santribaru/"
                                         class="footer-link">Beranda</a>
                                 </li>
                                 <li class="mb-4">
                                     <a
-                                        href="/psb/#profil"
+                                        href="/santribaru/#profil"
                                         class="footer-link">Profil</a>
                                 </li>
                                 <li class="mb-4">
                                     <a
-                                        href="/psb/#syarat"
+                                        href="/santribaru/#syarat"
                                         class="footer-link">Syarat Pendaftaran</a>
                                 </li>
                                 <li class="mb-4">
                                     <a
-                                        href="/psb/#kontak"
+                                        href="/santribaru/#kontak"
                                         class="footer-link">Kontak</a>
                                 </li>
                             </ul>

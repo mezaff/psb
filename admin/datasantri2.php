@@ -117,8 +117,8 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
             <!-- Menu -->
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
-                    <a href="/psb/admin" class="app-brand-link">
-                        <a href="/psb/admin" app-brand-link">
+                    <a href="/santribaru/admin" class="app-brand-link">
+                        <a href="/santribaru/admin" app-brand-link">
                             <img src="../gambar/PSBONLINE.png" alt="logopsb" width="200">
                         </a>
                     </a>
@@ -133,7 +133,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item">
-                        <a href="/psb/admin" class="menu-link">
+                        <a href="/santribaru/admin" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
