@@ -212,7 +212,7 @@ require_once 'koneksi.php';
                       echo "<center>
                       <div class='col-md-6'>
                       <div class='alert alert-danger alert-dismissible' role='alert'>
-                        <strong>Maaf! </strong> Data dari NISN <?php echo $ntt; ?> Tidak Ditemukan!
+                        <strong>Maaf! </strong> Data dari NISN $ntt Tidak Ditemukan!
                         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                       </div>
                       </div>
