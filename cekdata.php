@@ -13,16 +13,15 @@ require_once 'koneksi.php';
 
   <title>Cek NISN | PSB Pondok Ngujur</title>
 
-
   <meta name="description"
-    content="Most Powerful &amp; Comprehensive Bootstrap 5 Admin Dashboard built for developers!" />
-  <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
+    content="Daftar Sekarang! &amp; Jadilah Bagian dari Kami" />
+  <meta name="keywords" content="psb, pondok ngujur, psb pondok ngujur, pendaftaran santri baru">
   <!-- Canonical SEO -->
-  <link rel="canonical" href="https://themeselection.com/item/sneat-dashboard-pro-bootstrap/">
+  <link rel="canonical" href="https://pondokngujur.com/santribaru">
 
 
   <!-- ? PROD Only: Google Tag Manager (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
-  <script>
+  <!-- <script>
     (function(w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({
@@ -37,11 +36,11 @@ require_once 'koneksi.php';
         'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-5DDHKGP');
-  </script>
+  </script> -->
   <!-- End Google Tag Manager -->
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/sneat_pro/assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="gambar/favicon.ico" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -22,7 +22,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/sneat/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="gambar/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -288,7 +288,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                     <div class="container-fluid flex-grow-1 container-p-y">
                         <!-- Hoverable Table rows -->
                         <div class="card">
-                            <h3 class="card-header fw-bold">MANAJEMEN VERIFIKASI</h3>
+                            <h3 class="card-header fw-bold">DATA PENDAFTARAN</h3>
                             <div class="table-responsive text-nowrap p-4">
                                 <table class="table table-hover table-bordered">
                                     <thead>
