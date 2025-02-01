@@ -126,6 +126,9 @@
             <li class="nav-item">
               <a class="nav-link fw-medium" href="/santribaru/#kontak">Kontak</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="/santribaru/#sosmed">Sosmed</a>
+            </li>
             <li>
               <a href="cekdata" class="btn btn-primary d-block d-md-none"><span
                   class="d-block d-md-none">Cek Data</span></a>
