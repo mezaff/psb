@@ -144,7 +144,7 @@ $phoneNumber = $wa;
                         </li>
                         <li>
                             <a href="cekdata" class="btn btn-primary d-block d-md-none"><span
-                                    class="d-block d-md-none">Check Data</span></a>
+                                    class="d-block d-md-none">Cek Data</span></a>
                         </li>
                     </ul>
                 </div>
@@ -156,7 +156,7 @@ $phoneNumber = $wa;
                     <!-- navbar button: Start -->
                     <li>
                         <a href="cekdata" class="btn btn-primary d-none d-md-block"><span
-                                class="d-none d-md-block">Check Data</span></a>
+                                class="d-none d-md-block">Cek Data</span></a>
                     </li>
                     <!-- navbar button: End -->
                 </ul>
@@ -179,18 +179,35 @@ $phoneNumber = $wa;
                     data-speed="1" />
                 <div class="container">
                     <div class="hero-text-box text-center position-relative">
+                        <?php
+                        include "koneksi.php";
+                        $query = "SELECT embed FROM admin LIMIT 1";
+                        $sql = mysqli_query($connect, $query);
+                        $data = mysqli_fetch_array($sql);
+
+                        // Set variabel embed
+                        $embed = $data['embed'] ?? 1; // Default 1 jika tidak ada data
+                        ?>
                         <h1 class="text-primary hero-title display-6 fw-extrabold ">Sistem Aplikasi Penerimaan Santri Baru</h1>
                         <h2 class="hero-sub-title h6 mb-6">
                             Pondok Pesantren Tarbiyatul Mutathowi'in<br class="d-none d-lg-block" />
                             Ngujur Rejosari Kebonsari Madiun.
                         </h2>
+                        <?php echo ($embed == 0) ? '<div class="alert alert-danger bg-danger">
+                            <h3 class="text-white fw-bold p-0 m-0">Pendaftaran Ditutup</h3>
+                            <span>
+                                <h5 class="text-white p-0 m-0">Silahkan menghubungi panitia untuk informasi lebih lanjut</h5>
+                            </span>
+                        </div>' : ''; ?>
                         <div class="landing-hero-btn d-inline-block position-relative">
                             <span class="hero-btn-item position-absolute d-none d-md-flex fw-medium">Tunggu apa lagi?
                                 <img src="assets/sneat_pro/assets/img/front-pages/icons/Join-community-arrow.png"
                                     alt="Join community arrow" class="scaleX-n1-rtl" /></span>
                             <div class="d-flex gap-3">
-                                <a href="registrasi" class="btn btn-primary btn-lg">Daftar Sekarang</a>
-                                <a href="cekdata" class="btn btn-info btn-lg d-block d-md-none">Cek Data</a>
+                                <a href="registrasi" class="btn btn-sm d-md-none <?php echo ($embed == 0) ? 'disabled btn-danger' : 'btn-primary'; ?>">Daftar Sekarang</a>
+                                <a href="registrasi" class="btn btn-lg d-none d-md-inline-block <?php echo ($embed == 0) ? 'disabled btn-danger' : 'btn-primary'; ?>">Daftar Sekarang</a>
+                                <a href="cekdata" class="btn btn-info btn-sm d-block d-md-none">Cek Data</a>
+                                <a href="cekdata" class="btn btn-info btn-lg d-none d-md-none">Cek Data</a>
                             </div>
                         </div>
                     </div>
@@ -382,9 +399,7 @@ $phoneNumber = $wa;
                         <h5 class="text-body mb-8">
                             Daftar sekarang dan jadilah bagian dari Kami
                         </h5>
-                        <a
-                            href="registrasi"
-                            class="btn btn-lg btn-primary">Daftar Sekarang</a>
+                        <a href="registrasi" class="btn btn-lg <?php echo ($embed == 0) ? 'disabled btn-danger' : 'btn-primary'; ?>">Daftar Sekarang</a>
                     </div>
                     <div class="col-lg-6 pt-lg-12 text-center text-lg-end">
                         <img
@@ -434,6 +449,15 @@ $phoneNumber = $wa;
                                                 class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
                                                     class="bx bx-check bx-12px"></i></span>
                                             Mengisi formulir dan kelengkapnnya
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6
+                                            class="d-flex align-items-center mb-3">
+                                            <span
+                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                    class="bx bx-check bx-12px"></i></span>
+                                            Foto Copy Akte Kelahiran
                                         </h6>
                                     </li>
                                     <li>
@@ -527,11 +551,11 @@ $phoneNumber = $wa;
                                         </h6>
                                     </li>
                                 </ul>
-                                <!-- <div class="d-grid mt-8">
-                <a
-                  href="payment-page.html"
-                  class="btn btn-primary">Get Started</a>
-              </div> -->
+                                <h5>Catatan :</h5>
+                                <ul>
+                                    <li>Semua Berkas dimasukkan Map warna hijau untuk santri putra dan kuning untuk santri putri.</li>
+                                    <li>Bagi santri yang melakukan pendaftaran secara online, berkas bisa diupload dari formulir, dan bisa minta kepada panitia untuk di cetakkan pada saat daftar ulang.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -549,213 +573,99 @@ $phoneNumber = $wa;
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive text-nowrap">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-striped mb-9">
                                         <thead>
                                             <tr>
                                                 <th rowspan="2" class="text-center align-middle">NO</th>
                                                 <th rowspan="2" class="text-center align-middle">URAIAN</th>
                                                 <th rowspan="2" class="text-center align-middle">NOMINAL</th>
-                                                <th colspan="2" class="text-center align-middle">KETERANGAN</th>
+                                                <th colspan="3" class="text-center align-middle">KETERANGAN</th>
                                             </tr>
                                             <tr>
-                                                <th class="text-center align-middle">Bulanan</th>
-                                                <th class="text-center align-middle">Tahunan</th>
+                                                <th class="text-center align-middle">Perbulan</th>
+                                                <th class="text-center align-middle">Pertahun</th>
+                                                <th class="text-center align-middle">Sekali Bayar</th>
                                             </tr>
-
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>
-                                                    <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong>
-                                                </td>
-                                                <td>Albert Cook</td>
-                                                <td>
-                                                    <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Lilian Fuller">
-                                                            <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Sophia Wilkerson">
-                                                            <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Christina Parker">
-                                                            <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                                <td><span class="badge bg-label-primary me-1">Active</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button
-                                                            type="button"
-                                                            class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                <td class="text-center align-middle">1</td>
+                                                <td>Biaya Pendaftaran</td>
+                                                <td class="text-end align-middle">Rp. 100.000</td>
+                                                <td></td>
+                                                <td class="text-center align-middle">✅</td>
+                                                <td></td>
                                             </tr>
                                             <tr>
-                                                <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>React Project</strong></td>
-                                                <td>Barry Hunter</td>
-                                                <td>
-                                                    <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Lilian Fuller">
-                                                            <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Sophia Wilkerson">
-                                                            <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Christina Parker">
-                                                            <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                                <td><span class="badge bg-label-success me-1">Completed</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button
-                                                            type="button"
-                                                            class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                <td class="text-center align-middle">2</td>
+                                                <td>Biaya Kegiatan dan Kesehatan</td>
+                                                <td class="text-end align-middle">Rp. 85.000</td>
+                                                <td></td>
+                                                <td class="text-center align-middle">✅</td>
+                                                <td></td>
                                             </tr>
                                             <tr>
-                                                <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>VueJs Project</strong></td>
-                                                <td>Trevor Baker</td>
-                                                <td>
-                                                    <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Lilian Fuller">
-                                                            <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Sophia Wilkerson">
-                                                            <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Christina Parker">
-                                                            <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                                <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button
-                                                            type="button"
-                                                            class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                <td class="text-center align-middle">3</td>
+                                                <td>Kalender</td>
+                                                <td class="text-end align-middle">Rp. 30.000</td>
+                                                <td></td>
+                                                <td class="text-center align-middle">✅</td>
+                                                <td></td>
                                             </tr>
                                             <tr>
-                                                <td>
-                                                    <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Bootstrap Project</strong>
-                                                </td>
-                                                <td>Jerry Milton</td>
-                                                <td>
-                                                    <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Lilian Fuller">
-                                                            <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Sophia Wilkerson">
-                                                            <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                        <li
-                                                            data-bs-toggle="tooltip"
-                                                            data-popup="tooltip-custom"
-                                                            data-bs-placement="top"
-                                                            class="avatar avatar-xs pull-up"
-                                                            title="Christina Parker">
-                                                            <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                                <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button
-                                                            type="button"
-                                                            class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                <td class="text-center align-middle">4</td>
+                                                <td>Syahriah</td>
+                                                <td class="text-end align-middle">Rp. 20.000</td>
+                                                <td class="text-center align-middle">✅</td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
+                                            <tr>
+                                                <td class="text-center align-middle">5</td>
+                                                <td>Makan (3 x 1 Hari)</td>
+                                                <td class="text-end align-middle">Rp. 300.000</td>
+                                                <td class="text-center align-middle">✅</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center align-middle">6</td>
+                                                <td>Almari</td>
+                                                <td class="text-end align-middle">Rp. 300.000</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="text-center align-middle">✅</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center align-middle">7</td>
+                                                <td>Seragam</td>
+                                                <td class="text-end align-middle">Rp. 200.000</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="text-center align-middle">✅</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center align-middle">8</td>
+                                                <td>Kitab</td>
+                                                <td class="text-end align-middle">Rp. 100.000</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="text-center align-middle">✅</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center align-middle">8</td>
+                                                <td>Buku Izin</td>
+                                                <td class="text-end align-middle">Rp. 10.000</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="text-center align-middle">✅</td>
+                                            </tr>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="2" class="text-center align-middle">Total Biaya</th>
+                                                <th colspan="4" class=" text-center align-middle">Rp. 1.075.000</th>
+                                            </tr>
+                                        </tfoot>
                                         </tbody>
                                     </table>
                                 </div>

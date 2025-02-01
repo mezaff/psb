@@ -333,9 +333,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                                                             <label class="form-label" for="wa">Nomor Telpon</label>
                                                             <input type="text" name="wa" class="form-control" value="<?php echo $data['wa']; ?>" autocomplete="off" required="">
                                                         </div>
-                                                        <div class="mb-3">
-                                                            <input type="text" name="embed" class="form-control" value="null" autocomplete="off" required="" hidden="">
-                                                        </div>
+
                                                     </div>
                                                 </div>
                                                 <div class="col-12 mt-3">
@@ -347,7 +345,7 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
 
                                     <div class="col-md-6">
                                         <div class="card">
-                                            <h3 class="card-header fw-bold">PENGATURAN AKUN ADMIN</h3>
+                                            <h3 class="card-header fw-bold">PENGATURAN ADMIN</h3>
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -358,6 +356,13 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                                                         <div class="mb-3">
                                                             <label class="form-label" for="jenispd">Password</label>
                                                             <input type="text" name="pass" class="form-control" value="<?php echo $data['pass']; ?>" autocomplete="off" required="">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="embed">Status Pendaftaran</label>
+                                                            <select name="embed" id="embed" class="form-select">
+                                                                <option value="1" <?= ($data['embed'] == 1) ? 'selected' : ''; ?>>Buka</option>
+                                                                <option value="0" <?= ($data['embed'] == 0) ? 'selected' : ''; ?>>Tutup</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
