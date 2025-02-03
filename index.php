@@ -332,44 +332,196 @@ $phoneNumber = $wa;
                                     </div>
                                 </div>
                             </div>
-                            <div class="card accordion-item">
-                                <h2
-                                    class="accordion-header"
-                                    id="headingFive">
-                                    <button
-                                        type="button"
-                                        class="accordion-button collapsed"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#accordionFive"
-                                        aria-expanded="false"
-                                        aria-controls="accordionFive">
-                                        Unit Pendidikan
-                                    </button>
-                                </h2>
-                                <div
-                                    id="accordionFive"
-                                    class="accordion-collapse collapse"
-                                    aria-labelledby="headingFive"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>RA Al - Muslimun</li>
-                                            <li>MIN 3 Madiun</li>
-                                            <li>MTsN 2 Madiun</li>
-                                            <li>MAN 2 Madiun</li>
-                                            <li>MAN 2 Madiun</li>
-                                            <li>UT Pokjar Pondok Ngujur</li>
-                                            <li>BLKK Tarbiyatul Mutathowi’in</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- FAQ: End -->
+
+        <!-- Useful features: Start -->
+        <section id="landingFeatures" class="section-py landing-features">
+            <div class="container mb-5">
+                <h4 class="text-center mb-1">
+                    <span class="position-relative fw-extrabold z-1">Unit Pendidikan
+                        <img
+                            src="assets/sneat_pro/assets/img/front-pages/icons/section-title-icon.png"
+                            alt="laptop charging"
+                            class="section-title-img position-absolute object-fit-contain bottom-0 z-n1" />
+                    </span>
+                </h4>
+                <p class="text-center mb-12">
+                    Pondok Pesantren Tarbiyatul Mutathowi’in Ngujur Rejosari Kebonsari Madiun.
+                </p>
+                <div class="features-icon-wrapper row gx-0 gy-6 g-sm-12">
+                    <div
+                        class="col-lg-4 col-sm-6 text-center features-icon-box">
+                        <div class="text-center mb-4">
+                            <img
+                                src="gambar/logomadin.png"
+                                alt="laptop charging" width="100" />
+                        </div>
+                        <h5 class="mb-2">Madrasah Diniyah</h5>
+                        <a href="/santribaru/registrasi">
+                            <button class="btn btn-sm btn-primary">Daftar</button>
+                        </a>
+                    </div>
+                    <div
+                        class="col-lg-4 col-sm-6 text-center features-icon-box">
+                        <div class="text-center mb-4">
+                            <img
+                                src="gambar/raAlmuslimun.png"
+                                alt="RA Al-Muslimun" width="100" />
+                        </div>
+                        <h5 class="mb-2">RA Al - Muslimun</h5>
+                        <a href="#" target="_blank">
+                            <button class="btn btn-sm btn-primary">Daftar</button>
+                        </a>
+                    </div>
+                    <div
+                        class="col-lg-4 col-sm-6 text-center features-icon-box">
+                        <div class="text-center mb-4">
+                            <img
+                                src="gambar/min3madiun.png"
+                                alt="MIN 3 Madiun" width="100" />
+                        </div>
+                        <h5 class="mb-2">MIN 3 Madiun</h5>
+                        <a href="https://web.min3madiun.sch.id/" target="_blank">
+                            <button class="btn btn-sm btn-primary">Daftar</button>
+                        </a>
+                    </div>
+                    <div
+                        class="col-lg-4 col-sm-6 text-center features-icon-box">
+                        <div class="text-center mb-4">
+                            <img
+                                src="gambar/mtsn2Madiun.png"
+                                alt="MTsN 2 Madiun" width="100" />
+                        </div>
+                        <h5 class="mb-2">MTsN 2 Madiun</h5>
+                        <a href="https://www.mtsn2madiun.sch.id/" target="_blank">
+                            <button class="btn btn-sm btn-primary">Daftar</button>
+                        </a>
+                    </div>
+                    <div
+                        class="col-lg-4 col-sm-6 text-center features-icon-box">
+                        <div class="text-center mb-4">
+                            <img
+                                src="gambar/man2Madiun.png"
+                                alt="MAN 2 Madiun" width="100" />
+                        </div>
+                        <h5 class="mb-2">MAN 2 Madiun</h5>
+                        <p class="features-icon-description">
+                            <a href="https://www.man2kabmadiun.sch.id/" target="_blank">
+                                <button class="btn btn-sm btn-primary">Daftar</button>
+                            </a>
+                        </p>
+                    </div>
+                    <div
+                        class="col-lg-4 col-sm-6 text-center features-icon-box">
+                        <div class="text-center mb-4">
+                            <img
+                                src="gambar/ut.png"
+                                alt="Universitas Terbuka" width="130" />
+                        </div>
+                        <h5 class=" mb-2">Universitas Terbuka</h5>
+                        <a href="https://pondokngujur.com/universitas-terbuka/" target="_blank">
+                            <button class="btn btn-sm btn-primary">Daftar</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Useful features: End -->
+
+        <!-- Real customers reviews: Start -->
+        <!-- <section
+            id="landingReviews"
+            class="section-py bg-body landing-reviews pb-0">
+            <div class="container">
+                <div
+                    class="row align-items-center gx-0 gy-4 g-lg-5 mb-5 pb-md-5">
+                    <div class="col-md-6 col-lg-5 col-xl-3">
+                        <div class="mb-4">
+                            <span class="badge bg-label-primary">Real Customers Reviews</span>
+                        </div>
+                        <h4 class="mb-1">
+                            <span class="position-relative fw-extrabold z-1">What people say
+                                <img
+                                    src="assets/sneat_pro/assets/img/front-pages/icons/section-title-icon.png"
+                                    alt="laptop charging"
+                                    class="section-title-img position-absolute object-fit-contain bottom-0 z-n1" />
+                            </span>
+                        </h4>
+                        <p class="mb-5 mb-md-12">
+                            See what our customers have to<br
+                                class="d-none d-xl-block" />
+                            say about their experience.
+                        </p>
+                        <div class="landing-reviews-btns">
+                            <button
+                                id="reviews-previous-btn"
+                                class="btn btn-icon btn-label-primary reviews-btn me-3"
+                                type="button">
+                                <i class="bx bx-chevron-left bx-md"></i>
+                            </button>
+                            <button
+                                id="reviews-next-btn"
+                                class="btn btn-icon btn-label-primary reviews-btn"
+                                type="button">
+                                <i class="bx bx-chevron-right bx-md"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-7 col-xl-9 mb-12">
+                        <div
+                            class="swiper-reviews-carousel overflow-hidden">
+                            <div class="swiper" id="swiper-reviews">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/brosur-bg.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/brosur-bg.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/brosur-bg.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/brosur-bg.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/brosur-bg.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/brosur-bg.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/brosur-bg.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Real customers reviews: End -->
 
         <!-- CTA: Start -->
         <section
