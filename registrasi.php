@@ -17,26 +17,6 @@
   <!-- Canonical SEO -->
   <link rel="canonical" href="https://pondokngujur.com/santribaru">
 
-
-  <!-- ? PROD Only: Google Tag Manager (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
-  <!-- <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5DDHKGP');
-  </script> -->
-  <!-- End Google Tag Manager -->
-
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="gambar/favicon.ico" />
 
@@ -62,6 +42,7 @@
 
   <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/libs/nouislider/nouislider.css" />
   <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/libs/swiper/swiper.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
   <!-- Page CSS -->
 
@@ -74,13 +55,62 @@
   <!-- <script src="assets/sneat_pro/assets/vendor/js/template-customizer.js"></script> -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="assets/sneat_pro/assets/js/front-config.js"></script>
+  <style>
+    .select2-container .select2-selection--single {
+      height: calc(2.25rem + 2px);
+      padding: 0.375rem 0.75rem;
+      border: 1px solid #ced4da;
+      border-radius: 0.375rem;
+    }
 
+    .select2-container--bootstrap-5 .select2-selection__rendered {
+      line-height: 1.5;
+    }
+
+    .select2-container .select2-dropdown {
+      border: 1px solid #ced4da;
+      border-radius: 0.375rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .select2-container .select2-dropdown {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+
+    .select2-container--bootstrap-5 .select2-selection--single:disabled {
+      background-color: #e9ecef;
+      border-color: #ced4da;
+      color: #6c757d;
+      cursor: not-allowed;
+    }
+
+    .select2-container--bootstrap-5 .select2-dropdown:disabled {
+      background-color: #e9ecef;
+      color: #6c757d;
+      border-color: #ced4da;
+      cursor: not-allowed;
+    }
+
+    .form-select:disabled {
+      background-color: #e9ecef;
+      border-color: #ced4da;
+      color: #6c757d;
+      cursor: not-allowed;
+    }
+
+    input.form-control:disabled,
+    textarea.form-control:disabled {
+      background-color: #e9ecef;
+      border-color: #ced4da;
+      color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
 
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDHKGP" height="0" width="0"
-      style="display: none; visibility: hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <script src="assets/sneat_pro/assets/vendor/js/dropdown-hover.js"></script>
   <script src="assets/sneat_pro/assets/vendor/js/mega-dropdown.js"></script>
@@ -178,6 +208,7 @@
               <div class="card mb-4">
                 <div class="card-body">
                   <form method="post" action="prosespd" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <div class="divider">
                       <div class="divider-text fs-4 fw-bold">FORMULIR JENIS PENDAFTARAN</div>
                     </div>
@@ -277,6 +308,22 @@
                         </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label" for="upload_nisn">Upload NISN</label>
+                          <input type="file" name="upload_nisn" class="form-control" placeholder="Upload NISN" />
+                          <div class="validate"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label" for="upload_ijasah">Upload Ijasah</label>
+                          <input type="file" name="upload_ijasah" class="form-control" placeholder="Upload Ijasah" />
+                          <div class="validate"></div>
+                        </div>
+                      </div>
+                    </div>
                     <div class="divider">
                       <div class="divider-text fs-4 fw-bold">FORMULIR DATA ALAMAT</div>
                     </div>
@@ -293,15 +340,18 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="provinsipd">Provinsi</label>
-                          <input type="text" autocomplete="" class="form-control" required="" name="provinsipd" placeholder=" Provinsi" />
-                          <div class="validate"></div>
+                          <select id="provinsipd" name="provinsipd" class="form-select">
+                            <option value="">Pilih Provinsi</option>
+                          </select>
+
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="kabupatenpd">Kabupaten</label>
-                          <input type="text" autocomplete="" name="kabupatenpd" class="form-control" required="" placeholder="Kabupaten" />
-                          <div class="validate"></div>
+                          <select id="kabupatenpd" name="kabupatenpd" class="form-select">
+                            <option value="">Pilih Kabupaten</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -309,15 +359,17 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="kecamatanpd">Kecamatan</label>
-                          <input type="text" autocomplete="" class="form-control" required="" name="kecamatanpd" placeholder="Kecamatan" />
-                          <div class="validate"></div>
+                          <select id="kecamatanpd" name="kecamatanpd" class="form-select">
+                            <option value="">Pilih Kecamatan</option>
+                          </select>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="desapd">Kelurahan / Desa</label>
-                          <input type="text" autocomplete="" name="desapd" class="form-control" required="" placeholder="Kelurahan / Desa" />
-                          <div class="validate"></div>
+                          <select id="desapd" name="desapd" class="form-select">
+                            <option value="">Pilih Kelurahan / Desa</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -325,7 +377,9 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="kodepos">Kode Pos</label>
-                          <input type="text" autocomplete="" name="kodepos" class="form-control" required="" placeholder="Masukkan Kode Pos" />
+                          <input type="text" autocomplete="" id="kodepos" name="kodepos" class="form-control" required="" placeholder="Masukkan Kode Pos" readonly />
+                          <!-- Input untuk kodepos -->
+
                           <div class="validate"></div>
                         </div>
                       </div>
@@ -397,14 +451,14 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="upload_kk">Upload Kartu Keluarga</label>
-                          <input type="file" name="upload_kk" class="form-control" required="" placeholder="Nama Ayah" />
+                          <input type="file" name="upload_kk" class="form-control" placeholder="Nama Ayah" />
                           <div class="validate"></div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="upload_ktp_ortu">Upload KTP Orang Tua</label>
-                          <input type="file" name="upload_ktp_ortu" class="form-control" required="" id="name" value="" placeholder="Tempat Lahir Ayah" />
+                          <input type="file" name="upload_ktp_ortu" class="form-control" id="name" value="" placeholder="Tempat Lahir Ayah" />
                           <div class="validate"></div>
                         </div>
                       </div>
@@ -659,8 +713,7 @@
                       <div class="col-md-12">
                         <div class="mb-3">
                           <label class="form-label" for="nomorbantuan">NOMOR KIP/KIS/KKS (Isi dengan tanda (-) strip jika tidak ada)</label>
-                          <textarea class="form-control" name="nomorbantuan" rows="2" placeholder="Ketikan Nomor KIP/KIS/KKS Jika ada
-Misal KIP : 123456789, KIS : 123456789, KKS : 123456789"></textarea>
+                          <textarea class="form-control" name="nomorbantuan" rows="2" placeholder="Ketikan Nomor KIP/KIS/KKS Jika ada Misal KIP : 123456789, KIS : 123456789, KKS : 123456789"></textarea>
                           <div class="validate"></div>
                         </div>
                       </div>
@@ -736,6 +789,161 @@ Misal KIP : 123456789, KIS : 123456789, KKS : 123456789"></textarea>
   <!-- Page JS -->
   <script src="assets/sneat_pro/assets/js/front-page-landing.js"></script>
 
+
+  <!-- Wilayah JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Inisialisasi Select2 pada elemen select
+      $('#provinsipd').select2({
+        theme: 'bootstrap',
+        placeholder: 'Pilih Provinsi',
+        allowClear: false
+      });
+      $('#kabupatenpd').select2({
+        theme: 'bootstrap',
+        placeholder: 'Pilih Kabupaten',
+        allowClear: false
+      });
+      $('#kecamatanpd').select2({
+        theme: 'bootstrap',
+        placeholder: 'Pilih Kecamatan',
+        allowClear: false
+      });
+      $('#desapd').select2({
+        theme: 'bootstrap',
+        placeholder: 'Pilih Desa / Kelurahan',
+        allowClear: false
+      });
+
+      // Ambil data Provinsi dari proxy.php
+      $.getJSON('https://alamat.thecloudalert.com/api/provinsi/get/', function(data) {
+        var provinsiSelect = $('#provinsipd');
+        provinsiSelect.empty(); // Hapus semua opsi sebelumnya
+        provinsiSelect.append('<option value="">Pilih Provinsi</option>'); // Menambahkan pilihan default
+
+        // Loop untuk menambahkan pilihan provinsi ke dalam select
+        $.each(data.result, function(index, item) {
+          provinsiSelect.append($('<option>', {
+            value: item.id,
+            text: item.text
+          }));
+        });
+
+        // Memperbarui tampilan Select2 setelah data dimuat
+        provinsiSelect.trigger('change');
+      });
+
+      // Ketika Provinsi dipilih
+      $('#provinsipd').change(function() {
+        var provinsiId = $(this).val();
+        if (provinsiId) {
+          // Ambil data Kabupaten berdasarkan Provinsi melalui proxy.php
+          $.getJSON('https://alamat.thecloudalert.com/api/kabkota/get/?d_provinsi_id=' + provinsiId, function(data) {
+            var kabupatenSelect = $('#kabupatenpd');
+            kabupatenSelect.empty().append('<option value="">Pilih Kabupaten</option>');
+
+            // Loop untuk menambahkan pilihan kabupaten
+            $.each(data.result, function(index, item) {
+              kabupatenSelect.append($('<option>', {
+                value: item.id,
+                text: item.text
+              }));
+            });
+
+            // Memperbarui tampilan Select2 setelah data dimuat
+            kabupatenSelect.trigger('change');
+
+            // Aktifkan kabupaten select
+            $('#kabupatenpd').prop('disabled', false);
+          });
+        } else {
+          $('#kabupatenpd').prop('disabled', true).empty().append('<option value="">Pilih Kabupaten</option>');
+          $('#kecamatanpd').prop('disabled', true).empty().append('<option value="">Pilih Kecamatan</option>');
+          $('#desapd').prop('disabled', true).empty().append('<option value="">Pilih Desa</option>');
+        }
+      });
+
+      // Ketika Kabupaten dipilih
+      $('#kabupatenpd').change(function() {
+        var kabupatenId = $(this).val();
+        if (kabupatenId) {
+          // Ambil data Kecamatan berdasarkan Kabupaten melalui proxy.php
+          $.getJSON('https://alamat.thecloudalert.com/api/kecamatan/get/?d_kabkota_id=' + kabupatenId, function(data) {
+            var kecamatanSelect = $('#kecamatanpd');
+            kecamatanSelect.empty().append('<option value="">Pilih Kecamatan</option>');
+
+            // Loop untuk menambahkan pilihan kecamatan
+            $.each(data.result, function(index, item) {
+              kecamatanSelect.append($('<option>', {
+                value: item.id,
+                text: item.text
+              }));
+            });
+
+            // Memperbarui tampilan Select2 setelah data dimuat
+            kecamatanSelect.trigger('change');
+
+            // Aktifkan kecamatan select
+            $('#kecamatanpd').prop('disabled', false);
+          });
+        } else {
+          $('#kecamatanpd').prop('disabled', true).empty().append('<option value="">Pilih Kecamatan</option>');
+          $('#desapd').prop('disabled', true).empty().append('<option value="">Pilih Desa</option>');
+        }
+      });
+
+      // Ketika Kecamatan dipilih
+      $('#kecamatanpd').change(function() {
+        var kecamatanId = $(this).val();
+        if (kecamatanId) {
+          // Ambil data Desa berdasarkan Kecamatan melalui proxy.php
+          $.getJSON('https://alamat.thecloudalert.com/api/kelurahan/get/?d_kecamatan_id=' + kecamatanId, function(data) {
+            var desaSelect = $('#desapd');
+            desaSelect.empty().append('<option value="">Pilih Desa</option>');
+
+            // Loop untuk menambahkan pilihan desa
+            $.each(data.result, function(index, item) {
+              desaSelect.append($('<option>', {
+                value: item.id,
+                text: item.text
+              }));
+            });
+
+            // Memperbarui tampilan Select2 setelah data dimuat
+            desaSelect.trigger('change');
+
+            // Aktifkan desa select
+            $('#desapd').prop('disabled', false);
+          });
+        } else {
+          $('#desapd').prop('disabled', true).empty().append('<option value="">Pilih Desa</option>');
+        }
+      });
+
+      // Ketika Desa dipilih, ambil kodepos
+      $('#desapd').change(function() {
+        var provinsiId = $('#provinsipd').val();
+        var kabupatenId = $('#kabupatenpd').val();
+        var kecamatanId = $('#kecamatanpd').val();
+        var desaId = $(this).val();
+
+        if (provinsiId && kabupatenId && kecamatanId && desaId) {
+          $.getJSON('https://alamat.thecloudalert.com/api/kodepos/get/?d_kabkota_id=' + kabupatenId + '&d_kecamatan_id=' + kecamatanId, function(data) {
+            if (data.status === 200 && Array.isArray(data.result) && data.result.length > 0) {
+              $('#kodepos').val(data.result[0].text);
+            } else {
+              $('#kodepos').val('Kodepos tidak ditemukan');
+            }
+          }).fail(function(jqXHR, textStatus, errorThrown) {
+            console.log('Request gagal:', textStatus, errorThrown);
+          });
+        }
+
+      });
+    });
+  </script>
 </body>
 
 </html>

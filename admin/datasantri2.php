@@ -299,8 +299,6 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                                             <th class="text-center">JENJANG</th>
                                             <th class="text-center">JENIS KELAMIN</th>
                                             <th class="text-center">TEMPAT TANGGAL LAHIR</th>
-                                            <th class="text-center">ALAMAT</th>
-                                            <th class="text-center">ASAL SEKOLAH</th>
                                             <th class="text-center">NO HP ORTU</th>
                                             <th class="text-center">AKSI</th>
                                         </tr>
@@ -311,22 +309,20 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                                         include "../koneksi.php";
                                         $no = 1;
                                         $query = "SELECT * FROM siswa"; // Query untuk menampilkan semua data siswa
-                                        $sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
-
+                                        $sql = mysqli_query($connect, $query); // Eksekusi query
 
                                         while ($data = mysqli_fetch_array($sql)) { // Ambil semua data dari hasil eksekusi $sql
                                             echo "<tr>";
-                                            echo "<td>" . $no++ . "</td>";
+                                            echo "<td class='text-center'>" . $no++ . "</td>";
                                             echo "<td>" . $data['nisn'] . "</td>";
                                             echo "<td>" . $data['namapd'] . "</td>";
                                             echo "<td>" . $data['jenjang'] . "</td>";
                                             echo "<td>" . $data['jk'] . "</td>";
                                             echo "<td>" . $data['tempatlahirpd'] . ", " . $data['tanggallahirpd'] . "</td>";
-                                            echo "<td>" . $data['alamatpd'] . "</td>";
-                                            echo "<td>" . $data['asalsekolah'] . "</td>";
-                                            echo "<td>" . $data['wawali'] . "</td>";
+                                            $no_hp = preg_replace('/[^0-9]/', '', $data['wawali']); // Hanya ambil angka
+                                            echo "<td><a href='https://wa.me/$no_hp' target='_blank'>" . $data['wawali'] . "</a></td>";
 
-                                            echo "<td><a class='btn btn-warning' href='hapus?id=" . $data['id'] . "' role='button' >Hapus  </a></td>";
+                                            echo "<td><div class='d-flex gap-2 justify-content-center'><a class='btn btn-primary btn-sm' href='detail?id=" . $data['id'] . "'role='button'><i class='bx bx-search'></i></a><a class='btn btn-warning btn-sm' href='edit?id=" . $data['id'] . "'role='button'><i class='bx bx-edit'></i></a><a class='btn btn-danger btn-sm' href='hapus?id=" . $data['id'] . "' role='button' onclick='return confirm(\"Yakin ingin menghapus?\");'><i class='bx bx-trash'></i></a></div></td>";
 
                                             echo "</tr>";
                                         }

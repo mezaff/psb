@@ -2,22 +2,52 @@
 // Load file koneksi.php
 include "../koneksi.php";
 
-// Ambil data NIS yang dikirim oleh index melalui URL
+// Ambil ID yang dikirim melalui URL
 $id = $_GET['id'];
 
-// Query untuk menampilkan data siswa berdasarkan NIS yang dikirim
+// Query untuk menampilkan data siswa berdasarkan ID
 $query = "SELECT * FROM siswa WHERE id='" . $id . "'";
-$sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
-$data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
+$sql = mysqli_query($connect, $query);
+$data = mysqli_fetch_array($sql);
 
-// Query untuk menghapus data siswa berdasarkan NIS yang dikirim
-$query2 = "DELETE FROM siswa WHERE id='" . $id . "'";
-$sql2 = mysqli_query($connect, $query2); // Eksekusi/Jalankan query dari variabel $query
+if ($data) {
+	// Tentukan folder tempat penyimpanan file berdasarkan nama siswa
+	$namaFolder = preg_replace('/[^a-zA-Z0-9]/', '_', strtolower($data['namapd']));
+	$targetDir = "../uploads/" . $namaFolder . "/";
 
-if ($sql2) { // Cek jika proses simpan ke database sukses atau tidak
-	// Jika Sukses, Lakukan :
-	header("location: datasantri"); // Redirect ke halaman index
+	// Ambil nama file dari database
+	$files = [
+		'upload_akte' => $data['upload_akte'],
+		'upload_nisn' => $data['upload_nisn'],
+		'upload_ijasah' => $data['upload_ijasah'],
+		'upload_kk' => $data['upload_kk'],
+		'upload_ktp_ortu' => $data['upload_ktp_ortu']
+	];
+
+	// Hapus semua file yang terkait
+	foreach ($files as $file) {
+		$filePath = $targetDir . $file;
+		if (!empty($file) && file_exists($filePath)) {
+			unlink($filePath); // Hapus file
+		}
+	}
+
+	// Hapus folder jika kosong
+	if (is_dir($targetDir)) {
+		rmdir($targetDir);
+	}
+
+	// Query untuk menghapus data siswa berdasarkan ID
+	$query2 = "DELETE FROM siswa WHERE id='" . $id . "'";
+	$sql2 = mysqli_query($connect, $query2);
+
+	if ($sql2) {
+		// Jika sukses, redirect ke halaman data
+		header("location: datasantri2");
+		exit();
+	} else {
+		echo "Data gagal dihapus. <a href='/santribaru/admin'>Kembali</a>";
+	}
 } else {
-	// Jika Gagal, Lakukan :
-	echo "Data gagal dihapus. <a href='/santribaru/admin'>Kembali</a>";
+	echo "Data tidak ditemukan.";
 }

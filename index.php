@@ -256,6 +256,30 @@ $phoneNumber = $wa;
                             <div class="card accordion-item">
                                 <h2
                                     class="accordion-header"
+                                    id="headingFour">
+                                    <button
+                                        type="button"
+                                        class="accordion-button collapsed"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#accordionFour"
+                                        aria-expanded="false"
+                                        aria-controls="accordionFour">
+                                        Sejarah Singkat
+                                    </button>
+                                </h2>
+                                <div
+                                    id="accordionFour"
+                                    class="accordion-collapse collapse"
+                                    aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Keberadaaan Pondok Pesantren Tarbiyatul Mutathowi’in Dusun Ngujur Desa Rejosari Kecamatan Kebonsari Kabupaten Madiun merupakan rangkaian panjang dari perjuangan para tokoh pendiri dan pejuang Pendidikan Agama di Dusun Ngujur Desa Rejosari Kecamatan Kebonsari Kab. Madiun, menyadari akan tugas dan tanggung jawabnya untuk mengembangkan agama dan menyediakan tempat pendidikan bagi masyarakat sekitar Desa Rejosari, tokoh-tokoh tersebut antara lain : KH. Ali Rahmat K. Matlab K. Ashuri K. Sudirman Masyarakat Dusun Ngujur Pada tahun 1946 para tokoh tersebut mendirikan Pondok Pesantren dan untuk menopang pendidikan formalnya didirikanlah Madrasah Ibtidaiyah/SR1 di Dusun Ngujur Desa Rejosari dengan bekal tekad dan semangat yang kuat. Madrasah tersebut berdiri dan bertahan. Pada tahun 1960 berubah menjadi Madrasah Mu’alimin yang akhirnya pada tahun 1970, berdasar SK Menteri Agama No. 176 tanggal 9 Agustus berubah menjadi PGAN. Selanjutnya sesuai dengan kebijakan Pemerintah dalam hal ini Departemen Agama, PGAN tersebut diubah menjadi MTsN Rejosari untuk kelas I, II, dan III sedang MAN Rejosari untuk kelas IV, V dan VI. Sedang untuk tingkat Dasar didirikan Madrasah Ibtidaiyah sekaligus untuk tingkat anak – anak didirikan RA dan PAUD.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <h2
+                                    class="accordion-header"
                                     id="headingOne">
                                     <button
                                         type="button"
@@ -273,13 +297,7 @@ $phoneNumber = $wa;
                                     class="accordion-collapse collapse"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Lemon drops chocolate cake gummies
-                                        carrot cake chupa chups muffin
-                                        topping. Sesame snaps icing marzipan
-                                        gummi bears macaroon dragée danish
-                                        caramels powder. Bear claw dragée
-                                        pastry topping soufflé. Wafer gummi
-                                        bears marshmallow pastry pie.
+                                        “Mewujudkan Pondok Pesantren yang Mendidik Santri untuk Beriman, Bertakwa, Beakhlakul Karimah, dan Berilmu."
                                     </div>
                                 </div>
                             </div>
@@ -303,39 +321,14 @@ $phoneNumber = $wa;
                                     aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Dessert ice cream donut oat cake
-                                        jelly-o pie sugar plum cheesecake.
-                                        Bear claw dragée oat cake dragée ice
-                                        cream halvah tootsie roll. Danish
-                                        cake oat cake pie macaroon tart
-                                        donut gummies. Jelly beans candy
-                                        canes carrot cake. Fruitcake
-                                        chocolate chupa chups.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card accordion-item">
-                                <h2
-                                    class="accordion-header"
-                                    id="headingFour">
-                                    <button
-                                        type="button"
-                                        class="accordion-button collapsed"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#accordionFour"
-                                        aria-expanded="false"
-                                        aria-controls="accordionFour">
-                                        Sejarah Singkat
-                                    </button>
-                                </h2>
-                                <div
-                                    id="accordionFour"
-                                    class="accordion-collapse collapse"
-                                    aria-labelledby="headingFour"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Keberadaaan Pondok Pesantren Tarbiyatul Mutathowi’in Dusun Ngujur Desa Rejosari Kecamatan Kebonsari Kabupaten Madiun merupakan rangkaian panjang dari perjuangan para tokoh pendiri dan pejuang Pendidikan Agama di Dusun Ngujur Desa Rejosari Kecamatan Kebonsari Kab. Madiun, menyadari akan tugas dan tanggung jawabnya untuk mengembangkan agama dan menyediakan tempat pendidikan bagi masyarakat sekitar Desa Rejosari, tokoh-tokoh tersebut antara lain : KH. Ali Rahmat K. Matlab K. Ashuri K. Sudirman Masyarakat Dusun Ngujur Pada tahun 1946 para tokoh tersebut mendirikan Pondok Pesantren dan untuk menopang pendidikan formalnya didirikanlah Madrasah Ibtidaiyah/SR1 di Dusun Ngujur Desa Rejosari dengan bekal tekad dan semangat yang kuat. Madrasah tersebut berdiri dan bertahan. Pada tahun 1960 berubah menjadi Madrasah Mu’alimin yang akhirnya pada tahun 1970, berdasar SK Menteri Agama No. 176 tanggal 9 Agustus berubah menjadi PGAN. Selanjutnya sesuai dengan kebijakan Pemerintah dalam hal ini Departemen Agama, PGAN tersebut diubah menjadi MTsN Rejosari untuk kelas I, II, dan III sedang MAN Rejosari untuk kelas IV, V dan VI. Sedang untuk tingkat Dasar didirikan Madrasah Ibtidaiyah sekaligus untuk tingkat anak – anak didirikan RA dan PAUD.
+                                        <ul>
+                                            <li>Melaksanakan pembelajaran dan pengajian yang berkualitas bagi santri</li>
+                                            <li>Mendorong santri untuk berprestasi dalam bidang keagamaan dan keilmuan</li>
+                                            <li>Mewadahi santri untuk mengembangkan kreativitasnya</li>
+                                            <li>Menciptakan suasana pendidikan yang kondusif bagi proses belajar mengajar</li>
+                                            <li>Mendidik santri untuk mandiri, disiplin, dan tanggungjawab</li>
+                                            <li>Melengkapi sarana dan prasarana yang mendudukung</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
