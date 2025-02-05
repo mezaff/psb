@@ -141,6 +141,9 @@ $phoneNumber = $wa;
                         <li class="nav-item">
                             <a class="nav-link fw-medium" href="/santribaru/#sosmed">Sosmed</a>
                         </li>
+                        <li class="nav-item ">
+                            <a class="nav-link fw-medium d-block d-md-none" href="/santribaru/admin">Admin</a>
+                        </li>
                         <li>
                             <a href="cekdata" class="btn btn-primary d-block d-md-none"><span
                                     class="d-block d-md-none">Cek Data</span></a>
@@ -153,6 +156,9 @@ $phoneNumber = $wa;
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
 
                     <!-- navbar button: Start -->
+                    <li class="nav-item ">
+                        <a class="nav-link fw-medium d-none d-md-block" href="/santribaru/admin">Admin</a>
+                    </li>
                     <li>
                         <a href="cekdata" class="btn btn-primary d-none d-md-block"><span
                                 class="d-none d-md-block">Cek Data</span></a>
