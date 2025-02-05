@@ -213,7 +213,7 @@ $phoneNumber = $wa;
                     <div id="heroDashboardAnimation" class="hero-animation-img">
                         <a href="#">
                             <div id="heroAnimationImg" class="position-relative hero-dashboard-img">
-                                <img src="assets/sneat_pro/assets/img/front-pages/landing-page/brosur-bg.png"
+                                <img src="gambar/brosur-bg2.png"
                                     alt="hero dashboard" class="animation-img"
                                     data-app-light-img="front-pages/landing-page/brosur-bg.png"
                                     data-app-dark-img="front-pages/landing-page/brosur-bg.png" />
