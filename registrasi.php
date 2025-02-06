@@ -207,7 +207,7 @@
             <div class="col-xl">
               <div class="card mb-4">
                 <div class="card-body">
-                  <form method="post" action="prosespd" enctype="multipart/form-data">
+                  <form method="post" action="prosespd" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <div class="divider">
                       <div class="divider-text fs-4 fw-bold">FORMULIR JENIS PENDAFTARAN</div>
@@ -216,21 +216,27 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="jenispd">Jenis Pendaftaran</label>
-                          <select name="jenispd" id="jenispd" class="form-select" required="">
+                          <select name="jenispd" id="jenispd" class="form-select" required>
                             <option value="" disabled selected>Pilih Jenis Pendaftaran</option>
                             <option value="Santri Baru">Santri Baru</option>
                             <option value="Santri Pindahan">Santri Pindahan</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Jenis Pendaftaran wajib diisi
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="jenjang">Jenjang Pendidikan</label>
-                          <select name="jenjang" id="jenjang" class="form-select" required="">
+                          <select name="jenjang" id="jenjang" class="form-select" required>
                             <option value="" disabled selected>Pilih Jenjang Pendidikan</option>
-                            <option value="Tsanawiyah"> Tsanawiyah (MTs)</option>
-                            <option value="Aliyah"> Aliyah (MA)</option>
+                            <option value="Tsanawiyah (MTs)">Tsanawiyah (MTs)</option>
+                            <option value="Aliyah (MA)">Aliyah (MA)</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Jenjang Pendidikan wajib diisi
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -241,18 +247,21 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="nik">NIK (Nomor Induk Kependudukan)</label>
-                          <input type="number" class="form-control" required=""
-                            name="nik" placeholder="NIK dapat dilihat pada Kartu Keluarga (KK)"
-                            data-rule="minlen:4" data-msg="Masukan NIK Dengan Benar" />
-                          <div class="validate"></div>
+                          <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK dapat dilihat pada Kartu Keluarga (KK)"
+                            required pattern="^\d{16}$" title="NIK harus terdiri dari 16 digit" />
+                          <div class="invalid-feedback">
+                            NIK wajib diisi dan harus terdiri dari 16 digit.
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="nisn">NISN</label>
-                          <input type="number" class="form-control"
-                            required=" " name="nisn" placeholder="Masukan NISN " data-rule="minlen:4" data-msg="Masukan NISN Dengan Benar" />
-                          <div class="validate"></div>
+                          <input type="text" class="form-control" id="nisn" name="nisn" placeholder="Masukkan NISN"
+                            required pattern="^\d{10}$" title="NISN harus terdiri dari 10 digit" />
+                          <div class="invalid-feedback">
+                            NISN wajib diisi dan harus terdiri dari 10 digit.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -260,35 +269,44 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="namapd">Nama Lengkap</label>
-                          <input type="text" autocomplete="" class="form-control" required="" name="namapd" placeholder="Nama Lengkap Calon Peserta didik" data-rule="minlen:2" data-msg="Nama Tidak Valid" />
-                          <div class="validate"></div>
+                          <input type="text" class="form-control" id="namapd" name="namapd" placeholder="Nama Lengkap Calon Peserta Didik"
+                            required pattern="^[A-Za-z\s']+$" title="Nama hanya boleh mengandung huruf, spasi, dan tanda kutip tunggal (') saja." />
+                          <div class="invalid-feedback">
+                            Nama Lengkap wajib diisi dan hanya boleh mengandung huruf, spasi, dan tanda kutip tunggal (').
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="jk">Jenis Kelamin</label>
-                          <select name="jk" id="jk" required=""
-                            class="form-select">
+                          <select name="jk" id="jk" required class="form-select">
                             <option value="" disabled selected>Pilih Jenis Kelamin</option>
                             <option value="Laki - Laki">Laki - Laki</option>
                             <option value="Perempuan">Perempuan</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Jenis Kelamin wajib diisi.
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="namapd">Tempat Lahir</label>
-                          <input type="text" autocomplete="" name="tempatlahirpd" class="form-control" required="" value="" placeholder="Tempat Lahir" />
-                          <div class="validate"></div>
+                          <label class="form-label" for="tempatlahirpd">Tempat Lahir</label>
+                          <input type="text" autocomplete="" name="tempatlahirpd" id="tempatlahirpd" class="form-control" required="" value="" placeholder="Tempat Lahir" />
+                          <div class="invalid-feedback">
+                            Tempat Lahir wajib diisi.
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="tanggallahirpd">Tanggal Lahir</label>
-                          <input type="date" class="form-control" required="" name="tanggallahirpd" placeholder="Tanggal Lahir" />
-                          <div class="validate"></div>
+                          <input type="date" class="form-control" name="tanggallahirpd" id="tanggallahirpd" value="" autocomplete="" required="" placeholder="Tanggal Lahir" />
+                          <div class="invalid-feedback">
+                            Tanggal Lahir wajib diisi.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -296,31 +314,39 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="wapd">Nomor Telpon (Tidak Wajib)</label>
-                          <input type="number" class="form-control" name="wapd" placeholder="No Telp/ WA" data-rule="minlen:11" data-msg="Minimal 11 Angka" />
-                          <div class="validate"></div>
+                          <input type="number" class="form-control" name="wapd" id="wapd" value="" autocomplete="" placeholder="No Telp/ WA" />
+                          <div class="invalid-feedback">
+                            Nomor Telpon harus antara 11 hingga 13 digit.
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_akte">Upload Akte</label>
-                          <input type="file" name="upload_akte" class="form-control" placeholder="Upload Akte Kelahiran" />
-                          <div class="validate"></div>
+                          <label class="form-label" for="upload_akte">Upload Akte (Tidak Wajib) <span class="text-danger">File harus PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB</span></label>
+                          <input type="file" class="form-control" name="upload_akte" id="upload_akte" accept=".png, .jpg, .jpeg, .pdf">
+                          <div class="invalid-feedback">
+                            File harus berformat PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB.
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_nisn">Upload NISN</label>
-                          <input type="file" name="upload_nisn" class="form-control" placeholder="Upload NISN" />
-                          <div class="validate"></div>
+                          <label class="form-label" for="upload_nisn">Upload NISN (Tidak Wajib) <span class="text-danger">File harus PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB</span></label>
+                          <input type="file" name="upload_nisn" class="form-control" id="upload_nisn" accept=".png, .jpg, .jpeg, .pdf">
+                          <div class="invalid-feedback">
+                            File harus berformat PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB.
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_ijasah">Upload Ijasah</label>
-                          <input type="file" name="upload_ijasah" class="form-control" placeholder="Upload Ijasah" />
-                          <div class="validate"></div>
+                          <label class="form-label" for="upload_ijasah">Upload Ijasah (Tidak Wajib) <span class="text-danger">File harus PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB</span></label>
+                          <input type="file" name="upload_ijasah" class="form-control" id="upload_ijasah" accept=".png, .jpg, .jpeg, .pdf">
+                          <div class="invalid-feedback">
+                            File harus berformat PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -331,8 +357,10 @@
                       <div class="col-md-12">
                         <div class="mb-3">
                           <label class="form-label" for="alamatpd">Alamat Lengkap</label>
-                          <textarea class="form-control" required="" rows="2" name="alamatpd" data-rule="required" data-msg="Alamat Tidak Valid" placeholder="Masukkan Alamat Lengkap, Sertakan Nama Jalan dan RT/RW "></textarea>
-                          <div class="validate"></div>
+                          <textarea class="form-control" required rows="2" name="alamatpd" data-rule="required" data-msg="Alamat Tidak Valid" placeholder="Masukkan Alamat Lengkap, Sertakan Nama Jalan dan RT/RW"></textarea>
+                          <div class="invalid-feedback">
+                            Alamat wajib diisi.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -340,18 +368,23 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="provinsipd">Provinsi</label>
-                          <select id="provinsipd" name="provinsipd" class="form-select">
+                          <select id="provinsipd" name="provinsipd" class="form-select" required>
                             <option value="">Pilih Provinsi</option>
                           </select>
-
+                          <div class="invalid-feedback">
+                            Provinsi wajib dipilih.
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="kabupatenpd">Kabupaten</label>
-                          <select id="kabupatenpd" name="kabupatenpd" class="form-select">
+                          <select id="kabupatenpd" name="kabupatenpd" class="form-select" required>
                             <option value="">Pilih Kabupaten</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Kabupaten wajib dipilih.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -359,17 +392,23 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="kecamatanpd">Kecamatan</label>
-                          <select id="kecamatanpd" name="kecamatanpd" class="form-select">
+                          <select id="kecamatanpd" name="kecamatanpd" class="form-select" required>
                             <option value="">Pilih Kecamatan</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Kecamatan wajib dipilih.
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="desapd">Kelurahan / Desa</label>
-                          <select id="desapd" name="desapd" class="form-select">
+                          <select id="desapd" name="desapd" class="form-select" required>
                             <option value="">Pilih Kelurahan / Desa</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Kelurahan / Desa wajib dipilih.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -378,15 +417,13 @@
                         <div class="mb-3">
                           <label class="form-label" for="kodepos">Kode Pos</label>
                           <input type="text" autocomplete="" id="kodepos" name="kodepos" class="form-control" required="" placeholder="Masukkan Kode Pos" readonly />
-                          <!-- Input untuk kodepos -->
-
                           <div class="validate"></div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="jarak">Jarak Ke Lembaga</label>
-                          <select class="form-select" id="jarak" required="" name="jarak">
+                          <select class="form-select" id="jarak" required name="jarak">
                             <option value="" disabled selected>Jarak ke Lembaga</option>
                             <option value="Kurang dari 5 km">Kurang dari 5 km</option>
                             <option value="Antara 5 - 10 km">Antara 5 - 10 km</option>
@@ -394,6 +431,9 @@
                             <option value="Antara 21 - 30 km">Antara 21 - 30 km</option>
                             <option value="Lebih dari 30 km">Lebih dari 30 km</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Harap pilih jarak ke lembaga.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -401,7 +441,7 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="transportasi">Transportasi</label>
-                          <select class="form-select" id="transportasi" required="" name="transportasi">
+                          <select class="form-select" id="transportasi" required name="transportasi">
                             <option value="" disabled selected>Transportasi ke Lembaga</option>
                             <option value="Sepeda">Sepeda</option>
                             <option value="Sepeda Motor">Sepeda Motor</option>
@@ -415,12 +455,16 @@
                             <option value="Andong/Bendi/Sado/Dokar/Delman/Becak">Andong/Bendi/Sado/Dokar/Delman/Becak</option>
                             <option value="Lainnya">Lainnya</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Harap pilih jenis transportasi.
+                          </div>
                         </div>
                       </div>
+
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="waktu">Waktu Tempuh</label>
-                          <select class="form-select" id="waktu" required="" name="waktu">
+                          <select class="form-select" id="waktu" required name="waktu">
                             <option value="" disabled selected>Waktu Tempuh</option>
                             <option value="1 - 10 menit">1 - 10 menit</option>
                             <option value="11 - 20 menit">11 - 20 menit</option>
@@ -429,9 +473,13 @@
                             <option value="1 - 2 jam">1 - 2 jam</option>
                             <option value="> 2 jam"> >2 jam</option>
                           </select>
+                          <div class="invalid-feedback">
+                            Harap pilih waktu tempuh.
+                          </div>
                         </div>
                       </div>
                     </div>
+
                     <div class="divider">
                       <div class="divider-text fs-4 fw-bold">FORMULIR DATA ASAL SEKOLAH</div>
                     </div>
@@ -440,8 +488,11 @@
                         <div class="mb-3">
                           <label class="form-label" for="asalsekolah">Asal Sekolah</label>
                           <input type="text" autocomplete="" name="asalsekolah" class="form-control" required="" value="" placeholder="Asal Sekolah" />
-                          <div class="validate"></div>
+                          <div class="invalid-feedback">
+                            Harap masukkan asal sekolah.
+                          </div>
                         </div>
+
                       </div>
                     </div>
                     <div class="divider">
@@ -450,16 +501,22 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_kk">Upload Kartu Keluarga</label>
-                          <input type="file" name="upload_kk" class="form-control" placeholder="Nama Ayah" />
+                          <label class="form-label" for="upload_kk">Upload Kartu Keluarga (Tidak Wajib) <span class="text-danger">PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB</span></label>
+                          <input type="file" name="upload_kk" class="form-control" accept=".png, .jpg, .jpeg, .pdf" />
                           <div class="validate"></div>
+                          <div class="invalid-feedback">
+                            Format file harus berupa PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB.
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_ktp_ortu">Upload KTP Orang Tua</label>
-                          <input type="file" name="upload_ktp_ortu" class="form-control" id="name" value="" placeholder="Tempat Lahir Ayah" />
+                          <label class="form-label" for="upload_ktp_ortu">Upload KTP Orang Tua (Tidak Wajib) <span class="text-danger">PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB</span></label>
+                          <input type="file" name="upload_ktp_ortu" class="form-control" accept=".png, .jpg, .jpeg, .pdf" />
                           <div class="validate"></div>
+                          <div class="invalid-feedback">
+                            Format file harus berupa PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -468,18 +525,22 @@
                         <div class="mb-3">
                           <label class="form-label" for="kk">Nomor Kartu Keluarga</label>
                           <input type="number" class="form-control" required=""
-                            name="kk" placeholder="NIK dapat dilihat pada Kartu Keluarga (KK)"
-                            data-rule="minlen:4" data-msg="Masukan NIK Dengan Benar" />
-                          <div class="validate"></div>
+                            name="kk" placeholder="Nomor Kartu Keluarga (KK)"
+                            minlength="16" maxlength="16"
+                            pattern="\d{16}"
+                            title="Nomor Kartu Keluarga harus terdiri dari 16 digit angka" />
+                          <div class="invalid-feedback">Nomor Kartu Keluarga wajib diisi dan harus terdiri dari 16 digit angka.</div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="nikayah">NIK Ayah</label>
                           <input type="number" class="form-control" required=""
-                            name="nikayah" placeholder="NIK dapat dilihat pada Kartu Keluarga (KK)"
-                            data-rule="minlen:4" data-msg="Masukan NIK Dengan Benar" />
-                          <div class="validate"></div>
+                            name="nikayah" placeholder="NIK Ayah dapat dilihat pada Kartu Keluarga (KK)"
+                            minlength="16" maxlength="16"
+                            pattern="\d{16}"
+                            title="NIK Ayah harus terdiri dari 16 digit angka" />
+                          <div class="invalid-feedback">NIK Ayah wajib diisi dan harus terdiri dari 16 digit angka.</div>
                         </div>
                       </div>
                     </div>
@@ -487,15 +548,15 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="namaayah">Nama Lengkap Ayah</label>
-                          <input type="text" autocomplete="" name="namaayah" class="form-control" required="" placeholder="Nama Ayah" />
-                          <div class="validate"></div>
+                          <input type="text" autocomplete="" name="namaayah" class="form-control" required placeholder="Nama Ayah" />
+                          <div class="invalid-feedback">Nama Ayah wajib diisi.</div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="tempatlahirayah">Tempat Lahir</label>
-                          <input type="text" autocomplete="" name="tempatlahirayah" class="form-control" required="" id="name" value="" placeholder="Tempat Lahir Ayah" />
-                          <div class="validate"></div>
+                          <input type="text" autocomplete="" name="tempatlahirayah" class="form-control" required id="name" value="" placeholder="Tempat Lahir Ayah" />
+                          <div class="invalid-feedback">Tempat Lahir Ayah wajib diisi.</div>
                         </div>
                       </div>
                     </div>
@@ -503,14 +564,14 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="tanggallahirayah">Tanggal Lahir</label>
-                          <input type="date" class="form-control" required="" name="tanggallahirayah" placeholder="Tanggal Lahir Ayah" />
-                          <div class="validate"></div>
+                          <input type="date" class="form-control" required name="tanggallahirayah" placeholder="Tanggal Lahir Ayah" />
+                          <div class="invalid-feedback">Tanggal Lahir Ayah wajib diisi.</div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="pendidikanayah">Pendidikan Terakhir</label>
-                          <select name="pendidikanayah" id="pendidikanayah" class="form-select" required="">
+                          <select name="pendidikanayah" id="pendidikanayah" class="form-select" required>
                             <option value="" disabled selected> Pilih Pendidikan Terakhir Ayah</option>
                             <option value="Tidak Sekolah">Tidak Sekolah</option>
                             <option value="SD/MI">SD/MI</option>
@@ -521,6 +582,7 @@
                             <option value="S2">S2</option>
                             <option value="S3">S3</option>
                           </select>
+                          <div class="invalid-feedback">Pendidikan Terakhir Ayah wajib diisi.</div>
                         </div>
                       </div>
                     </div>
@@ -528,7 +590,7 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="pekerjaanayah">Pekerjaan</label>
-                          <select name="pekerjaanayah" id="pekerjaanayah" class="form-select" required="">
+                          <select name="pekerjaanayah" id="pekerjaanayah" class="form-select" required>
                             <option value="" disabled selected> Pilih Pekerjaan Ayah</option>
                             <option value="Tidak Bekerja">Tidak Bekerja</option>
                             <option value="Pensiunan">Pensiunan</option>
@@ -549,12 +611,13 @@
                             <option value="Politikus">Politikus</option>
                             <option value="Lainnya"> Lainnya</option>
                           </select>
+                          <div class="invalid-feedback">Pekerjaan Ayah wajib diisi.</div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="penghasilanayah">Penghasilan</label>
-                          <select name="penghasilanayah" id="penghasilanayah" class="form-select" required="">
+                          <select name="penghasilanayah" id="penghasilanayah" class="form-select" required>
                             <option value="" disabled selected> Pilih Penghasilan Ayah</option>
                             <option value="< 500.000"> 0 - < 500.000</option>
                             <option value="> 500.000 - 1000.000">> 500.000 - 1000.000</option>
@@ -562,6 +625,7 @@
                             <option value="> 2000.000 - 5000.000">> 2000.000 - 5000.000</option>
                             <option value="> 5000.000">> 5000.000</option>
                           </select>
+                          <div class="invalid-feedback">Penghasilan Ayah wajib diisi.</div>
                         </div>
                       </div>
                     </div>
@@ -569,58 +633,59 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="namaibu">Nama Lengkap Ibu</label>
-                          <input type="text" autocomplete="" name="namaibu" class="form-control" required="" placeholder="Nama ibu" />
-                          <div class="validate"></div>
+                          <input type="text" autocomplete="" name="namaibu" class="form-control" required placeholder="Nama ibu" />
+                          <div class="invalid-feedback">Nama Ibu wajib diisi.</div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="nikibu">NIK Ibu</label>
-                          <input type="number" class="form-control" required=""
-                            name="nikibu" placeholder="NIK dapat dilihat pada Kartu Keluarga (KK)"
-                            data-rule="minlen:4" data-msg="Masukan NIK Dengan Benar" />
-                          <div class="validate"></div>
+                          <input type="number" class="form-control" required name="nikibu" placeholder="NIK dapat dilihat pada Kartu Keluarga (KK)" data-rule="minlen:4" data-msg="Masukan NIK Dengan Benar" />
+                          <div class="invalid-feedback">NIK Ibu wajib diisi dan harus terdiri dari 16 digit angka.</div>
                         </div>
                       </div>
                     </div>
+
                     <div class="row">
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="tempatlahiribu">Tempat Lahir</label>
-                          <input type="text" autocomplete="" name="tempatlahiribu" class="form-control" required="" value="" placeholder="Tempat Lahir ibu" />
-                          <div class="validate"></div>
+                          <input type="text" autocomplete="" name="tempatlahiribu" class="form-control" required value="" placeholder="Tempat Lahir ibu" />
+                          <div class="invalid-feedback">Tempat Lahir Ibu wajib diisi.</div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="tanggallahiribu">Tanggal Lahir</label>
-                          <input type="date" class="form-control" required="" name="tanggallahiribu" placeholder="Tanggal Lahir ibu" />
-                          <div class="validate"></div>
+                          <input type="date" class="form-control" required name="tanggallahiribu" placeholder="Tanggal Lahir ibu" />
+                          <div class="invalid-feedback">Tanggal Lahir Ibu wajib diisi.</div>
                         </div>
                       </div>
                     </div>
+
                     <div class="row">
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="pendidikanibu">Pendidikan Terakhir</label>
-                          <select name="pendidikanibu" id="pendidikanibu" class="form-select" required="">
-                            <option value="" disabled selected> Pilih Pendidikan Terakhir Ibu</option>
+                          <select name="pendidikanibu" id="pendidikanibu" class="form-select" required>
+                            <option value="" disabled selected>Pilih Pendidikan Terakhir Ibu</option>
                             <option value="Tidak Sekolah">Tidak Sekolah</option>
                             <option value="SD/MI">SD/MI</option>
-                            <option value="SMP/MTs">SMP/ MTs</option>
-                            <option value="SMA/MA">SMA / MA</option>
-                            <option value="D1/D2/D3"> D1/D2/D3</option>
+                            <option value="SMP/MTs">SMP/MTs</option>
+                            <option value="SMA/MA">SMA/MA</option>
+                            <option value="D1/D2/D3">D1/D2/D3</option>
                             <option value="S1">S1</option>
                             <option value="S2">S2</option>
                             <option value="S3">S3</option>
                           </select>
+                          <div class="invalid-feedback">Pendidikan Terakhir Ibu wajib diisi.</div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="pekerjaanibu">Pekerjaan</label>
-                          <select name="pekerjaanibu" id="pekerjaanibu" class="form-select" required="">
-                            <option value="" disabled selected> Pilih Pekerjaan Ibu</option>
+                          <select name="pekerjaanibu" id="pekerjaanibu" class="form-select" required>
+                            <option value="" disabled selected>Pilih Pekerjaan Ibu</option>
                             <option value="Tidak Bekerja">Tidak Bekerja</option>
                             <option value="Pensiunan">Pensiunan</option>
                             <option value="PNS">PNS</option>
@@ -638,8 +703,9 @@
                             <option value="Buruh (Tani/Pabrik/Bangunan)">Buruh (Tani/Pabrik/Bangunan)</option>
                             <option value="Sopir/Masinis/Kondektur">Sopir/Masinis/Kondektur</option>
                             <option value="Politikus">Politikus</option>
-                            <option value="Lainnya"> Lainnya</option>
+                            <option value="Lainnya">Lainnya</option>
                           </select>
+                          <div class="invalid-feedback">Pekerjaan Ibu wajib diisi.</div>
                         </div>
                       </div>
                     </div>
@@ -647,23 +713,25 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="penghasilanibu">Penghasilan</label>
-                          <select name="penghasilanibu" id="penghasilanibu" class="form-select" required="">
-                            <option value="" disabled selected> Pilih Penghasilan Ibu</option>
-                            <option value="< 500.000"> 0 - < 500.000</option>
+                          <select name="penghasilanibu" id="penghasilanibu" class="form-select" required>
+                            <option value="" disabled selected>Pilih Penghasilan Ibu</option>
+                            <option value="< 500.000">0 - < 500.000</option>
                             <option value="> 500.000 - 1000.000">> 500.000 - 1000.000</option>
-                            <option value="> 1000.000 - 1000.000">> 1000.000 - 2000.000</option>
+                            <option value="> 1000.000 - 2000.000">> 1000.000 - 2000.000</option>
                             <option value="> 2000.000 - 5000.000">> 2000.000 - 5000.000</option>
                             <option value="> 5000.000">> 5000.000</option>
                           </select>
+                          <div class="invalid-feedback">Penghasilan Ibu wajib diisi.</div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="wawali">Nomor Telp Orang Tua/Wali Santri</label>
-                          <input type="number" name="wawali" class="form-control" required="" placeholder="Nomor Telp/ WhatsApp" />
-                          <div class="validate"></div>
+                          <input type="number" name="wawali" class="form-control" required placeholder="Nomor Telp/ WhatsApp" />
+                          <div class="invalid-feedback">Nomor Telp Orang Tua/Wali Santri wajib diisi.</div>
                         </div>
                       </div>
+
                     </div>
                     <div class="divider">
                       <div class="divider-text fs-4 fw-bold">FORMULIR DATA PENDUKUNG LAINNYA</div>
@@ -673,7 +741,7 @@
                         <div class="mb-3">
                           <label class="form-label" for="prestasi">Prestasi (Isi dengan tanda (-) strip jika tidak ada)</label>
                           <input type="text" autocomplete="" name="prestasi" class="form-control" required="" placeholder="Prestasi Yang Pernah di Raih" />
-                          <div class="validate"></div>
+                          <div class="invalid-feedback">Prestasi wajib diisi.</div>
                         </div>
                       </div>
                     </div>
@@ -681,40 +749,44 @@
                       <div class="col-md-4">
                         <div class="mb-3">
                           <label class="form-label" for="bantuan">Kartu Indonesia Pintar (KIP)</label>
-                          <select name="bantuan" id="bantuan" class="form-select" required="">
+                          <select name="bantuan" id="bantuan" class="form-select" required>
                             <option value="" disabled selected>Pilih Status Bantuan</option>
                             <option value="Tidak Mempunyai">Tidak Mempunyai</option>
-                            <option value=" Mempunyai"> Mempunyai</option>
+                            <option value="Mempunyai">Mempunyai</option>
                           </select>
+                          <div class="invalid-feedback">Kartu Indonesia Pintar (KIP) wajib diisi.</div>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="mb-3">
                           <label class="form-label" for="jaminan">Kartu Indonesia Sehat (KIS)</label>
-                          <select name="jaminan" id="jaminan" class="form-select" required="">
+                          <select name="jaminan" id="jaminan" class="form-select" required>
                             <option value="" disabled selected>Pilih Status Bantuan</option>
                             <option value="Tidak Mempunyai">Tidak Mempunyai</option>
-                            <option value=" Mempunyai"> Mempunyai</option>
+                            <option value="Mempunyai">Mempunyai</option>
                           </select>
+                          <div class="invalid-feedback">Kartu Indonesia Sehat (KIS) wajib diisi.</div>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="mb-3">
                           <label class="form-label" for="pkh">Kartu Keluarga Sejahtera (KKS)</label>
-                          <select name="pkh" id="pkh" class="form-select" required="">
+                          <select name="pkh" id="pkh" class="form-select" required>
                             <option value="" disabled selected>Pilih Status Bantuan</option>
                             <option value="Tidak Mempunyai">Tidak Mempunyai</option>
-                            <option value=" Mempunyai"> Mempunyai</option>
+                            <option value="Mempunyai">Mempunyai</option>
                           </select>
+                          <div class="invalid-feedback">Kartu Keluarga Sejahtera (KKS) wajib diisi.</div>
                         </div>
                       </div>
                     </div>
+
                     <div class="row">
                       <div class="col-md-12">
                         <div class="mb-3">
                           <label class="form-label" for="nomorbantuan">NOMOR KIP/KIS/KKS (Isi dengan tanda (-) strip jika tidak ada)</label>
                           <textarea class="form-control" name="nomorbantuan" rows="2" placeholder="Ketikan Nomor KIP/KIS/KKS Jika ada Misal KIP : 123456789, KIS : 123456789, KKS : 123456789"></textarea>
-                          <div class="validate"></div>
+                          <div class="invalid-feedback">Nomor KIP/KIS/KKS wajib diisi.</div>
                         </div>
                       </div>
                     </div>
@@ -944,6 +1016,100 @@
       });
     });
   </script>
+
+  <script>
+    (function() {
+      'use strict'
+
+      // Pilih semua form dengan class 'needs-validation'
+      var forms = document.querySelectorAll('.needs-validation');
+
+      Array.prototype.slice.call(forms)
+        .forEach(function(form) {
+          form.addEventListener('submit', function(event) {
+            var fileInputs = document.querySelectorAll('input[type="file"]');
+            var phoneInputs = document.querySelectorAll('input[type="number"]'); // Tambahkan validasi untuk input number
+
+            // Validasi file input
+            fileInputs.forEach(function(fileInput) {
+              var file = fileInput.files[0];
+
+              if (file) {
+                var fileSize = file.size / 1024 / 1024; // Convert byte to MB
+                var fileType = file.type;
+
+                // Cek ukuran file
+                if (fileSize > 2) {
+                  fileInput.classList.add('is-invalid');
+                  event.preventDefault();
+                  event.stopPropagation();
+                  return; // Hentikan proses jika file terlalu besar
+                } else {
+                  fileInput.classList.remove('is-invalid');
+                }
+
+                // Cek format file (png, jpg, jpeg, pdf)
+                if (!['image/png', 'image/jpeg', 'application/pdf'].includes(fileType)) {
+                  fileInput.classList.add('is-invalid');
+                  event.preventDefault();
+                  event.stopPropagation();
+                  return; // Hentikan proses jika format file tidak sesuai
+                } else {
+                  fileInput.classList.remove('is-invalid');
+                }
+              }
+            });
+
+            // Validasi untuk Nomor Telpon jika diisi
+            phoneInputs.forEach(function(input) {
+              var phoneNumber = input.value;
+              var feedback = input.nextElementSibling;
+
+              // Validasi hanya untuk 'wawali' yang wajib diisi
+              if (input.name === "wawali") {
+                if (!phoneNumber) {
+                  input.classList.add('is-invalid');
+                  feedback.textContent = "Nomor Telp Orang Tua/Wali Santri wajib diisi.";
+                } else if (phoneNumber.length < 11 || phoneNumber.length > 13) {
+                  input.classList.add('is-invalid');
+                  feedback.textContent = "Nomor Telpon harus antara 11 hingga 13 digit.";
+                } else {
+                  input.classList.remove('is-invalid');
+                  input.classList.add('is-valid');
+                  feedback.textContent = "";
+                }
+              }
+            });
+
+            // Cek validitas form secara umum
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+          }, false);
+        });
+
+      // Validasi untuk Nomor Telpon 'wapd' jika diisi
+      document.getElementById('wapd')?.addEventListener('input', function() {
+        var phoneNumber = this.value;
+        var feedback = this.nextElementSibling;
+
+        // Cek apakah panjang nomor telpon berada di antara 11 hingga 13 digit
+        if (phoneNumber && (phoneNumber.length < 11 || phoneNumber.length > 13)) {
+          this.classList.add('is-invalid');
+          feedback.textContent = "Nomor Telpon harus antara 11 hingga 13 digit.";
+        } else {
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          feedback.textContent = "";
+        }
+      });
+
+    })()
+  </script>
+
 </body>
 
 </html>

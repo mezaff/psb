@@ -529,7 +529,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                             <i class='bx bxs-cloud-download'></i>
                                                         </a>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_nisn']; ?>">
+                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_nisn']; ?>" download>
                                                             <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
                                                                 <i class='bx bxs-cloud-download'></i>
                                                             </button>
@@ -557,7 +557,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                             <i class='bx bxs-cloud-download'></i>
                                                         </a>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_akte']; ?>">
+                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_akte']; ?>" download>
                                                             <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
                                                                 <i class='bx bxs-cloud-download'></i>
                                                             </button>
@@ -585,7 +585,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                             <i class='bx bxs-cloud-download'></i>
                                                         </a>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_ijasah']; ?>">
+                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_ijasah']; ?>" download>
                                                             <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
                                                                 <i class='bx bxs-cloud-download'></i>
                                                             </button>
@@ -613,7 +613,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                             <i class='bx bxs-cloud-download'></i>
                                                         </a>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_kk']; ?>">
+                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_kk']; ?>" download>
                                                             <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
                                                                 <i class='bx bxs-cloud-download'></i>
                                                             </button>
@@ -641,7 +641,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                             <i class='bx bxs-cloud-download'></i>
                                                         </a>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_ktp_ortu']; ?>">
+                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_ktp_ortu']; ?>" download>
                                                             <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
                                                                 <i class='bx bxs-cloud-download'></i>
                                                             </button>
@@ -658,7 +658,6 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                 </div>
                             </div>
                         </div>
-
                         <!--/ Hoverable Table rows -->
                     </div>
                     <!-- / Content -->

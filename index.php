@@ -87,13 +87,18 @@ $phoneNumber = $wa;
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="assets/sneat_pro/assets/js/front-config.js"></script>
 
+    <style>
+        .img-size {
+            width: 100%;
+            height: 24vh;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+
 </head>
 
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDHKGP" height="0" width="0"
-            style="display: none; visibility: hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <script src="assets/sneat_pro/assets/vendor/js/dropdown-hover.js"></script>
     <script src="assets/sneat_pro/assets/vendor/js/mega-dropdown.js"></script>
 
@@ -440,7 +445,7 @@ $phoneNumber = $wa;
         <!-- Useful features: End -->
 
         <!-- Real customers reviews: Start -->
-        <!-- <section
+        <section
             id="landingReviews"
             class="section-py bg-body landing-reviews pb-0">
             <div class="container">
@@ -448,10 +453,10 @@ $phoneNumber = $wa;
                     class="row align-items-center gx-0 gy-4 g-lg-5 mb-5 pb-md-5">
                     <div class="col-md-6 col-lg-5 col-xl-3">
                         <div class="mb-4">
-                            <span class="badge bg-label-primary">Real Customers Reviews</span>
+                            <span class="badge bg-label-primary">Kepoin Yuk!</span>
                         </div>
                         <h4 class="mb-1">
-                            <span class="position-relative fw-extrabold z-1">What people say
+                            <span class="position-relative fw-extrabold z-1">Galeri Kami
                                 <img
                                     src="assets/sneat_pro/assets/img/front-pages/icons/section-title-icon.png"
                                     alt="laptop charging"
@@ -459,9 +464,9 @@ $phoneNumber = $wa;
                             </span>
                         </h4>
                         <p class="mb-5 mb-md-12">
-                            See what our customers have to<br
+                            Pondok Pesantren<br
                                 class="d-none d-xl-block" />
-                            say about their experience.
+                            Tarbiyatul Mutathowi'in.
                         </p>
                         <div class="landing-reviews-btns">
                             <button
@@ -485,37 +490,117 @@ $phoneNumber = $wa;
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="card h-100">
-                                            <img src="gambar/brosur-bg.png" alt="">
+                                            <img src="gambar/galeri/img1.png" alt="Haul-1" class="img-size rounded float-start">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="card h-100">
-                                            <img src="gambar/brosur-bg.png" alt="">
+                                            <img src="gambar/galeri/img2.png" alt="Haul-2" class="img-size rounded float-start">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="card h-100">
-                                            <img src="gambar/brosur-bg.png" alt="">
+                                            <img src="gambar/galeri/img3.png" alt="Haul-3" class="img-size rounded float-start">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="card h-100">
-                                            <img src="gambar/brosur-bg.png" alt="">
+                                            <img src="gambar/galeri/img4.png" alt="Haflah" class="img-size rounded float-start">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="card h-100">
-                                            <img src="gambar/brosur-bg.png" alt="">
+                                            <img src="gambar/galeri/img5.png" alt="Kegiatan" class="img-size rounded float-start">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="card h-100">
-                                            <img src="gambar/brosur-bg.png" alt="">
+                                            <img src="gambar/galeri/img6.png" alt="Ziarah Wali" class="img-size rounded float-start">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="card h-100">
-                                            <img src="gambar/brosur-bg.png" alt="">
+                                            <img src="gambar/galeri/img7.png" alt="Kegiatan" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img8.png" alt="Kegiatan" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img9.png" alt="Haul-4" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img10.png" alt="Ziarah Maqbaroh" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img11.png" alt="Kegiatan" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img12.png" alt="Kegiatan" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img13.png" alt="Kegiatan" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img14.png" alt="Kegiatan" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img15.png" alt="Kegiatan" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img16.png" alt="Kegiatan" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img17.png" alt="Kegiatan" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img18.png" alt="MIN 3 Madiun" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img19.png" alt="RA Al Muslimun" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img21.png" alt="Asrama Putri" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img22.png" alt="MIN 3 Madiun" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img23.png" alt="MTsN 2 Madiun" class="img-size rounded float-start">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card h-100">
+                                            <img src="gambar/galeri/img24.png" alt="Man 2 Madiun" class="img-size rounded float-start">
                                         </div>
                                     </div>
                                 </div>
@@ -526,7 +611,7 @@ $phoneNumber = $wa;
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
         <!-- Real customers reviews: End -->
 
         <!-- CTA: Start -->
