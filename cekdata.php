@@ -123,7 +123,7 @@ require_once 'koneksi.php';
               <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#profil">Profil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#syarat">Syarat Pendaftaran</a>
+              <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#syarat">Informasi Pendaftaran</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-medium" href="/santribaru/#kontak">Kontak</a>
@@ -464,11 +464,11 @@ require_once 'koneksi.php';
             </div>
             <div class="card-body">
               <div class="table-responsive text-nowrap">
-                <table class="table table-bordered table-striped mb-9">
+                <table class="table table-sm table-bordered mb-4">
                   <thead>
                     <tr>
                       <th rowspan="2" class="text-center align-middle">NO</th>
-                      <th rowspan="2" class="text-center align-middle">URAIAN</th>
+                      <th rowspan="2" colspan="2" class="text-center align-middle">URAIAN</th>
                       <th rowspan="2" class="text-center align-middle">NOMINAL</th>
                       <th colspan="3" class="text-center align-middle">KETERANGAN</th>
                     </tr>
@@ -481,80 +481,123 @@ require_once 'koneksi.php';
                   <tbody>
                     <tr>
                       <td class="text-center align-middle">1</td>
-                      <td>Biaya Pendaftaran</td>
-                      <td class="text-end align-middle">Rp. 100.000</td>
+                      <td colspan="2">Biaya Pendaftaran</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">50.000</span>
+                      </td>
+                      <td></td>
                       <td></td>
                       <td class="text-center align-middle">✅</td>
-                      <td></td>
                     </tr>
                     <tr>
                       <td class="text-center align-middle">2</td>
-                      <td>Biaya Kegiatan dan Kesehatan</td>
-                      <td class="text-end align-middle">Rp. 85.000</td>
+                      <td colspan="2">Biaya Kegiatan</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">90.000</span>
+                      </td>
                       <td></td>
                       <td class="text-center align-middle">✅</td>
                       <td></td>
                     </tr>
                     <tr>
                       <td class="text-center align-middle">3</td>
-                      <td>Kalender</td>
-                      <td class="text-end align-middle">Rp. 30.000</td>
+                      <td colspan="2">Kalender</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">25.000</span>
+                      </td>
                       <td></td>
                       <td class="text-center align-middle">✅</td>
                       <td></td>
                     </tr>
                     <tr>
                       <td class="text-center align-middle">4</td>
-                      <td>Syahriah</td>
-                      <td class="text-end align-middle">Rp. 20.000</td>
+                      <td colspan="2">Syahriah</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">25.000</span>
+                      </td>
                       <td class="text-center align-middle">✅</td>
                       <td></td>
                       <td></td>
                     </tr>
                     <tr>
                       <td class="text-center align-middle">5</td>
-                      <td>Makan (3 x 1 Hari)</td>
-                      <td class="text-end align-middle">Rp. 300.000</td>
+                      <td colspan="2">Makan (2 x 1 Hari)</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">300.000</span>
+                      </td>
                       <td class="text-center align-middle">✅</td>
                       <td></td>
                       <td></td>
                     </tr>
                     <tr>
                       <td class="text-center align-middle">6</td>
-                      <td>Almari</td>
-                      <td class="text-end align-middle">Rp. 300.000</td>
+                      <td colspan="2">Almari</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">300.000</span>
+                      </td>
                       <td></td>
                       <td></td>
                       <td class="text-center align-middle">✅</td>
                     </tr>
                     <tr>
-                      <td class="text-center align-middle">7</td>
-                      <td>Seragam</td>
-                      <td class="text-end align-middle">Rp. 200.000</td>
+                      <td class="text-center align-middle" rowspan="2">7</td>
+                      <td rowspan="2">Seragam</td>
+                      <td class="align-middle">Putra</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">200.000</span>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td class="text-center align-middle">✅</td>
+                    </tr>
+                    <tr>
+                      <td class="align-middle">Putri</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">225.000</span>
+                      </td>
                       <td></td>
                       <td></td>
                       <td class="text-center align-middle">✅</td>
                     </tr>
                     <tr>
                       <td class="text-center align-middle">8</td>
-                      <td>Kitab</td>
-                      <td class="text-end align-middle">Rp. 100.000</td>
+                      <td colspan="2">Kitab</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">150.000</span>
+                      </td>
                       <td></td>
                       <td></td>
                       <td class="text-center align-middle">✅</td>
                     </tr>
                     <tr>
-                      <td class="text-center align-middle">8</td>
-                      <td>Buku Izin</td>
-                      <td class="text-end align-middle">Rp. 10.000</td>
+                      <td class="text-center align-middle">9</td>
+                      <td colspan="2">Buku Izin</td>
+                      <td class="d-flex justify-content-between align-items-center">
+                        <span class="text-start">Rp.</span>
+                        <span class="text-end">10.000</span>
+                      </td>
                       <td></td>
                       <td></td>
                       <td class="text-center align-middle">✅</td>
                     </tr>
                   <tfoot>
                     <tr>
-                      <th colspan="2" class="text-center align-middle">Total Biaya</th>
-                      <th colspan="4" class=" text-center align-middle">Rp. 1.075.000</th>
+                      <th colspan="2" rowspan="2" class="text-center align-middle">Total Biaya</th>
+                      <th class="text-center align-middle">Putra</th>
+                      <th colspan="4" class=" text-center align-middle">Rp. 1.150.000</th>
+                    </tr>
+                    <tr>
+                      <th class="text-center align-middle">Putri</th>
+                      <th colspan="4" class=" text-center align-middle">Rp. 1.175.000</th>
                     </tr>
                   </tfoot>
                   </tbody>

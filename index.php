@@ -71,6 +71,11 @@ $phoneNumber = $wa;
             object-fit: cover;
             object-position: center;
         }
+
+        .table th,
+        .table td {
+            padding: 0.67rem !important;
+        }
     </style>
 
 </head>
@@ -115,7 +120,7 @@ $phoneNumber = $wa;
                             <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#profil">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#syarat">Syarat Pendaftaran</a>
+                            <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#syarat">Informasi Pendaftaran</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-medium" href="/santribaru/#kontak">Kontak</a>
@@ -211,7 +216,9 @@ $phoneNumber = $wa;
             <div class="landing-hero-blank"></div>
         </section>
         <!-- Hero: End -->
-        <!-- FAQ: Start -->
+
+
+        <!-- Profil: Start -->
         <section id="profil" class="section-py bg-body landing-faq">
             <div class="container">
                 <!-- <div class="text-center mb-4">
@@ -323,9 +330,9 @@ $phoneNumber = $wa;
                 </div>
             </div>
         </section>
-        <!-- FAQ: End -->
+        <!-- Profil: End -->
 
-        <!-- Useful features: Start -->
+        <!-- Unit Pendidikan: Start -->
         <section id="landingFeatures" class="section-py landing-features">
             <div class="container mb-5">
                 <h4 class="text-center mb-1">
@@ -417,8 +424,9 @@ $phoneNumber = $wa;
                 </div>
             </div>
         </section>
-        <!-- Useful features: End -->
-        <!-- Real customers reviews: Start -->
+        <!-- Unit Pendidikan: End -->
+
+        <!-- Galeri: Start -->
         <section
             id="landingReviews"
             class="section-py bg-body landing-reviews pb-0">
@@ -586,7 +594,7 @@ $phoneNumber = $wa;
                 </div>
             </div>
         </section>
-        <!-- Real customers reviews: End -->
+        <!-- Galeri: End -->
 
         <!-- CTA: Start -->
         <section
@@ -621,11 +629,339 @@ $phoneNumber = $wa;
         </section>
         <!-- CTA: End -->
 
-        <!-- Useful features: Start -->
+        <!-- Alur dan Syarat: Start -->
         <section id="syarat" class="section-py landing-features">
             <div class="container">
                 <h4 class="text-center mb-1">
-                    <span class="position-relative fw-extrabold z-1">Syarat Pendaftaran
+                    <span class="position-relative fw-extrabold z-1">Informasi Pendaftaran
+                        <img
+                            src="assets/sneat_pro/assets/img/front-pages/icons/section-title-icon.png"
+                            alt="laptop charging"
+                            class="section-title-img position-absolute object-fit-contain bottom-0 z-n1" />
+                    </span>
+                </h4>
+                <p class="text-center mb-12">
+                    Santri Baru PP Tarbiyatul Mutathowi'in Tahun Pelajaran 2025/2026.
+                </p>
+                <div class="row overflow-hidden">
+                    <div class="col-12">
+                        <ul class="timeline timeline-center mt-12">
+                            <li class="timeline-item">
+                                <span class="timeline-indicator timeline-indicator-warning" data-aos="zoom-in" data-aos-delay="200">
+                                    <i class="icon-base bx bx-time"></i>
+                                </span>
+                                <div class="timeline-event card p-0" data-aos="fade-right">
+                                    <div class="card-header border-0 d-flex justify-content-between">
+                                        <h5 class="card-title mb-0">Waktu dan Tempat Pendaftaran</h5>
+                                    </div>
+                                    <div class="card-body pb-4 pt-0">
+                                        <div class="hours mb-2">
+                                            <i class="icon-base bx bx-time"></i>
+                                            <span class="ms-2">01 Februari 2025</span>
+                                            <i class="icon-base bx bx-transfer mx-2"></i>
+                                            <span>30 Juni 2025</span>
+                                        </div>
+                                        <div class="location">
+                                            <i class="icon-base bx bx-map"></i>
+                                            <span class="align-middle ms-2 mb-7">Kantor PP. Tarbiyatul Mutathowi'in | Ngujur Rejosari Kebonsari Madiun (offline)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <span class="timeline-indicator timeline-indicator-danger" data-aos="zoom-in" data-aos-delay="200">
+                                    <i class="icon-base bx bx-line-chart"></i>
+                                </span>
+                                <div class="timeline-event card p-0" data-aos="fade-right">
+                                    <h5 class="card-header">Alur Pendaftaran</h5>
+                                    <div class="card-body">
+                                        <p class="mb-2">Klik tombol dibawah ini untuk melihat alur pendaftaran</p>
+                                        <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><span class="px-4">Lihat</span></button>
+                                        <div class="collapse" id="collapseExample">
+                                            <ul class="list-group list-group-flush mt-4">
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Mengisi formulir pendaftaran
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Melengkapi persyaratan pendaftaran
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Melunasi administrasi pendaftaran
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Sowan Ndalem Pengasuh
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Wajib Masuk ke pondok pada waktu yang telah ditentukan
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Mengikuti kegiatan MOSBA (Masa Orientasi Santri Baru)
+                                                    </h6>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <span class="timeline-indicator timeline-indicator-primary" data-aos="zoom-in" data-aos-delay="200">
+                                    <i class="icon-base bx bx-list-ul"></i>
+                                </span>
+                                <div class="timeline-event card p-0" data-aos="fade-right">
+                                    <h5 class="card-header">Syarat Pendaftaran</h5>
+                                    <div class="card-body">
+                                        <p class="mb-2">Klik tombol dibawah ini untuk melihat syarat pendaftaran</p>
+                                        <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2"><span class="px-4">Lihat</span></button>
+                                        <div class="collapse" id="collapseExample2">
+                                            <ul class="list-group list-group-flush mt-4">
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Mengisi formulir dan kelengkapnnya
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Foto Copy Akte Kelahiran
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Foto Copy Ijazah (Bisa Menyusul)
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Foto Copy NISN
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Foto Copy Kartu Keluarga
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Foto Copy KTP Orang Tua
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        3 Lembar Pas foto 3x4
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Materai 10.000 (1pcs)
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Map Kuning (untuk santri putra)
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Map Hijau (untuk santri putri)
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Bersedia mengikuti tes penempatan kelas
+                                                    </h6>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h6
+                                                        class="d-flex align-items-center mb-3">
+                                                        <span
+                                                            class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
+                                                                class="bx bx-check bx-12px"></i></span>
+                                                        Bersedia mengikuti semua aturan dan tata tertib
+                                                    </h6>
+                                                </li>
+                                            </ul>
+                                            <h6 class="mt-6">Catatan :</h6>
+                                            <ul>
+                                                <li>Semua Berkas dimasukkan Map warna hijau untuk santri putra dan kuning untuk santri putri.</li>
+                                                <li>Bagi santri yang melakukan pendaftaran secara online, berkas bisa diupload dari formulir, dan bisa minta kepada panitia untuk di cetakkan pada saat daftar ulang.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <span class="timeline-indicator timeline-indicator-success" data-aos="zoom-in" data-aos-delay="200">
+                                    <i class="icon-base bx bx-wifi-off"></i>
+                                </span>
+                                <div class="timeline-event card p-0" data-aos="fade-right">
+                                    <h5 class="card-header">Tata Cara Pendaftaran Offline</h5>
+                                    <div class="card-body">
+                                        <ul class="list-unstyled">
+                                            <li class="d-flex justify-content-start align-items-center text-success mb-2">
+                                                <i class="icon-base bx bx-home icon-sm me-4"></i>
+                                                <div class="ps-4 border-start">
+                                                    <h6 class="mb-0">Datang langsung ke Kantor PP Tarbiyatul Mutathowi'in</h5>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex justify-content-start align-items-center text-info mb-2">
+                                                <i class="icon-base bx bx-pencil icon-sm me-4"></i>
+                                                <div class="ps-4 border-start">
+                                                    <h6 class="mb-0">Mengisi formulir pendaftaran</h6>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex justify-content-start align-items-center text-primary mb-2">
+                                                <i class="icon-base bx bx-folder-open icon-sm me-4"></i>
+                                                <div class="ps-4 border-start">
+                                                    <h6 class="mb-0">Mengumpulkan semua berkas yang telah ditentukan</h6>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex justify-content-start align-items-center text-warning mb-2">
+                                                <i class="icon-base bx bx-credit-card icon-sm me-4"></i>
+                                                <div class="ps-4 border-start">
+                                                    <h6 class="mb-0">Membayar biaya administrasi pendaftaran</h6>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                <span class="timeline-indicator timeline-indicator-info" data-aos="zoom-in" data-aos-delay="200">
+                                    <i class="icon-base bx bx-wifi"></i>
+                                </span>
+                                <div class="timeline-event card p-0" data-aos="fade-right">
+                                    <h5 class="card-header">Tata Cara Pendaftaran Online</h5>
+                                    <div class="card-body">
+                                        <ul class="list-unstyled">
+                                            <li class="d-flex justify-content-start align-items-center text-success mb-2">
+                                                <i class="icon-base bx bx-globe icon-sm me-4"></i>
+                                                <div class="ps-4 border-start">
+                                                    <h6 class="mb-0">Kunjungi link berikut: <a href="/santribaru/registrasi" class="text-primary">Daftar</a></h5>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex justify-content-start align-items-center text-info mb-2">
+                                                <i class="icon-base bx bx-pencil icon-sm me-4"></i>
+                                                <div class="ps-4 border-start">
+                                                    <h6 class="mb-0">Mengisi formulir pendaftaran</h6>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex justify-content-start align-items-center text-primary mb-2">
+                                                <i class="icon-base bx bx-folder-open icon-sm me-4"></i>
+                                                <div class="ps-4 border-start">
+                                                    <h6 class="mb-0">Mengupload semua berkas yang telah ditentukan</h6>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex justify-content-start align-items-center text-warning mb-2">
+                                                <i class="icon-base bx bx-credit-card icon-sm me-4"></i>
+                                                <div class="ps-4 border-start">
+                                                    <h6 class="mb-0">Membayar biaya administrasi pendaftaran (via Transfer)</h6>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex justify-content-start align-items-center text-danger mb-2">
+                                                <i class="icon-base bx bx-cloud-upload icon-sm me-4"></i>
+                                                <div class="ps-4 border-start">
+                                                    <h6 class="mb-0">Upload bukti pembayaran</h6>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <h6 class="mt-6">Catatan :</h6>
+                                        <ul>
+                                            <li>Untuk santri yang melakukan pendaftaran secara online, pembayaran bisa ditransfer ataupun langsung cash pada saat daftar ulang</li>
+                                            <li>Bagi santri yang melakukan pembayaran secara online (Transfer), wajib mengupload bukti pembayaran yang telah kami sediakan di halaman formulir pendaftaran.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Alur dan Syarat: End -->
+
+        <!--Rincian Biaya: Start -->
+        <section id="" class="section pb-10 mb-10 landing-features">
+            <div class="container">
+                <h4 class="text-center mb-1">
+                    <span class="position-relative fw-extrabold z-1">Rincian Biaya Pendaftaran
                         <img
                             src="assets/sneat_pro/assets/img/front-pages/icons/section-title-icon.png"
                             alt="laptop charging"
@@ -637,138 +973,7 @@ $phoneNumber = $wa;
                 </p>
                 <div class="row g-6 pt-lg-5">
                     <!-- Favourite Plan: Start -->
-                    <div class="col-xl-4 col-lg-6">
-                        <div class="card border border-primary shadow-xl">
-                            <div class="card-header">
-                                <div class="text-center">
-                                    <h4 class="mb-0">Syarat Pendaftaran</h4>
-                                    <div
-                                        class="d-flex align-items-center justify-content-center">
-                                        <span
-                                            class="price-monthly h2 text-primary fw-extrabold mb-0">PSB 2025</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-unstyled pricing-list">
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Mengisi formulir dan kelengkapnnya
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Foto Copy Akte Kelahiran
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Foto Copy Ijazah (Bisa Menyusul)
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Foto Copy NISN
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Foto Copy Kartu Keluarga
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Foto Copy KTP Orang Tua
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            3 Lembar Pas foto 3x4
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Materai 10.000 (1pcs)
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Map Kuning (untuk santri putra)
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Map Hijau (untuk santri putri)
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Bersedia mengikuti tes penempatan kelas
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6
-                                            class="d-flex align-items-center mb-3">
-                                            <span
-                                                class="badge badge-center rounded-pill bg-primary p-0 me-3"><i
-                                                    class="bx bx-check bx-12px"></i></span>
-                                            Bersedia mengikuti semua aturan dan tata tertib
-                                        </h6>
-                                    </li>
-                                </ul>
-                                <h5>Catatan :</h5>
-                                <ul>
-                                    <li>Semua Berkas dimasukkan Map warna hijau untuk santri putra dan kuning untuk santri putri.</li>
-                                    <li>Bagi santri yang melakukan pendaftaran secara online, berkas bisa diupload dari formulir, dan bisa minta kepada panitia untuk di cetakkan pada saat daftar ulang.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-6">
+                    <div class="col-xl-12 col-lg-6">
                         <div class="card border border-primary shadow-xl">
                             <div class="card-header">
                                 <div class="text-center">
@@ -782,11 +987,11 @@ $phoneNumber = $wa;
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive text-nowrap">
-                                    <table class="table table-bordered table-striped mb-9">
+                                    <table class="table table-sm table-bordered mb-4">
                                         <thead>
                                             <tr>
                                                 <th rowspan="2" class="text-center align-middle">NO</th>
-                                                <th rowspan="2" class="text-center align-middle">URAIAN</th>
+                                                <th rowspan="2" colspan="2" class="text-center align-middle">URAIAN</th>
                                                 <th rowspan="2" class="text-center align-middle">NOMINAL</th>
                                                 <th colspan="3" class="text-center align-middle">KETERANGAN</th>
                                             </tr>
@@ -799,80 +1004,123 @@ $phoneNumber = $wa;
                                         <tbody>
                                             <tr>
                                                 <td class="text-center align-middle">1</td>
-                                                <td>Biaya Pendaftaran</td>
-                                                <td class="text-end align-middle">Rp. 100.000</td>
+                                                <td colspan="2">Biaya Pendaftaran</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">50.000</span>
+                                                </td>
+                                                <td></td>
                                                 <td></td>
                                                 <td class="text-center align-middle">✅</td>
-                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center align-middle">2</td>
-                                                <td>Biaya Kegiatan dan Kesehatan</td>
-                                                <td class="text-end align-middle">Rp. 85.000</td>
+                                                <td colspan="2">Biaya Kegiatan</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">90.000</span>
+                                                </td>
                                                 <td></td>
                                                 <td class="text-center align-middle">✅</td>
                                                 <td></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center align-middle">3</td>
-                                                <td>Kalender</td>
-                                                <td class="text-end align-middle">Rp. 30.000</td>
+                                                <td colspan="2">Kalender</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">25.000</span>
+                                                </td>
                                                 <td></td>
                                                 <td class="text-center align-middle">✅</td>
                                                 <td></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center align-middle">4</td>
-                                                <td>Syahriah</td>
-                                                <td class="text-end align-middle">Rp. 20.000</td>
+                                                <td colspan="2">Syahriah</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">25.000</span>
+                                                </td>
                                                 <td class="text-center align-middle">✅</td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center align-middle">5</td>
-                                                <td>Makan (3 x 1 Hari)</td>
-                                                <td class="text-end align-middle">Rp. 300.000</td>
+                                                <td colspan="2">Makan (2 x 1 Hari)</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">300.000</span>
+                                                </td>
                                                 <td class="text-center align-middle">✅</td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center align-middle">6</td>
-                                                <td>Almari</td>
-                                                <td class="text-end align-middle">Rp. 300.000</td>
+                                                <td colspan="2">Almari</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">300.000</span>
+                                                </td>
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center align-middle">✅</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center align-middle">7</td>
-                                                <td>Seragam</td>
-                                                <td class="text-end align-middle">Rp. 200.000</td>
+                                                <td class="text-center align-middle" rowspan="2">7</td>
+                                                <td rowspan="2">Seragam</td>
+                                                <td class="align-middle">Putra</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">200.000</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="text-center align-middle">✅</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-middle">Putri</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">225.000</span>
+                                                </td>
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center align-middle">✅</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center align-middle">8</td>
-                                                <td>Kitab</td>
-                                                <td class="text-end align-middle">Rp. 100.000</td>
+                                                <td colspan="2">Kitab</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">150.000</span>
+                                                </td>
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center align-middle">✅</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center align-middle">8</td>
-                                                <td>Buku Izin</td>
-                                                <td class="text-end align-middle">Rp. 10.000</td>
+                                                <td class="text-center align-middle">9</td>
+                                                <td colspan="2">Buku Izin</td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                    <span class="text-start">Rp.</span>
+                                                    <span class="text-end">10.000</span>
+                                                </td>
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center align-middle">✅</td>
                                             </tr>
                                         <tfoot>
                                             <tr>
-                                                <th colspan="2" class="text-center align-middle">Total Biaya</th>
-                                                <th colspan="4" class=" text-center align-middle">Rp. 1.075.000</th>
+                                                <th colspan="2" rowspan="2" class="text-center align-middle">Total Biaya</th>
+                                                <th class="text-center align-middle">Putra</th>
+                                                <th colspan="4" class=" text-center align-middle">Rp. 1.150.000</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center align-middle">Putri</th>
+                                                <th colspan="4" class=" text-center align-middle">Rp. 1.175.000</th>
                                             </tr>
                                         </tfoot>
                                         </tbody>
@@ -890,7 +1138,7 @@ $phoneNumber = $wa;
                 </div>
             </div>
         </section>
-        <!-- Useful features: End -->
+        <!--Rincian Biaya: End -->
 
         <!-- Contact Us: Start -->
         <section
@@ -1000,8 +1248,6 @@ $phoneNumber = $wa;
     </div>
 
     <!-- / Sections:End -->
-
-
 
     <!-- Footer: Start -->
     <footer class="landing-footer bg-body footer-text" id="sosmed">

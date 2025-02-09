@@ -163,7 +163,7 @@ if ($data && $data['embed'] == '0') {
               <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#profil">Profil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#syarat">Syarat Pendaftaran</a>
+              <a class="nav-link fw-medium" aria-current="page" href="/santribaru/#syarat">Informasi Pendaftaran</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-medium" href="/santribaru/#kontak">Kontak</a>
