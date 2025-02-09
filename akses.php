@@ -14,7 +14,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Pendaftaran Gagal | PSB Pondok Ngujur</title>
+    <title>Akses Ditolak | PSB Pondok Ngujur</title>
 
     <meta name="description" content="" />
 

@@ -580,7 +580,7 @@ require_once 'koneksi.php';
 
 
   <!-- Footer: Start -->
-  <footer class="landing-footer bg-body footer-text">
+  <footer class="landing-footer bg-body footer-text" id="sosmed">
     <div class="footer-bottom py-3 py-md-5">
       <div
         class="container d-flex flex-wrap justify-content-between flex-md-row flex-column text-center text-md-start">
@@ -590,8 +590,8 @@ require_once 'koneksi.php';
               document.write(new Date().getFullYear());
             </script>
           </span>
-          <span class="footer-bottom-text"> Made with ❤️ by</span>
-          <a href="https://instagram.com/mezaaf_" target="_blank" class="text-white">Mezaaf</a>
+          <span class="footer-bottom-text"> Pondok Ngujur. All rights reserved</span>
+          <!-- <a href="https://instagram.com/mezaaf_" target="_blank" class="text-white">Mezaaf</a> -->
         </div>
         <div>
           <a href="https://github.com/mezaff" class="me-4" target="_blank">

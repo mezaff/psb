@@ -30,25 +30,6 @@ $phoneNumber = $wa;
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://pondokngujur.com/santribaru">
 
-    <!-- ? PROD Only: Google Tag Manager (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
-    <!-- <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5DDHKGP');
-    </script> -->
-    <!-- End Google Tag Manager -->
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="gambar/favicon.ico" />
 
@@ -81,10 +62,6 @@ $phoneNumber = $wa;
 
     <!-- Helpers -->
     <script src="assets/sneat_pro/assets/vendor/js/helpers.js"></script>
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-    <!-- <script src="assets/sneat_pro/assets/vendor/js/template-customizer.js"></script> -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="assets/sneat_pro/assets/js/front-config.js"></script>
 
     <style>
@@ -178,8 +155,6 @@ $phoneNumber = $wa;
 
 
     <!-- Sections:Start -->
-
-
     <div data-bs-spy="scroll" class="scrollspy-example">
         <!-- Hero: Start -->
         <section id="hero-animation">
@@ -443,7 +418,6 @@ $phoneNumber = $wa;
             </div>
         </section>
         <!-- Useful features: End -->
-
         <!-- Real customers reviews: Start -->
         <section
             id="landingReviews"
@@ -1040,7 +1014,7 @@ $phoneNumber = $wa;
                 <div class="row gx-0">
                     <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center">
                         <a
-                            href="landing-page.html"
+                            href="/santribaru/"
                             class="app-brand-link mb-6 d-flex align-items-center justify-content-center">
                             <img src="gambar/logopondok.png" alt="logo pondok" class="footer-logo w-20">
                         </a>
@@ -1140,8 +1114,8 @@ $phoneNumber = $wa;
                             document.write(new Date().getFullYear());
                         </script>
                     </span>
-                    <span class="footer-bottom-text"> Made with ❤️ by</span>
-                    <a href="https://instagram.com/mezaaf_" target="_blank" class="text-white">Mezaaf</a>
+                    <span class="footer-bottom-text"> Pondok Ngujur. All rights reserved</span>
+                    <!-- <a href="https://instagram.com/mezaaf_" target="_blank" class="text-white">Mezaaf</a> -->
                 </div>
                 <div>
                     <a href="https://github.com/mezaff" class="me-4" target="_blank">

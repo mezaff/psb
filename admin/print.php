@@ -18,6 +18,11 @@
   <link rel="icon" type="image/x-icon" href="gambar/favicon.ico" />
 
   <style>
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+
     @media print {
       html {
         font-size: 12px;
@@ -58,6 +63,10 @@
       margin-top: 10px;
       margin-bottom: -20px;
     }
+
+    .page-break {
+      page-break-before: always;
+    }
   </style>
 
 </head>
@@ -97,7 +106,7 @@ while ($data = mysqli_fetch_array($sql)) {
                   <input type="number" name="nt" class="form-control" id="nt" placeholder="Ketikan NISN siswa yang ingin di print.... " autocomplete="off" / required="">
                 </div>
                 <div class="text-center">
-                  <button type="submit" name="submit" class="btn btn-primary ">CETAK</button>
+                  <button type="submit" name="submit" class="btn btn-primary">CETAK</button>
                   <a href="/santribaru/admin" class="btn btn-warning">KEMBALI</a>
                 </div>
             </form>
@@ -256,7 +265,7 @@ while ($data = mysqli_fetch_array($sql)) {
                     <TD>Nomor Telp Orang Tua/Wali Santri</TD>
                     <TD><?php echo $r['wawali']; ?></TD>
                     </TR>
-
+                    <br><br><br><br><br>
                     <TD><b>PRESTASI SANTRI<b></TD>
                     <TD><?php echo $r['prestasi']; ?></TD>
                     </TR>
