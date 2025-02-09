@@ -5,7 +5,7 @@ $query = mysqli_query($connect, "SELECT embed FROM admin LIMIT 1");
 $data = mysqli_fetch_assoc($query);
 
 if ($data && $data['embed'] == '0') {
-  header("Location: /santribaru/akses");
+  header("Location: /santribaru/registrasiAkses");
   exit;
 }
 ?>
