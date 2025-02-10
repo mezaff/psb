@@ -143,7 +143,7 @@ if ($data && $data['embed'] == '0') {
             <!-- <span class="app-brand-logo demo">
                             <img src="{{ \Storage::url(settings()->get('app_logo')) }}" alt="Logo" width="50">
                         </span> -->
-            <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1">PSB Pondok Ngujur</span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1 fs-5">PSB Pondok Ngujur</span>
           </a>
         </div>
         <!-- Menu logo wrapper: End -->

@@ -101,7 +101,7 @@ $phoneNumber = $wa;
                         <!-- <span class="app-brand-logo demo">
                             <img src="{{ \Storage::url(settings()->get('app_logo')) }}" alt="Logo" width="50">
                         </span> -->
-                        <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1">PSB Pondok Ngujur</span>
+                        <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1 fs-5">PSB Pondok Ngujur</span>
                     </a>
                 </div>
                 <!-- Menu logo wrapper: End -->
@@ -946,6 +946,7 @@ $phoneNumber = $wa;
                                         <ul>
                                             <li>Untuk santri yang melakukan pendaftaran secara online, pembayaran bisa ditransfer ataupun langsung cash pada saat daftar ulang</li>
                                             <li>Bagi santri yang melakukan pembayaran secara online (Transfer), wajib mengupload bukti pembayaran yang telah kami sediakan di halaman formulir pendaftaran.</li>
+                                            <li>Apabila santri ingin membayar via transfer dan memang sudah terlanjur mengirim formulir sebelum upload bukti pembayaran, maka silahkan kirim bukti pembayaran ke : <a href="/santribaru/#kontak" class="text-primary">Kirim Bukti Pembayaran</a>.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1154,7 +1155,7 @@ $phoneNumber = $wa;
                     </span>
                 </h4>
                 <p class="text-center mb-12 pb-md-4">
-                    Anda punya pertanyaan? tulis saja dibawah dan kirim ke kami.
+                    Ada sesuatu yang ingin ditanyakan? tulis dibawah dan kirim ke kami.
                 </p>
                 <div class="row g-6">
                     <div class="col-lg-5">
@@ -1217,7 +1218,7 @@ $phoneNumber = $wa;
                             <div class="card-body">
                                 <h4 class="mb-2">Kirim Pesan</h4>
                                 <p class="mb-6">
-                                    Jika ada yang ingin anda tanyakan, anda bisa mengirimkan pertanyaan anda melalui form dibawah ini.
+                                    Catatan : Apabila anda ingin menggunakan form ini untuk mengirim bukti pembayaran, silahkan tulis nama dan pesan anda, kemudian kirim pesan anda, bukti pembayaran anda baru bisa diupload setelah whatsapp berhasil terbuka.
                                 </p>
                                 <form id="contact-form" class="mb-3">
                                     <div class="row g-4">
