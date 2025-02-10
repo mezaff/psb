@@ -154,11 +154,6 @@ $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : 0;
                                     <div data-i18n="Without navbar">Data</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="print" class="menu-link">
-                                    <div data-i18n="Container">Cetak Formulir</div>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                 </ul>

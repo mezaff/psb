@@ -212,11 +212,6 @@ $ktpOrtuFile = !empty($data['upload_ktp_ortu']) ? $targetDir . $data['upload_ktp
                                     <div data-i18n="Without navbar">Data</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="print" class="menu-link">
-                                    <div data-i18n="Container">Cetak Formulir</div>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -811,49 +806,47 @@ $ktpOrtuFile = !empty($data['upload_ktp_ortu']) ? $targetDir . $data['upload_ktp
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="prestasi">Prestasi (Isi dengan tanda (-) strip jika tidak ada)</label>
-                                                        <input type="text" autocomplete="" name="prestasi" value="<?php echo htmlspecialchars($data['prestasi']); ?>" class="form-control" required="" placeholder="Prestasi Yang Pernah di Raih" />
-                                                        <div class="validate"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="bantuan">Kartu Indonesia Pintar (KIP)</label>
-                                                        <select name="bantuan" id="bantuan" class="form-select" required="">
-                                                            <option value="" disabled <?php echo empty($data['bantuan']) ? 'selected' : ''; ?>>Pilih Status Bantuan</option>
-                                                            <option value="Tidak Mempunyai" <?php echo ($data['bantuan'] == 'Tidak Mempunyai') ? 'selected' : ''; ?>>Tidak Mempunyai</option>
-                                                            <option value=" Mempunyai" <?php echo ($data['bantuan'] == ' Mempunyai') ? 'selected' : ''; ?>> Mempunyai</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="jaminan">Kartu Indonesia Sehat (KIS)</label>
-                                                        <select name="jaminan" id="jaminan" class="form-select" required="">
-                                                            <option value="" disabled <?php echo empty($data['jaminan']) ? 'selected' : ''; ?>>Pilih Status Bantuan</option>
-                                                            <option value="Tidak Mempunyai" <?php echo ($data['jaminan'] == 'Tidak Mempunyai') ? 'selected' : ''; ?>>Tidak Mempunyai</option>
-                                                            <option value=" Mempunyai" <?php echo ($data['jaminan'] == ' Mempunyai') ? 'selected' : ''; ?>> Mempunyai</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="pkh">Kartu Keluarga Sejahtera (KKS)</label>
-                                                        <select name="pkh" id="pkh" class="form-select" required="">
-                                                            <option value="" disabled <?php echo empty($data['pkh']) ? 'selected' : ''; ?>>Pilih Status Bantuan</option>
-                                                            <option value="Tidak Mempunyai" <?php echo ($data['pkh'] == 'Tidak Mempunyai') ? 'selected' : ''; ?>>Tidak Mempunyai</option>
-                                                            <option value=" Mempunyai" <?php echo ($data['pkh'] == ' Mempunyai') ? 'selected' : ''; ?>> Mempunyai</option>
-                                                        </select>
+                                                        <label class="form-label" for="bantuan">Minat & Bakat Santri</label>
+                                                        <textarea class="form-control" name="bantuan" rows="2" placeholder="Masukkan jawaban anda" required><?php echo htmlspecialchars($data['bantuan']); ?></textarea>
+                                                        <div class="invalid-feedback">Wajib diisi.</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="nomorbantuan">NOMOR KIP/KIS/KKS (Isi dengan tanda (-) strip jika tidak ada)</label>
-                                                        <textarea class="form-control" name="nomorbantuan" rows="2" placeholder="Ketikan Nomor KIP/KIS/KKS Jika ada Misal KIP : 123456789, KIS : 123456789, KKS : 123456789"><?php echo htmlspecialchars($data['nomorbantuan']); ?></textarea>
+                                                        <label class="form-label" for="prestasi">Tujuan & Harapan Masuk PonPes Tarbiyatul Mutathowi'in</label>
+                                                        <textarea class="form-control" name="prestasi" rows="2" placeholder="Masukkan jawaban anda" required><?php echo htmlspecialchars($data['prestasi']); ?></textarea>
+                                                        <div class="invalid-feedback">Wajib diisi.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <input type="hidden" name="jaminan" value="-" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <input type="hidden" name="pkh" value="-" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="nomorbantuan">Darimana anda mengetahui informasi tentang PonPes Tarbiyatul Mutathowi'in</label>
+                                                        <textarea class="form-control" name="nomorbantuan" rows="2" placeholder=""><?php echo htmlspecialchars($data['nomorbantuan']); ?></textarea>
+                                                        <div class="validate"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="pkh">Upload Bukti Pembayaran</label>
+                                                        <input type="file" name="pkh" class="form-control" placeholder="Nama Ayah" />
                                                         <div class="validate"></div>
                                                     </div>
                                                 </div>

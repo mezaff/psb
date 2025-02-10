@@ -122,15 +122,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				}
 			}
 
-			// Pastikan folder memiliki permission yang tepat
 			if (!is_writable($folder)) {
 				die("Error: Folder tidak dapat ditulisi.");
 			}
 
-			// Cek apakah file lama ada di folder
-			if (file_exists($targetFilePath)) {
-				// Hapus file lama jika ada
-				unlink($targetFilePath);
+			$oldFiles = glob($folder . "/" . pathinfo($targetFilePath, PATHINFO_FILENAME) . ".*");
+			foreach ($oldFiles as $oldFile) {
+				unlink($oldFile);
 			}
 
 			// Cek apakah file berhasil dipindahkan ke folder tujuan
@@ -167,6 +165,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	if (isset($_FILES['upload_ktp_ortu']) && $_FILES['upload_ktp_ortu']['error'] === UPLOAD_ERR_OK) {
 		uploadFile('upload_ktp_ortu', $targetDir, $namaFolder . "_ktp_ortu", 'upload_ktp_ortu');
+	}
+	if (isset($_FILES['pkh']) && $_FILES['pkh']['error'] === UPLOAD_ERR_OK) {
+		uploadFile('pkh', $targetDir, $namaFolder . "_bukti_pembayaran", 'pkh');
 	}
 
 	// Update data ke database hanya jika ada perubahan

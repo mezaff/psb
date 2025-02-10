@@ -207,11 +207,6 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                     <div data-i18n="Without navbar">Data</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="print" class="menu-link">
-                                    <div data-i18n="Container">Cetak Formulir</div>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -525,15 +520,13 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_nisn'] == null) : ?>
-                                                        <a href="<?php echo $nisnFile; ?>" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bxs-cloud-download'></i>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_nisn']; ?>" download>
-                                                            <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
-                                                                <i class='bx bxs-cloud-download'></i>
-                                                            </button>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_nisn']; ?>')">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -553,15 +546,13 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_akte'] == null) : ?>
-                                                        <a href="<?php echo $akteFile; ?>" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bxs-cloud-download'></i>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_akte']; ?>" download>
-                                                            <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
-                                                                <i class='bx bxs-cloud-download'></i>
-                                                            </button>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_akte']; ?>')">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -581,15 +572,13 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_ijasah'] == null) : ?>
-                                                        <a href="<?php echo $ijasahFile; ?>" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bxs-cloud-download'></i>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_ijasah']; ?>" download>
-                                                            <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
-                                                                <i class='bx bxs-cloud-download'></i>
-                                                            </button>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_ijasah']; ?>')">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -609,15 +598,13 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_kk'] == null) : ?>
-                                                        <a href="<?php echo $kkFile; ?>" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bxs-cloud-download'></i>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_kk']; ?>" download>
-                                                            <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
-                                                                <i class='bx bxs-cloud-download'></i>
-                                                            </button>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_kk']; ?>')">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -637,15 +624,39 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_ktp_ortu'] == null) : ?>
-                                                        <a href="<?php echo $ktpOrtuFile; ?>" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bxs-cloud-download'></i>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php else : ?>
-                                                        <a href="../uploads/<?php echo $namaFolder . '/' . $data['upload_ktp_ortu']; ?>" download>
-                                                            <button type="button" class="btn btn-sm btn-icon btn-outline-primary">
-                                                                <i class='bx bxs-cloud-download'></i>
-                                                            </button>
-                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_ktp_ortu']; ?>')">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="d-flex mb-3">
+                                            <div class="flex-grow-1 row align-items-center">
+                                                <div class="col-10 mb-sm-0 mb-2">
+                                                    <h4 class="mb-0 fw-bold">Bukti Pembayaran</h4>
+                                                    <span>
+                                                        <?php
+                                                        if ($data['pkh'] == null) {
+                                                            echo '<p class="mb-0 text-danger">Data belum diupload</p>';
+                                                        }
+                                                        ?>
+                                                    </span>
+                                                </div>
+                                                <div class="col-2  text-end">
+                                                    <?php if ($data['pkh'] == null) : ?>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
+                                                    <?php else : ?>
+                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['pkh']; ?>')">
+                                                            <i class='bx bx-printer'></i>
+                                                        </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -653,8 +664,9 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                         <!-- /Social Accounts -->
                                     </div>
                                 </div>
-                                <div class="d-flex mb-3">
+                                <div class="d-flex mb-3 gap-3">
                                     <a href="datasantri2" class="btn btn-primary">Kembali</a>
+                                    <a href="/santribaru/admin/print1?id=<?php echo $data['id']; ?>" class="btn btn-info" target="_blank">Cetak Formulir</a>
                                 </div>
                             </div>
                         </div>
@@ -778,6 +790,17 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
 
         });
     </script>
+
+
+    <script>
+        function printFile(fileUrl) {
+            var printWindow = window.open(fileUrl, '_blank'); // Buka file di tab baru
+            printWindow.onload = function() {
+                printWindow.print(); // Panggil print otomatis setelah file dimuat
+            };
+        }
+    </script>
+
 
 </body>
 

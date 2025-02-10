@@ -103,7 +103,7 @@ while ($data = mysqli_fetch_array($sql)) {
             <form action="" method="post" role="form">
               <div class="form-row">
                 <div class="col-md-9 form-group">
-                  <input type="number" name="nt" class="form-control" id="nt" placeholder="Ketikan NISN siswa yang ingin di print.... " autocomplete="off" / required="">
+                  <input type="number" name="nt" class="form-control" id="nt" value="" placeholder="Ketikan NISN siswa yang ingin di print.... " autocomplete="off" / required="">
                 </div>
                 <div class="text-center">
                   <button type="submit" name="submit" class="btn btn-primary">CETAK</button>
@@ -158,174 +158,166 @@ while ($data = mysqli_fetch_array($sql)) {
                       <b><br>FORMULIR PENERIMAAN SANTRI BARU</br>
                         PP TARBIYATUL MUTATHOWI'IN TAHUN PELAJARAN 2025 / 2026</b>
                     </center>
-                    <br>
-                    <TD>Status Pendaftaran</TD>
-                    <TD><?php $nilai = $r['status'];
+                    <td>Status Pendaftaran</td>
+                    <td><?php $nilai = $r['status'];
                         if ($nilai > 1) {
                           echo "<span class='badge bg-primary text-white'>Sudah Verifikasi</span>";
                         } else {
                           echo "<span class='badge bg-danger text-white'>Belum Verifikasi</span>";
-                        }; ?></TD>
-                    </TR>
-                    <TR>
-                    <TR>
-                      <TD>Jenjang Pendidikan</TD>
-                      <TD><?php echo $r['jenjang']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>NISN</TD>
-                      <TD><?php echo $r['nisn']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>NIK</TD>
-                      <TD><?php echo $r['nik']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD><b>NAMA LENGKAP SANTRI<b></TD>
-                      <TD><?php echo $r['namapd']; ?></TD>
-                    </TR>
-                    <TR>
-                    <TR>
-                      <TD>Jenis Kelamin</TD>
-                      <TD><?php echo $r['jk']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>Tempat Tanggal Lahir </TD>
-                      <TD><?php echo $r['tempatlahirpd']; ?> , <?php echo $r['tanggallahirpd']; ?></TD>
-                    </TR>
-                    <TD>Alamat</TD>
-                    <TD><?php echo $r['alamatpd']; ?></TD>
-                    </TR>
-                    </TR>
-                    <TD>Jarak Rumah ke Lembaga</TD>
-                    <TD><?php echo $r['jarak']; ?></TD>
-                    </TR>
-                    </TR>
-                    <TD>Transportasi</TD>
-                    <TD><?php echo $r['transportasi']; ?></TD>
-                    </TR>
-                    </TR>
-                    <TD>Waktu Tempuh</TD>
-                    <TD><?php echo $r['waktu']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>Asal Sekolah</TD>
-                      <TD><?php echo $r['asalsekolah']; ?></TD>
-                    </TR>
-                    <TD><b>NAMA LENGKAP AYAH</b></TD>
-                    <TD><?php echo $r['namaayah']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>Nomor Kartu Keluarga</TD>
-                      <TD><?php echo $r['kk']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>NIK Ayah</TD>
-                      <TD><?php echo $r['nikayah']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>Tempat Tanggal Lahir Ayah</TD>
-                      <TD><?php echo $r['tempatlahirayah']; ?> , <?php echo $r['tanggallahirayah']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>Pendidikan Terakhir Ayah</TD>
-                      <TD><?php echo $r['pendidikanayah']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>Pekerjaan Ayah</TD>
-                      <TD><?php echo $r['pekerjaanayah']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>Penghasilan Ayah</TD>
-                      <TD><?php echo $r['penghasilanayah']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD><b>NAMA LENGKAP IBU</b></TD>
-                      <TD><?php echo $r['namaibu']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>NIK Ibu</TD>
-                      <TD><?php echo $r['nikibu']; ?></TD>
-                    </TR>
-                    </TR>
-                    <TD>Tempat Tanggal Lahir Ibu</TD>
-                    <TD><?php echo $r['tempatlahirayah']; ?> , <?php echo $r['tanggallahiribu']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>Pendidikan Terakhir Ibu</TD>
-                      <TD><?php echo $r['pendidikanibu']; ?></TD>
-                    </TR>
-                    <TR>
-                      <TD>Pekerjaan Ibu</TD>
-                      <TD><?php echo $r['pekerjaanibu']; ?></TD>
-                    </TR>
-                    <TD>Penghasilan Ibu</TD>
-                    <TD><?php echo $r['penghasilanibu']; ?></TD>
-                    </TR>
-                    <TD>Nomor Telp Orang Tua/Wali Santri</TD>
-                    <TD><?php echo $r['wawali']; ?></TD>
-                    </TR>
+                        }; ?></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>Jenjang Pendidikan</td>
+                      <td><?php echo $r['jenjang']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>NISN</td>
+                      <td><?php echo $r['nisn']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>NIK</td>
+                      <td><?php echo $r['nik']; ?></td>
+                    </tr>
+                    <tr>
+                      <td><b>NAMA LENGKAP SANTRI<b></td>
+                      <td><?php echo $r['namapd']; ?></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>Jenis Kelamin</td>
+                      <td><?php echo $r['jk']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Tempat Tanggal Lahir </td>
+                      <td><?php echo $r['tempatlahirpd']; ?> , <?php echo $r['tanggallahirpd']; ?></td>
+                    </tr>
+                    <td>Alamat</td>
+                    <td><?php echo $r['alamatpd']; ?></td>
+                    </tr>
+                    </tr>
+                    <td>Jarak Rumah ke Lembaga</td>
+                    <td><?php echo $r['jarak']; ?></td>
+                    </tr>
+                    </tr>
+                    <td>Transportasi</td>
+                    <td><?php echo $r['transportasi']; ?></td>
+                    </tr>
+                    </tr>
+                    <td>Waktu Tempuh</td>
+                    <td><?php echo $r['waktu']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Asal Sekolah</td>
+                      <td><?php echo $r['asalsekolah']; ?></td>
+                    </tr>
+                    <td><b>NAMA LENGKAP AYAH</b></td>
+                    <td><?php echo $r['namaayah']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Nomor Kartu Keluarga</td>
+                      <td><?php echo $r['kk']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>NIK Ayah</td>
+                      <td><?php echo $r['nikayah']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Tempat Tanggal Lahir Ayah</td>
+                      <td><?php echo $r['tempatlahirayah']; ?> , <?php echo $r['tanggallahirayah']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Pendidikan Terakhir Ayah</td>
+                      <td><?php echo $r['pendidikanayah']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Pekerjaan Ayah</td>
+                      <td><?php echo $r['pekerjaanayah']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Penghasilan Ayah</td>
+                      <td><?php echo $r['penghasilanayah']; ?></td>
+                    </tr>
+                    <tr>
+                      <td><b>NAMA LENGKAP IBU</b></td>
+                      <td><?php echo $r['namaibu']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>NIK Ibu</td>
+                      <td><?php echo $r['nikibu']; ?></td>
+                    </tr>
+                    </tr>
+                    <td>Tempat Tanggal Lahir Ibu</td>
+                    <td><?php echo $r['tempatlahirayah']; ?> , <?php echo $r['tanggallahiribu']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Pendidikan Terakhir Ibu</td>
+                      <td><?php echo $r['pendidikanibu']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Pekerjaan Ibu</td>
+                      <td><?php echo $r['pekerjaanibu']; ?></td>
+                    </tr>
+                    <td>Penghasilan Ibu</td>
+                    <td><?php echo $r['penghasilanibu']; ?></td>
+                    </tr>
+                    <td>Nomor Telp Orang Tua/Wali Santri</td>
+                    <td><?php echo $r['wawali']; ?></td>
+                    </tr>
                     <br><br><br><br><br>
-                    <TD><b>PRESTASI SANTRI<b></TD>
-                    <TD><?php echo $r['prestasi']; ?></TD>
-                    </TR>
-                    <TD>Kartu Indonesia Pintar (KIP)</TD>
-                    <TD><?php echo $r['jaminan']; ?></TD>
-                    </TR>
-                    <TD>Kartu Indonesia Sehat (KIS)</TD>
-                    <TD><?php echo $r['nomorbantuan']; ?></TD>
-                    </TR>
-                    <TD>Kartu Keluarga Sejahtera (KKS)</TD>
-                    <TD><?php echo $r['pkh']; ?></TD>
-                    </TR>
-                    <TD>Nomor KIP/KIS/KKS</TD>
-                    <TD><?php echo $r['bantuan']; ?></TD>
-                    </TR>
+                    <td><b>Minat & Bakat<b></td>
+                    <td><?php echo $r['bantuan']; ?></td>
+                    </tr>
+                    <td>Tujuan & Harapan</td>
+                    <td><?php echo $r['prestasi']; ?></td>
+                    </tr>
+                    <td>Informasi Tentang PonPes</td>
+                    <td><?php echo $r['nomorbantuan']; ?></td>
+                    </tr>
                   </table>
-
                   <div class="card-body">
                     <table id="example1" class="table table-bordered table-hover  table-responsive-sm">
                       <b> CHECK LIST BERKAS YANG SUDAH DIKUMPULKAN <b>
                           <small>
                             <br>
-                            <TD>NO</TD>
-                            <TD>
+                            <td>NO</td>
+                            <td>
                               <center>NAMA BERKAS PERSYARATAN DAFTAR ULANG YANG DIKUMPULKAN</center>
-                            </TD>
-                            <TD>
+                            </td>
+                            <td>
                               <center>CHECK LIST / KETERANGAN</center>
-                            </TD>
-                            </TR>
+                            </td>
+                            </tr>
 
-                            <TD>1</TD>
-                            <TD> Foto Copy Kartu Keluarga (KK)</TD>
-                            <TD> </TD>
-                            </TR>
-                            <TD>2</TD>
-                            <TD> Foto Copy KTP Orang Tua</TD>
-                            <TD> </TD>
-                            </TR>
-                            <TD>3</TD>
-                            <TD> Foto Copy Akta Kelahiran</TD>
-                            <TD> </TD>
-                            </TR>
-                            <TD>4</TD>
-                            <TD>Pas Photo berwarna 3 x4 (3 lembar)</TD>
-                            <TD> </TD>
-                            </TR>
-                            <TD>5</TD>
-                            <TD>Materai Rp. 10.000 (1 pcs)</TD>
-                            <TD> </TD>
-                            </TR>
-                            <TD>6</TD>
-                            <TD>Membayar biaya Pendaftaran Rp. 1.000.000</TD>
-                            <TD> </TD>
-                            </TR>
-                            </TR>
-                            <TD>7</TD>
-                            <TD>Foto Copy Ijasah ( Bisa Menyusul)</TD>
-                            <TD> </TD>
-                            </TR>
+                            <td>1</td>
+                            <td> Foto Copy Kartu Keluarga (KK)</td>
+                            <td> </td>
+                            </tr>
+                            <td>2</td>
+                            <td> Foto Copy KTP Orang Tua</td>
+                            <td> </td>
+                            </tr>
+                            <td>3</td>
+                            <td> Foto Copy Akta Kelahiran</td>
+                            <td> </td>
+                            </tr>
+                            <td>4</td>
+                            <td>Pas Photo berwarna 3 x4 (3 lembar)</td>
+                            <td> </td>
+                            </tr>
+                            <td>5</td>
+                            <td>Materai Rp. 10.000 (1 pcs)</td>
+                            <td> </td>
+                            </tr>
+                            <td>6</td>
+                            <td>Membayar biaya Pendaftaran Rp. 1.000.000</td>
+                            <td> </td>
+                            </tr>
+                            </tr>
+                            <td>7</td>
+                            <td>Foto Copy Ijasah ( Bisa Menyusul)</td>
+                            <td> </td>
+                            </tr>
                     </table>
                     </small>
                     <div class="row mt-5">

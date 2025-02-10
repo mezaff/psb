@@ -48,25 +48,24 @@ if ($data && $data['embed'] == '0') {
     class="template-customizer-core-css" />
   <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/css/rtl/theme-default.css"
     class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="assets/sneat_pro/assets/css/demo.css" />
   <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/css/pages/front-page.css" />
   <!-- Vendors CSS -->
+  <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/libs/pickr/pickr-themes.css" />
+  <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/css/core.css" />
+  <link rel="stylesheet" href="assets/sneat_pro/assets/css/demo.css" />
+  <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-  <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/libs/nouislider/nouislider.css" />
-  <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/libs/swiper/swiper.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
   <!-- Page CSS -->
 
   <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/css/pages/front-page-landing.css" />
+  <link rel="stylesheet" href="assets/sneat_pro/assets/vendor/libs/dropzone/dropzone.css" />
 
   <!-- Helpers -->
   <script src="assets/sneat_pro/assets/vendor/js/helpers.js"></script>
-  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-  <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-  <!-- <script src="assets/sneat_pro/assets/vendor/js/template-customizer.js"></script> -->
-  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="assets/sneat_pro/assets/js/front-config.js"></script>
+  <script src="assets/sneat_pro/assets/js/config.js"></script>
   <style>
     .select2-container .select2-selection--single {
       height: calc(2.25rem + 2px);
@@ -334,7 +333,7 @@ if ($data && $data['embed'] == '0') {
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_akte">Upload Akte (Tidak Wajib) <span class="text-danger">File harus PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB</span></label>
+                          <label class="form-label" for="upload_akte">Upload Akte (Tidak Wajib) <span class="d-none d-md-inline text-danger">File harus PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB</span></label>
                           <input type="file" class="form-control" name="upload_akte" id="upload_akte" accept=".png, .jpg, .jpeg, .pdf">
                           <div class="invalid-feedback">
                             File harus berformat PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB.
@@ -345,7 +344,7 @@ if ($data && $data['embed'] == '0') {
                     <div class="row">
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_nisn">Upload NISN (Tidak Wajib) <span class="text-danger">File harus PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB</span></label>
+                          <label class="form-label" for="upload_nisn">Upload NISN (Tidak Wajib) <span class="d-none d-md-inline text-danger">File harus PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB</span></label>
                           <input type="file" name="upload_nisn" class="form-control" id="upload_nisn" accept=".png, .jpg, .jpeg, .pdf">
                           <div class="invalid-feedback">
                             File harus berformat PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB.
@@ -354,7 +353,7 @@ if ($data && $data['embed'] == '0') {
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_ijasah">Upload Ijasah (Tidak Wajib) <span class="text-danger">File harus PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB</span></label>
+                          <label class="form-label" for="upload_ijasah">Upload Ijasah (Tidak Wajib) <span class="d-none d-md-inline text-danger">File harus PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB</span></label>
                           <input type="file" name="upload_ijasah" class="form-control" id="upload_ijasah" accept=".png, .jpg, .jpeg, .pdf">
                           <div class="invalid-feedback">
                             File harus berformat PNG, JPG, JPEG, atau PDF dan ukuran maksimal 2MB.
@@ -377,7 +376,7 @@ if ($data && $data['embed'] == '0') {
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-sm-12 col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="provinsipd">Provinsi</label>
                           <select id="provinsipd" name="provinsipd" class="form-select" required>
@@ -513,7 +512,7 @@ if ($data && $data['embed'] == '0') {
                     <div class="row">
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_kk">Upload Kartu Keluarga (Tidak Wajib) <span class="text-danger">PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB</span></label>
+                          <label class="form-label" for="upload_kk">Upload Kartu Keluarga (Tidak Wajib) <span class="d-none d-md-inline text-danger">PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB</span></label>
                           <input type="file" name="upload_kk" class="form-control" accept=".png, .jpg, .jpeg, .pdf" />
                           <div class="validate"></div>
                           <div class="invalid-feedback">
@@ -523,7 +522,7 @@ if ($data && $data['embed'] == '0') {
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="upload_ktp_ortu">Upload KTP Orang Tua (Tidak Wajib) <span class="text-danger">PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB</span></label>
+                          <label class="form-label" for="upload_ktp_ortu">Upload KTP Orang Tua (Tidak Wajib) <span class="d-none d-md-inline text-danger">PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB</span></label>
                           <input type="file" name="upload_ktp_ortu" class="form-control" accept=".png, .jpg, .jpeg, .pdf" />
                           <div class="validate"></div>
                           <div class="invalid-feedback">
@@ -746,59 +745,81 @@ if ($data && $data['embed'] == '0') {
 
                     </div>
                     <div class="divider">
-                      <div class="divider-text fs-4 fw-bold">FORMULIR DATA PENDUKUNG LAINNYA</div>
+                      <div class="divider-text fs-4 fw-bold">FORMULIR DATA PENDUKUNG</div>
                     </div>
                     <div class="row">
                       <div class="col-md-12">
                         <div class="mb-3">
-                          <label class="form-label" for="prestasi">Prestasi (Isi dengan tanda (-) strip jika tidak ada)</label>
-                          <input type="text" autocomplete="" name="prestasi" class="form-control" required="" placeholder="Prestasi Yang Pernah di Raih" />
-                          <div class="invalid-feedback">Prestasi wajib diisi.</div>
+                          <label class="form-label" for="bantuan">Minat & Bakat Santri</label>
+                          <textarea class="form-control" name="bantuan" rows="2" placeholder="Masukkan jawaban anda" required></textarea>
+                          <div class="invalid-feedback">Wajib diisi.</div>
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label" for="bantuan">Kartu Indonesia Pintar (KIP)</label>
-                          <select name="bantuan" id="bantuan" class="form-select" required>
-                            <option value="" disabled selected>Pilih Status Bantuan</option>
-                            <option value="Tidak Mempunyai">Tidak Mempunyai</option>
-                            <option value="Mempunyai">Mempunyai</option>
-                          </select>
-                          <div class="invalid-feedback">Kartu Indonesia Pintar (KIP) wajib diisi.</div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label" for="jaminan">Kartu Indonesia Sehat (KIS)</label>
-                          <select name="jaminan" id="jaminan" class="form-select" required>
-                            <option value="" disabled selected>Pilih Status Bantuan</option>
-                            <option value="Tidak Mempunyai">Tidak Mempunyai</option>
-                            <option value="Mempunyai">Mempunyai</option>
-                          </select>
-                          <div class="invalid-feedback">Kartu Indonesia Sehat (KIS) wajib diisi.</div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label" for="pkh">Kartu Keluarga Sejahtera (KKS)</label>
-                          <select name="pkh" id="pkh" class="form-select" required>
-                            <option value="" disabled selected>Pilih Status Bantuan</option>
-                            <option value="Tidak Mempunyai">Tidak Mempunyai</option>
-                            <option value="Mempunyai">Mempunyai</option>
-                          </select>
-                          <div class="invalid-feedback">Kartu Keluarga Sejahtera (KKS) wajib diisi.</div>
-                        </div>
-                      </div>
-                    </div>
-
                     <div class="row">
                       <div class="col-md-12">
                         <div class="mb-3">
-                          <label class="form-label" for="nomorbantuan">NOMOR KIP/KIS/KKS (Isi dengan tanda (-) strip jika tidak ada)</label>
-                          <textarea class="form-control" name="nomorbantuan" rows="2" placeholder="Ketikan Nomor KIP/KIS/KKS Jika ada Misal KIP : 123456789, KIS : 123456789, KKS : 123456789"></textarea>
-                          <div class="invalid-feedback">Nomor KIP/KIS/KKS wajib diisi.</div>
+                          <label class="form-label" for="prestasi">Tujuan & Harapan Masuk PonPes Tarbiyatul Mutathowi'in</label>
+                          <textarea class="form-control" name="prestasi" rows="2" placeholder="Masukkan jawaban anda" required></textarea>
+                          <div class="invalid-feedback">Wajib diisi.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <input type="hidden" name="jaminan" value="-" />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <input type="hidden" name="pkh" value="-" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="nomorbantuan">Darimana anda mengetahui informasi tentang PonPes <br class="d-block d-md-none"> Tarbiyatul Mutathowi'in</label>
+                          <textarea class="form-control" name="nomorbantuan" rows="2" required placeholder="Masukkan jawaban anda"></textarea>
+                          <div class="invalid-feedback">Wajib diisi.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 mb-3">
+                        <div class="mb-2 mt-4">
+                          <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">
+                              Bayar Via Transfer <small class="text-primary">(Tidak Wajib)</small>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Elemen ini akan ditampilkan saat switch ON -->
+                      <div class="col-12 mb-3 d-none" id="transferSection">
+                        <h5 class="my-0">Pembayaran Transfer :</h5>
+                        <p>
+                          Transfer ke Rekening
+                          <strong class="text-dark">BRI : <span id="copyText">004501003478569</span></strong>
+                          a.n PONDOK PESANTREN TARBIYATUL MUTATHOWI’IN
+                          <button type="button" id="copyBtn" onclick="copyToClipboard()" class="btn btn-sm btn-outline-primary py-0.5 px-2">
+                            <i class="bx bx-clipboard"></i> &nbsp;Salin No Rekening
+                          </button>
+                        </p>
+                        <div class="mb-3">
+                          <label class="form-label" for="pkh">
+                            Upload Bukti Pembayaran
+                            <span class="d-none d-md-block text-danger">
+                              PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB
+                            </span>
+                          </label>
+                          <input type="file" name="pkh" class="form-control" accept=".png, .jpg, .jpeg, .pdf" />
+                          <div class="validate"></div>
+                          <div class="invalid-feedback">
+                            Format file harus berupa PNG, JPG, JPEG, atau PDF dan ukuran file tidak boleh lebih dari 2MB.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -857,14 +878,20 @@ if ($data && $data['embed'] == '0') {
 
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
+  <script src="assets/sneat_pro/assets/vendor/libs/jquery/jquery.js"></script>
   <script src="assets/sneat_pro/assets/vendor/libs/popper/popper.js"></script>
   <script src="assets/sneat_pro/assets/vendor/js/bootstrap.js"></script>
+  <script src="assets/sneat_pro/assets/vendor/libs/@algolia/autocomplete-js.js"></script>
+  <script src="assets/sneat_pro/assets/vendor/libs/pickr/pickr.js"></script>
+  <script src="assets/sneat_pro/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <script src="assets/sneat_pro/assets/vendor/libs/hammer/hammer.js"></script>
+  <script src="assets/sneat_pro/assets/vendor/libs/i18n/i18n.js"></script>
+  <script src="assets/sneat_pro/assets/vendor/js/menu.js"></script>
 
   <!-- endbuild -->
 
   <!-- Vendors JS -->
-  <script src="assets/sneat_pro/assets/vendor/libs/nouislider/nouislider.js"></script>
-  <script src="assets/sneat_pro/assets/vendor/libs/swiper/swiper.js"></script>
+  <script src="assets/sneat_pro/assets/vendor/libs/dropzone/dropzone.js"></script>
 
   <!-- Main JS -->
   <script src="assets/sneat_pro/assets/js/front-main.js"></script>
@@ -872,7 +899,7 @@ if ($data && $data['embed'] == '0') {
 
   <!-- Page JS -->
   <script src="assets/sneat_pro/assets/js/front-page-landing.js"></script>
-
+  <script src="assets/sneat_pro/assets/js/forms-file-upload.js"></script>
 
   <!-- Wilayah JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -1120,6 +1147,44 @@ if ($data && $data['embed'] == '0') {
       });
 
     })()
+  </script>
+  <script>
+    document.getElementById("flexSwitchCheckDefault").addEventListener("change", function() {
+      var transferSection = document.getElementById("transferSection");
+      if (this.checked) {
+        transferSection.classList.remove("d-none"); // Tampilkan saat switch ON
+      } else {
+        transferSection.classList.add("d-none"); // Sembunyikan saat switch OFF
+      }
+    });
+
+    function copyToClipboard() {
+      var text = document.getElementById("copyText").innerText;
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById("copyBtn");
+        btn.innerHTML = '<i class="bx bx-check-circle text-success"></i>'; // Ubah ikon ke centang hijau
+
+        setTimeout(function() {
+          btn.innerHTML = '<i class="bx bx-clipboard"></i> &nbsp;Salin No Rekening'; // Kembalikan ikon setelah 2 detik
+        }, 2000);
+      }).catch(function(error) {
+        console.error("Gagal menyalin", error);
+      });
+    }
+
+    function copyToClipboard() {
+      var text = document.getElementById("copyText").innerText; // Ambil hanya nomor rekening
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById("copyBtn");
+        btn.innerHTML = '<i class="bx bx-check-circle"></i>&nbsp;No Rekening Berhasil Disalin'; // Ubah ikon ke centang hijau
+
+        setTimeout(function() {
+          btn.innerHTML = '<i class="bx bx-clipboard"></i> &nbsp;Salin No Rekening'; // Kembalikan ikon setelah 2 detik
+        }, 2000);
+      }).catch(function(error) {
+        console.error("Gagal menyalin", error);
+      });
+    }
   </script>
 
 </body>
