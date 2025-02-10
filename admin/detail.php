@@ -507,7 +507,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                             </div>
                             <div class="col-md-3">
                                 <div class="card mb-3">
-                                    <h3 class="card-header fw-bold text-center">DOWNLOAD BERKAS</h3>
+                                    <h3 class="card-header fw-bold text-center">CETAK BERKAS</h3>
                                     <div class="card-body">
                                         <!-- Social Accounts -->
                                         <div class="d-flex mb-3">
