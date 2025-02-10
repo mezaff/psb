@@ -1,52 +1,128 @@
+<?php
+include("../koneksi.php");
+session_start();
+ob_start();
+
+// Cek apakah user sudah login
+if (empty($_SESSION['status_login'])) {
+  header("Location: login");
+  exit;
+}
+
+$id_user = isset($_SESSION['id_user']) ? intval($_SESSION['id_user']) : 0;
+
+// Pastikan ID tersedia di URL
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+  $id = intval($_GET['id']); // Konversi ke integer untuk keamanan
+
+  // Ambil data siswa berdasarkan ID
+  $query = "SELECT * FROM siswa WHERE id = ?";
+  $stmt = mysqli_prepare($connect, $query);
+  mysqli_stmt_bind_param($stmt, "i", $id);
+  mysqli_stmt_execute($stmt);
+  $result = mysqli_stmt_get_result($stmt);
+  $data = mysqli_fetch_assoc($result);
+
+  // Cek apakah data ditemukan
+  if (!$data) {
+    header("Location: error.php?msg=Data tidak ditemukan");
+    exit;
+  }
+} else {
+  header("Location: error.php?msg=ID tidak valid");
+  exit;
+}
+
+function formatTanggal($tanggal)
+{
+  $bulan = [
+    'January' => 'Januari',
+    'February' => 'Februari',
+    'March' => 'Maret',
+    'April' => 'April',
+    'May' => 'Mei',
+    'June' => 'Juni',
+    'July' => 'Juli',
+    'August' => 'Agustus',
+    'September' => 'September',
+    'October' => 'Oktober',
+    'November' => 'November',
+    'December' => 'Desember'
+  ];
+
+  $tanggalObj = strtotime($tanggal);
+  return date('d', $tanggalObj) . ' ' . $bulan[date('F', $tanggalObj)] . ' ' . date('Y', $tanggalObj);
+}
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<!-- beautify ignore:start -->
+<html
+  lang="en"
+  class="light-style"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/sneat/assets/"
+  data-template="vertical-menu-template-free">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cetak Formulir | PSB Pondok Ngujur</title>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <title>Cetak Data | <?php echo $data['namapd']; ?></title>
 
-  <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
+  <meta name="description" content="" />
 
-  <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
-  <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/css/app.css">
-  <link rel="icon" type="image/x-icon" href="gambar/favicon.ico" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../gambar/favicon.ico" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons. Uncomment required icon fonts -->
+  <link rel="stylesheet" href="../assets/sneat/assets/vendor/fonts/boxicons.css" />
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="../assets/sneat/assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../assets/sneat/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../assets/sneat/assets/css/demo.css" />
+
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="../assets/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+  <!-- Page CSS -->
+
+  <!-- Helpers -->
+  <script src="../assets/sneat/assets/vendor/js/helpers.js"></script>
+
+  <script src="../assets/sneat/assets/js/config.js"></script>
 
   <style>
-    @page {
-      size: A4;
-      margin: 20mm;
-    }
-
-    @media print {
-      html {
-        font-size: 12px;
-      }
-
-      form,
-      .btn,
-      .alert {
-        display: none !important;
-      }
-
-      .kop-surat {
-        display: block !important;
-        text-align: center;
-        padding: 0 !important;
-        margin-top: 0;
-        margin-bottom: 1px;
-        border-bottom: 2px solid black;
-      }
-    }
-
-    /* Default: kop surat disembunyikan saat tampilan biasa */
     .kop-surat {
-      display: none;
+      display: block !important;
+      text-align: center;
+      padding: 0 !important;
+      margin-top: 0;
+      margin-bottom: 1px;
+      border-bottom: 2px solid black;
+    }
+
+    .page {
+      page-break-after: always;
+      page-break-before: auto;
+      page-break-inside: avoid;
+      position: relative;
+    }
+
+    .no-break {
+      page-break-inside: avoid;
     }
 
     .ttd {
@@ -58,298 +134,397 @@
 
     .garis {
       display: inline-block;
-      width: 70vw;
+      width: 60vw;
       border-bottom: 2px solid black;
       margin-top: 10px;
       margin-bottom: -20px;
     }
 
-    .page-break {
-      page-break-before: always;
+    @page {
+      size: A4;
+      margin: 10mm 10mm 10mm 10mm;
+    }
+
+    @media print {
+      body {
+        background-color: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .no-background {
+        background: none !important;
+        box-shadow: none !important;
+      }
+
+      .hidden-print {
+        display: none !important;
+      }
+
+      .page:last-of-type {
+        page-break-after: auto;
+      }
     }
   </style>
 
+
 </head>
 
+<body>
+  <!-- Content -->
+  <div class="content-wrapper px-4">
+    <div class="container-fluid flex-grow-1 container-p-y">
 
-<?php
-error_reporting(0);
-include "../koneksi.php";
-
-
-$query = "SELECT * FROM admin"; // Query untuk menampilkan semua data siswa
-$sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
-
-while ($data = mysqli_fetch_array($sql)) {
-} ?> </a>
-
-</div>
-</header><!-- End Header -->
-
-<!-- ======= Hero Section ======= -->
-
-</section><!-- End Services Section -->
-
-<!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="portfolio">
-  <div class="container">
-
-
-
-    <section class="section">
-      <div class="card">
-        <div class="card-header">
-          <div class="col-sm-12">
-            <form action="" method="post" role="form">
-              <div class="form-row">
-                <div class="col-md-9 form-group">
-                  <input type="number" name="nt" class="form-control" id="nt" value="" placeholder="Ketikan NISN siswa yang ingin di print.... " autocomplete="off" / required="">
-                </div>
-                <div class="text-center">
-                  <button type="submit" name="submit" class="btn btn-primary">CETAK</button>
-                  <a href="/santribaru/admin" class="btn btn-warning">KEMBALI</a>
-                </div>
-            </form>
-            <br>
-
-            <?php
-            if (!isset($_POST['submit'])) {
-
-              $sql = "SELECT * FROM siswa";
-
-              $query = mysqli_query($connect, $sql);
-              while ($row = mysqli_fetch_array($query)) {
-
-            ?>
-
-            <?php }
-            } ?>
-
-            <?php if (isset($_POST['submit'])) {
-
-              $cari = mysqli_escape_string($connect, $_POST['nt']);
-              $query1 = $connect->query("SELECT * FROM siswa WHERE nisn LIKE '$cari'");
-              $ntt = $_POST['nt'];
-              $jml = mysqli_num_rows($query1);
-              $x = $jml;
-
-              if ($x < 1) {
-                echo "<center><br><div class='col-sm'><div class='alert alert-danger alert-dismissible fade show' role='alert'>
-  <strong>Maaf! </strong> Hasil Pencarian NISN $ntt Tidak Ditemukan
-  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-  </button>
-</div></div></center>";
-              } else {
-                echo "</div>";
-                echo "<center><div class='col-sm'><div class='alert alert-primary alert-dismissible fade show' role='alert'>Pencarian NISN $ntt berhasil ditemukan!</div></center>";
-                echo "<br>";
-              }
-              $query2 = "SELECT * FROM siswa WHERE nisn LIKE '$cari'";
-              $sql = mysqli_query($connect, $query2);
-              while ($r = mysqli_fetch_array($sql)) {
-            ?>
-                <div class="card-body">
-                  <table id="example1" class="table table-bordered table-hover  table-responsive-sm">
-                    <center>
-                      <div class="kop-surat">
-                        <img src="../gambar/kop.png" alt="Kop Surat" width="100%">
-                      </div>
-                      <b><br>FORMULIR PENERIMAAN SANTRI BARU</br>
-                        PP TARBIYATUL MUTATHOWI'IN TAHUN PELAJARAN 2025 / 2026</b>
-                    </center>
-                    <td>Status Pendaftaran</td>
-                    <td><?php $nilai = $r['status'];
-                        if ($nilai > 1) {
-                          echo "<span class='badge bg-primary text-white'>Sudah Verifikasi</span>";
-                        } else {
-                          echo "<span class='badge bg-danger text-white'>Belum Verifikasi</span>";
-                        }; ?></td>
-                    </tr>
-                    <tr>
-                    <tr>
-                      <td>Jenjang Pendidikan</td>
-                      <td><?php echo $r['jenjang']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>NISN</td>
-                      <td><?php echo $r['nisn']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>NIK</td>
-                      <td><?php echo $r['nik']; ?></td>
-                    </tr>
-                    <tr>
-                      <td><b>NAMA LENGKAP SANTRI<b></td>
-                      <td><?php echo $r['namapd']; ?></td>
-                    </tr>
-                    <tr>
-                    <tr>
-                      <td>Jenis Kelamin</td>
-                      <td><?php echo $r['jk']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Tempat Tanggal Lahir </td>
-                      <td><?php echo $r['tempatlahirpd']; ?> , <?php echo $r['tanggallahirpd']; ?></td>
-                    </tr>
-                    <td>Alamat</td>
-                    <td><?php echo $r['alamatpd']; ?></td>
-                    </tr>
-                    </tr>
-                    <td>Jarak Rumah ke Lembaga</td>
-                    <td><?php echo $r['jarak']; ?></td>
-                    </tr>
-                    </tr>
-                    <td>Transportasi</td>
-                    <td><?php echo $r['transportasi']; ?></td>
-                    </tr>
-                    </tr>
-                    <td>Waktu Tempuh</td>
-                    <td><?php echo $r['waktu']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Asal Sekolah</td>
-                      <td><?php echo $r['asalsekolah']; ?></td>
-                    </tr>
-                    <td><b>NAMA LENGKAP AYAH</b></td>
-                    <td><?php echo $r['namaayah']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Nomor Kartu Keluarga</td>
-                      <td><?php echo $r['kk']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>NIK Ayah</td>
-                      <td><?php echo $r['nikayah']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Tempat Tanggal Lahir Ayah</td>
-                      <td><?php echo $r['tempatlahirayah']; ?> , <?php echo $r['tanggallahirayah']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Pendidikan Terakhir Ayah</td>
-                      <td><?php echo $r['pendidikanayah']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Pekerjaan Ayah</td>
-                      <td><?php echo $r['pekerjaanayah']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Penghasilan Ayah</td>
-                      <td><?php echo $r['penghasilanayah']; ?></td>
-                    </tr>
-                    <tr>
-                      <td><b>NAMA LENGKAP IBU</b></td>
-                      <td><?php echo $r['namaibu']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>NIK Ibu</td>
-                      <td><?php echo $r['nikibu']; ?></td>
-                    </tr>
-                    </tr>
-                    <td>Tempat Tanggal Lahir Ibu</td>
-                    <td><?php echo $r['tempatlahirayah']; ?> , <?php echo $r['tanggallahiribu']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Pendidikan Terakhir Ibu</td>
-                      <td><?php echo $r['pendidikanibu']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Pekerjaan Ibu</td>
-                      <td><?php echo $r['pekerjaanibu']; ?></td>
-                    </tr>
-                    <td>Penghasilan Ibu</td>
-                    <td><?php echo $r['penghasilanibu']; ?></td>
-                    </tr>
-                    <td>Nomor Telp Orang Tua/Wali Santri</td>
-                    <td><?php echo $r['wawali']; ?></td>
-                    </tr>
-                    <br><br><br><br><br>
-                    <td><b>Minat & Bakat<b></td>
-                    <td><?php echo $r['bantuan']; ?></td>
-                    </tr>
-                    <td>Tujuan & Harapan</td>
-                    <td><?php echo $r['prestasi']; ?></td>
-                    </tr>
-                    <td>Informasi Tentang PonPes</td>
-                    <td><?php echo $r['nomorbantuan']; ?></td>
-                    </tr>
+      <div class="kop-surat">
+        <img src="../gambar/kop.png" alt="Kop Surat" width="1000">
+      </div>
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <td>
+              <!--place holder for the fixed-position header-->
+              <div class="page-header-space"></div>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <!--*** CONTENT GOES HERE ***-->
+              <div class="page">
+                <h3 class="text-center fw-bold text-dark">FORMULIR PENDAFTARAN SANTRI BARU <br> PP TARBIYATUL MUTATHOWI'IN TAHUN PELAJARAN 2025 / 2026</h3>
+                <div class="table-responsive text-nowrap p-4">
+                  <table class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th colspan="2" class="text-center align-middle fw-bold fs-4">
+                          DATA SANTRI
+                        </th>
+                      </tr>
+                      <tr>
+                        <th width="25%">Status Pendaftaran</th>
+                        <td><?php
+                            $nilai = $data['status'];
+                            if ($nilai > 1) {
+                              echo "<span class='badge bg-primary'>Sudah Verifikasi</span>";
+                            } else {
+                              echo "<span class='badge bg-danger'>Belum Verifikasi</span>";
+                            }
+                            ?></td>
+                      </tr>
+                      <tr>
+                        <th>Nama Lengkap</th>
+                        <td><?php echo $data['namapd']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>NIK</th>
+                        <td><?php echo $data['nik']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>NISN</th>
+                        <td><?php echo $data['nisn']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Jenis Kelamin</th>
+                        <td><?php echo $data['jk']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Tempat Tanggal Lahir</th>
+                        <td><?php echo $data['tempatlahirpd'] . ', ' . formatTanggal($data['tanggallahirpd']); ?></td>
+                      </tr>
+                      <tr>
+                        <th>Nomor Handphone</th>
+                        <td><?php echo $data['wapd']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Jenjang Pendidikan</th>
+                        <td><?php echo $data['jenjang']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Asal Sekolah</th>
+                        <td><?php echo $data['asalsekolah']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Minat & Bakat</th>
+                        <td><?php echo $data['bantuan']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Tujuan & Harapan Mondok</th>
+                        <td><?php echo $data['prestasi']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Sumber Informasi Tentang PonPes</th>
+                        <td><?php echo $data['nomorbantuan']; ?></td>
+                      </tr>
+                      <tr>
+                        <th colspan="2" class="text-center align-middle fw-bold fs-4">
+                          DATA ORANG TUA
+                        </th>
+                      </tr>
+                      <tr>
+                        <th width="25%">Nomor Kartu Keluarga (KK)</th>
+                        <td><?php echo $data['kk']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>NIK Ayah</th>
+                        <td><?php echo $data['nikayah']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Nama Ayah</th>
+                        <td><?php echo $data['namaayah']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Tempat Tanggal Lahir Ayah</th>
+                        <td><?php echo $data['tempatlahirayah'] . ', ' . formatTanggal($data['tanggallahirayah']); ?></td>
+                      </tr>
+                      <tr>
+                        <th>Pendidikan Terakhir Ayah</th>
+                        <td><?php echo $data['pendidikanayah']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Pekerjaan Ayah</th>
+                        <td><?php echo $data['pekerjaanayah']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Penghasilan Ayah</th>
+                        <td><?php echo $data['penghasilanayah']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>NIK Ibu</th>
+                        <td><?php echo $data['nikibu']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Nama Ibu</th>
+                        <td><?php echo $data['namaibu']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Tempat Tanggal Lahir Ibu</th>
+                        <td><?php echo $data['tempatlahiribu'] . ', ' . formatTanggal($data['tanggallahiribu']); ?></td>
+                      </tr>
+                    </thead>
                   </table>
-                  <div class="card-body">
-                    <table id="example1" class="table table-bordered table-hover  table-responsive-sm">
-                      <b> CHECK LIST BERKAS YANG SUDAH DIKUMPULKAN <b>
-                          <small>
-                            <br>
-                            <td>NO</td>
-                            <td>
-                              <center>NAMA BERKAS PERSYARATAN DAFTAR ULANG YANG DIKUMPULKAN</center>
-                            </td>
-                            <td>
-                              <center>CHECK LIST / KETERANGAN</center>
-                            </td>
-                            </tr>
-
-                            <td>1</td>
-                            <td> Foto Copy Kartu Keluarga (KK)</td>
-                            <td> </td>
-                            </tr>
-                            <td>2</td>
-                            <td> Foto Copy KTP Orang Tua</td>
-                            <td> </td>
-                            </tr>
-                            <td>3</td>
-                            <td> Foto Copy Akta Kelahiran</td>
-                            <td> </td>
-                            </tr>
-                            <td>4</td>
-                            <td>Pas Photo berwarna 3 x4 (3 lembar)</td>
-                            <td> </td>
-                            </tr>
-                            <td>5</td>
-                            <td>Materai Rp. 10.000 (1 pcs)</td>
-                            <td> </td>
-                            </tr>
-                            <td>6</td>
-                            <td>Membayar biaya Pendaftaran Rp. 1.000.000</td>
-                            <td> </td>
-                            </tr>
-                            </tr>
-                            <td>7</td>
-                            <td>Foto Copy Ijasah ( Bisa Menyusul)</td>
-                            <td> </td>
-                            </tr>
-                    </table>
-                    </small>
-                    <div class="row mt-5">
-                      <div class="col-md-6 text-center">
-                        <p>Panitia PSB</p>
-                        <br><br><br>
-                        <p class="ttd"></p>
-                      </div>
-                      <div class="col-md-6 text-center">
-                        <p>Orang Tua/Wali</p>
-                        <br><br><br>
-                        <p class="ttd"></p>
-                      </div>
-                    </div>
-
-                <?php }
-            } ?>
-
-
+                </div>
+              </div>
+              <div class="page">
+                <div class="table-responsive text-nowrap p-4">
+                  <table class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Pendidikan Terakhir Ibu</th>
+                        <td><?php echo $data['pendidikanibu']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Pekerjaan Ibu</th>
+                        <td><?php echo $data['pekerjaanibu']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Penghasilan Ibu</th>
+                        <td><?php echo $data['penghasilanibu']; ?></td>
+                      </tr>
+                      <tr>
+                        <th colspan="2" class="text-center align-middle fw-bold fs-4">
+                          DATA ALAMAT
+                        </th>
+                      </tr>
+                      <tr>
+                        <th width="25%">Alamat Lengkap</th>
+                        <td><?php echo $data['alamatpd']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Desa</th>
+                        <td id="desaText"></td>
+                      </tr>
+                      <tr>
+                        <th>Kecamatan</th>
+                        <td id="kecamatanText"></td>
+                      </tr>
+                      <tr>
+                        <th>Kabupaten</th>
+                        <td id="kabupatenText"></td>
+                      </tr>
+                      <tr>
+                        <th>Provinsi</th>
+                        <td id="provinsiText"></td>
+                      </tr>
+                      <tr>
+                        <th>Kode Pos</th>
+                        <td><?php echo $data['kodepos']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Jarak Ke Lembaga</th>
+                        <td><?php echo $data['jarak']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Transportasi</th>
+                        <td><?php echo $data['transportasi']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Waktu Tempuh</th>
+                        <td><?php echo $data['waktu']; ?></td>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="table-responsive text-nowrap px-4">
+                  <h5 class="fw-bold">Pernyataan :</h5>
+                  <ol class="ps-3">
+                    <li class="mb-0">
+                      <p class="mb-0">Saya yang bertanda tangan di bawah ini menyatakan bahwa data yang saya isikan dalam formulir ini adalah benar dan sesuai <br> dengan dokumen pendukung yang dilampirkan.</p>
+                    </li>
+                    <li class="mb-0">
+                      <p class="mb-0">Saya yang bertanda tangan di bawah ini menyatakan bahwa data yang saya isikan dalam formulir ini adalah benar dan sesuai <br> dengan dokumen pendukung yang dilampirkan.</p>
+                    </li>
+                  </ol>
+                </div>
+                <div class="table-responsive text-nowrap p-4">
+                  <table class="table table-sm table-striped table-bordered w-50">
+                    <thead>
+                      <tr>
+                        <th colspan="3" class="text-center align-middle fw-bold fs-5">
+                          CHECK LIST KELENGKAPAN PENDAFTARAN
+                        </th>
+                      </tr>
+                      <tr>
+                        <td width="5%" class="text-center fw-bold">NO</td>
+                        <td class="text-center fw-bold">NAMA </td>
+                        <td class="text-center fw-bold">KETERANGAN</td>
+                      </tr>
+                      <tr>
+                        <td width="5%" class="text-center">1</td>
+                        <th>Foto Copy Kartu Keluarga (KK)</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">2</td>
+                        <th>Foto Copy KTP Orang Tua</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">3</td>
+                        <th width="25%">Foto Copy Akta Kelahiran</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">4</td>
+                        <th>Pas Foto berwarna 3 x4 (3 lembar)</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">5</td>
+                        <th>Materai Rp. 10.000 (1 pcs)</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">6</td>
+                        <th>Foto Copy Ijasah ( Bisa Menyusul)</th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">7</td>
+                        <th>Status Pembayaran</th>
+                        <td></td>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="row mt-5">
+                  <div class="col-md-4 text-center">
+                    <p>&nbsp;</p>
+                    <p>Panitia PSB</p>
+                    <br><br><br>
+                    <p class="ttd"></p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p>&nbsp;</p>
+                    <p>Calon Santri</p>
+                    <br><br><br>
+                    <p class="ttd"></p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <p>Madiun, <?php echo formatTanggal(date('Y-m-d')); ?></p>
+                    <p>Orang Tua/Wali</p>
+                    <br><br><br>
+                    <p class="ttd"></p>
                   </div>
                 </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- / Content -->
 
-    </section><!-- End Portfolio Section -->
+  <!-- Core JS -->
+  <!-- build:js assets/vendor/js/core.js -->
+  <script src="../assets/sneat/assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="../assets/sneat/assets/vendor/libs/popper/popper.js"></script>
+  <script src="../assets/sneat/assets/vendor/js/bootstrap.js"></script>
+  <script src="../assets/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    </main><!-- End #main -->
+  <script src="../assets/sneat/assets/vendor/js/menu.js"></script>
+  <!-- endbuild -->
 
+  <!-- Vendors JS -->
 
+  <!-- Main JS -->
+  <script src="../assets/sneat/assets/js/main.js"></script>
 
-    <script>
-      window.print();
-    </script>
+  <!-- Page JS -->
 
-    </body>
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      function fetchData(url) {
+        return new Promise((resolve, reject) => {
+          $.getJSON(url, function(data) {
+            resolve(data);
+          }).fail(function() {
+            reject();
+          });
+        });
+      }
+
+      async function loadData() {
+        var defaultProvinsi = "<?php echo $data['provinsipd']; ?>";
+        var defaultKabupaten = "<?php echo $data['kabupatenpd']; ?>";
+        var defaultKecamatan = "<?php echo $data['kecamatanpd']; ?>";
+        var defaultDesa = "<?php echo $data['desapd']; ?>";
+
+        try {
+          let provinsiData = await fetchData('https://alamat.thecloudalert.com/api/provinsi/get/');
+          let provinsiName = provinsiData.result.find(item => item.id == defaultProvinsi)?.text || '';
+          $('#provinsiText').text(provinsiName);
+
+          let kabupatenData = await fetchData(`https://alamat.thecloudalert.com/api/kabkota/get/?d_provinsi_id=${defaultProvinsi}`);
+          let kabupatenName = kabupatenData.result.find(item => item.id == defaultKabupaten)?.text || '';
+          $('#kabupatenText').text(kabupatenName);
+
+          let kecamatanData = await fetchData(`https://alamat.thecloudalert.com/api/kecamatan/get/?d_kabkota_id=${defaultKabupaten}`);
+          let kecamatanName = kecamatanData.result.find(item => item.id == defaultKecamatan)?.text || '';
+          $('#kecamatanText').text(kecamatanName);
+
+          let desaData = await fetchData(`https://alamat.thecloudalert.com/api/kelurahan/get/?d_kecamatan_id=${defaultKecamatan}`);
+          let desaName = desaData.result.find(item => item.id == defaultDesa)?.text || '';
+          $('#desaText').text(desaName);
+
+          // Tunggu beberapa milidetik agar DOM benar-benar update sebelum mencetak
+          setTimeout(() => {
+            window.print();
+          }, 500);
+
+        } catch (error) {
+          console.error("Gagal mengambil data.");
+        }
+      }
+
+      loadData();
+    });
+  </script>
+
+</body>
 
 </html>

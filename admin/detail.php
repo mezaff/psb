@@ -72,7 +72,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="gambar/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../gambar/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -383,12 +383,16 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                     <td><?php echo $data['asalsekolah']; ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Prestasi</th>
+                                                    <th>Minat & Bakat</th>
+                                                    <td><?php echo $data['bantuan']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Tujuan & Harapan Mondok</th>
                                                     <td><?php echo $data['prestasi']; ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>KIP/KIS/KKS</th>
-                                                    <td><?php echo $data['bantuan']; ?></td>
+                                                    <th>Sumber Informasi Tentang PonPes</th>
+                                                    <td><?php echo $data['nomorbantuan']; ?></td>
                                                 </tr>
                                             </thead>
                                         </table>
@@ -666,7 +670,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                 </div>
                                 <div class="d-flex mb-3 gap-3">
                                     <a href="datasantri2" class="btn btn-primary">Kembali</a>
-                                    <a href="/santribaru/admin/print1?id=<?php echo $data['id']; ?>" class="btn btn-info" target="_blank">Cetak Formulir</a>
+                                    <a href="/santribaru/admin/print?id=<?php echo $data['id']; ?>" class="btn btn-info" target="_blank">Cetak Formulir</a>
                                 </div>
                             </div>
                         </div>

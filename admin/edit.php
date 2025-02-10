@@ -75,7 +75,7 @@ $ktpOrtuFile = !empty($data['upload_ktp_ortu']) ? $targetDir . $data['upload_ktp
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="gambar/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../gambar/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
