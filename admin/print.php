@@ -105,6 +105,22 @@ function formatTanggal($tanggal)
   <script src="../assets/sneat/assets/js/config.js"></script>
 
   <style>
+    body {
+      font-size: 12pt;
+      background-color: #fff !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .table th,
+    .table td {
+      color: #000 !important;
+    }
+
+    .table-bordered {
+      border: 1px solid rgba(0, 0, 0, 0.5) !important;
+    }
+
     .kop-surat {
       display: block !important;
       text-align: center;
@@ -128,7 +144,7 @@ function formatTanggal($tanggal)
     .ttd {
       display: inline-block;
       width: 200px;
-      border-bottom: 2px solid black;
+      border-bottom: 1px solid black;
       margin-top: 20px;
     }
 
@@ -141,12 +157,13 @@ function formatTanggal($tanggal)
     }
 
     @page {
-      size: A4;
-      margin: 10mm 10mm 10mm 10mm;
+      size: 210mm 330mm;
+      margin: 20mm;
     }
 
     @media print {
       body {
+        font-size: 12pt;
         background-color: #fff !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -173,7 +190,7 @@ function formatTanggal($tanggal)
 <body>
   <!-- Content -->
   <div class="content-wrapper px-4">
-    <div class="container-fluid flex-grow-1 container-p-y">
+    <div class="container-fluid flex-grow-1 container-p-y mt-2">
 
       <div class="kop-surat">
         <img src="../gambar/kop.png" alt="Kop Surat" width="1000">
@@ -192,7 +209,7 @@ function formatTanggal($tanggal)
             <td>
               <!--*** CONTENT GOES HERE ***-->
               <div class="page">
-                <h3 class="text-center fw-bold text-dark">FORMULIR PENDAFTARAN SANTRI BARU <br> PP TARBIYATUL MUTATHOWI'IN TAHUN PELAJARAN 2025 / 2026</h3>
+                <h3 class="text-center fw-bold" style="color: #000 !important;">FORMULIR PENDAFTARAN SANTRI BARU <br> PP TARBIYATUL MUTATHOWI'IN TAHUN PELAJARAN 2025 / 2026</h3>
                 <div class="table-responsive text-nowrap p-4">
                   <table class="table table-striped table-bordered">
                     <thead>
@@ -306,7 +323,7 @@ function formatTanggal($tanggal)
                 </div>
               </div>
               <div class="page">
-                <div class="table-responsive text-nowrap p-4">
+                <div class="table-responsive text-nowrap p-3 mt-3">
                   <table class="table table-striped table-bordered">
                     <thead>
                       <tr>
@@ -366,13 +383,19 @@ function formatTanggal($tanggal)
                   </table>
                 </div>
                 <div class="table-responsive text-nowrap px-4">
-                  <h5 class="fw-bold">Pernyataan :</h5>
+                  <h5 class="fw-bold" style="color: #000 !important;">Dengan ini kami menyatakan dengan sesungguhnya bahwa selama dipondok pesantren :</h5>
                   <ol class="ps-3">
                     <li class="mb-0">
-                      <p class="mb-0">Saya yang bertanda tangan di bawah ini menyatakan bahwa data yang saya isikan dalam formulir ini adalah benar dan sesuai <br> dengan dokumen pendukung yang dilampirkan.</p>
+                      <p class="mb-0">Akan belajar dengan tekun dan sungguh-sungguh.</p>
                     </li>
                     <li class="mb-0">
-                      <p class="mb-0">Saya yang bertanda tangan di bawah ini menyatakan bahwa data yang saya isikan dalam formulir ini adalah benar dan sesuai <br> dengan dokumen pendukung yang dilampirkan.</p>
+                      <p class="mb-0">Akan menjaga nama baik diri sendiri, keluarga, masyarakat dan pondok pesantren.</p>
+                    </li>
+                    <li class="mb-0">
+                      <p class="mb-0">Sanggup menaati seluruh aturan tata tertib yang berlaku, baik dalam lingkungan pesantren dan lembaga pendidikan yang ada.</p>
+                    </li>
+                    <li class="mb-0">
+                      <p class="mb-0">Siap menerima sanksi apabila melanggar aturan atau tata tertib yang berlaku sesuai ketentuan pesantren.</p>
                     </li>
                   </ol>
                 </div>
@@ -430,19 +453,19 @@ function formatTanggal($tanggal)
                 <div class="row mt-5">
                   <div class="col-md-4 text-center">
                     <p>&nbsp;</p>
-                    <p>Panitia PSB</p>
+                    <p class="fw-bold" style="color: #000 !important;">Panitia PSB</p>
                     <br><br><br>
                     <p class="ttd"></p>
                   </div>
                   <div class="col-md-4 text-center">
                     <p>&nbsp;</p>
-                    <p>Calon Santri</p>
+                    <p class="fw-bold" style="color: #000 !important;">Calon Santri</p>
                     <br><br><br>
                     <p class="ttd"></p>
                   </div>
                   <div class="col-md-4 text-center">
-                    <p>Madiun, <?php echo formatTanggal(date('Y-m-d')); ?></p>
-                    <p>Orang Tua/Wali</p>
+                    <p class="fw-semibold" style="color: #000 !important;">Madiun, <?php echo formatTanggal(date('Y-m-d')); ?></p>
+                    <p class="fw-bold" style="color: #000 !important;">Orang Tua/Wali Santri</p>
                     <br><br><br>
                     <p class="ttd"></p>
                   </div>
