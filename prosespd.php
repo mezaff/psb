@@ -128,10 +128,10 @@ if (mysqli_num_rows($result) > 0) {
 
 	// Insert data ke dalam database
 	$query = "INSERT INTO siswa (
-        nik, nisn, namapd, jk, tempatlahirpd, tanggallahirpd, wapd, desapd, kecamatanpd, kabupatenpd, provinsipd, kodepos, alamatpd, jarak, transportasi, waktu, jenispd, jenjang, asalsekolah, kk, nikayah, namaayah, tempatlahirayah, tanggallahirayah, pendidikanayah, pekerjaanayah, penghasilanayah, nikibu, namaibu, tempatlahiribu, tanggallahiribu, pendidikanibu, pekerjaanibu, penghasilanibu, wawali, prestasi, jaminan, nomorbantuan, bantuan, status, keterangan, 
-        upload_akte, upload_nisn, upload_ijasah, upload_kk, pkh, upload_ktp_ortu) 
+        nik, nisn, namapd, jk, tempatlahirpd, tanggallahirpd, wapd, desapd, kecamatanpd, kabupatenpd, provinsipd, kodepos, alamatpd, jarak, transportasi, waktu, jenispd, jenjang, asalsekolah, kk, nikayah, namaayah, tempatlahirayah, tanggallahirayah, pendidikanayah, pekerjaanayah, penghasilanayah, nikibu, namaibu, tempatlahiribu, tanggallahiribu, pendidikanibu, pekerjaanibu, penghasilanibu, wawali, prestasi, jaminan, nomorbantuan, pkh, bantuan, status, keterangan, 
+        upload_akte, upload_nisn, upload_ijasah, upload_kk,  upload_ktp_ortu) 
         VALUES (
-        '$nik', '$nisn', '$namapd', '$jk', '$tempatlahirpd', '$tanggallahirpd', '$wapd', '$desapd', '$kecamatanpd', '$kabupatenpd', '$provinsipd', '$kodepos', '$alamatpd', '$jarak', '$transportasi', '$waktu', '$jenispd', '$jenjang', '$asalsekolah', '$kk', '$nikayah', '$namaayah', '$tempatlahirayah', '$tanggallahirayah', '$pendidikanayah', '$pekerjaanayah', '$penghasilanayah', '$nikibu', '$namaibu', '$tempatlahiribu', '$tanggallahiribu', '$pendidikanibu', '$pekerjaanibu', '$penghasilanibu', '$wawali', '$prestasi', '$jaminan', '$nomorbantuan', '$bantuan', '$status', '$keterangan', 
+        '$nik', '$nisn', '$namapd', '$jk', '$tempatlahirpd', '$tanggallahirpd', '$wapd', '$desapd', '$kecamatanpd', '$kabupatenpd', '$provinsipd', '$kodepos', '$alamatpd', '$jarak', '$transportasi', '$waktu', '$jenispd', '$jenjang', '$asalsekolah', '$kk', '$nikayah', '$namaayah', '$tempatlahirayah', '$tanggallahirayah', '$pendidikanayah', '$pekerjaanayah', '$penghasilanayah', '$nikibu', '$namaibu', '$tempatlahiribu', '$tanggallahiribu', '$pendidikanibu', '$pekerjaanibu', '$penghasilanibu', '$wawali', '$prestasi', '$jaminan', '$nomorbantuan', '$pkh', '$bantuan', '$status', '$keterangan', 
         " .
 		(is_null($upload_akte) ? "NULL" : "'$upload_akte'") . ", 
         " .
@@ -140,8 +140,6 @@ if (mysqli_num_rows($result) > 0) {
 		(is_null($upload_ijasah) ? "NULL" : "'$upload_ijasah'") . ", 
         " .
 		(is_null($upload_kk) ? "NULL" : "'$upload_kk'") . ", 
-        " .
-		(is_null($pkh) ? "NULL" : "'$pkh'") . ", 
         " .
 		(is_null($upload_ktp_ortu) ? "NULL" : "'$upload_ktp_ortu'") .
 		")";
