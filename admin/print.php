@@ -15,13 +15,41 @@ $id_user = isset($_SESSION['id_user']) ? intval($_SESSION['id_user']) : 0;
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
   $id = intval($_GET['id']); // Konversi ke integer untuk keamanan
 
-  // Ambil data siswa berdasarkan ID
+  // Ambil data siswa berdasarkan ID server local
+  // $query = "SELECT * FROM siswa WHERE id = ?";
+  // $stmt = mysqli_prepare($connect, $query);
+  // mysqli_stmt_bind_param($stmt, "i", $id);
+  // mysqli_stmt_execute($stmt);
+  // $result = mysqli_stmt_get_result($stmt);
+  // $data = mysqli_fetch_assoc($result);
+
+
+  // Ambil data siswa berdasarkan ID server hosting
   $query = "SELECT * FROM siswa WHERE id = ?";
   $stmt = mysqli_prepare($connect, $query);
   mysqli_stmt_bind_param($stmt, "i", $id);
   mysqli_stmt_execute($stmt);
-  $result = mysqli_stmt_get_result($stmt);
-  $data = mysqli_fetch_assoc($result);
+
+  $meta = mysqli_stmt_result_metadata($stmt);
+  $row = [];
+  while ($field = mysqli_fetch_field($meta)) {
+    $var = $field->name;
+    $$var = null;
+    $row[$var] = &$$var;
+  }
+  call_user_func_array([$stmt, 'bind_result'], $row);
+
+  if (mysqli_stmt_fetch($stmt)) {
+    $data = [];
+    foreach ($row as $key => $val) {
+      $data[$key] = $val;
+    }
+  } else {
+    $data = null;
+  }
+
+  mysqli_stmt_close($stmt);
+
 
   // Cek apakah data ditemukan
   if (!$data) {
