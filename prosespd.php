@@ -57,16 +57,6 @@ function formatNomorTelepon($nomor)
 		$nomor = '62' . substr($nomor, 1);
 	}
 
-	// Pastikan hanya angka
-	if (!preg_match('/^[0-9]+$/', $nomor)) {
-		die("Error: Nomor telepon hanya boleh mengandung angka.");
-	}
-
-	// Pastikan panjang nomor antara 11-13 digit
-	if (strlen($nomor) < 11 || strlen($nomor) > 13) {
-		die("Error: Nomor telepon tidak valid. Panjang nomor harus antara 11-13 digit.");
-	}
-
 	return $nomor;
 }
 
