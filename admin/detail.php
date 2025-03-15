@@ -85,8 +85,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
     <link rel="stylesheet" href="../assets/sneat/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/sneat/assets/vendor/css/core.css"
-        class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/sneat/assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../assets/sneat/assets/vendor/css/theme-default.css"
         class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../assets/sneat/assets/css/demo.css" />
@@ -106,56 +105,56 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
     <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.0.0/dist/select2-bootstrap-5.min.css"
         rel="stylesheet" />
     <style>
-        .select2-container .select2-selection--single {
-            height: calc(2.25rem + 2px);
-            padding: 0.375rem 0.75rem;
-            border: 1px solid #ced4da;
-            border-radius: 0.375rem;
-        }
+    .select2-container .select2-selection--single {
+        height: calc(2.25rem + 2px);
+        padding: 0.375rem 0.75rem;
+        border: 1px solid #ced4da;
+        border-radius: 0.375rem;
+    }
 
-        .select2-container--bootstrap-5 .select2-selection__rendered {
-            line-height: 1.5;
-        }
+    .select2-container--bootstrap-5 .select2-selection__rendered {
+        line-height: 1.5;
+    }
 
-        .select2-container .select2-dropdown {
-            border: 1px solid #ced4da;
-            border-radius: 0.375rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+    .select2-container .select2-dropdown {
+        border: 1px solid #ced4da;
+        border-radius: 0.375rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .select2-container .select2-dropdown {
-            max-height: 300px;
-            overflow-y: auto;
-        }
+    .select2-container .select2-dropdown {
+        max-height: 300px;
+        overflow-y: auto;
+    }
 
-        .select2-container--bootstrap-5 .select2-selection--single:disabled {
-            background-color: #e9ecef;
-            border-color: #ced4da;
-            color: #6c757d;
-            cursor: not-allowed;
-        }
+    .select2-container--bootstrap-5 .select2-selection--single:disabled {
+        background-color: #e9ecef;
+        border-color: #ced4da;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
 
-        .select2-container--bootstrap-5 .select2-dropdown:disabled {
-            background-color: #e9ecef;
-            color: #6c757d;
-            border-color: #ced4da;
-            cursor: not-allowed;
-        }
+    .select2-container--bootstrap-5 .select2-dropdown:disabled {
+        background-color: #e9ecef;
+        color: #6c757d;
+        border-color: #ced4da;
+        cursor: not-allowed;
+    }
 
-        .form-select:disabled {
-            background-color: #e9ecef;
-            border-color: #ced4da;
-            color: #6c757d;
-            cursor: not-allowed;
-        }
+    .form-select:disabled {
+        background-color: #e9ecef;
+        border-color: #ced4da;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
 
-        input.form-control:disabled,
-        textarea.form-control:disabled {
-            background-color: #e9ecef;
-            border-color: #ced4da;
-            color: #6c757d;
-            cursor: not-allowed;
-        }
+    input.form-control:disabled,
+    textarea.form-control:disabled {
+        background-color: #e9ecef;
+        border-color: #ced4da;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
     </style>
 
 </head>
@@ -173,7 +172,8 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                         </a>
                     </a>
 
-                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                    <a href="javascript:void(0);"
+                        class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
                         <i class="bx bx-chevron-left bx-sm align-middle"></i>
                     </a>
                 </div>
@@ -217,8 +217,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
             <div class="layout-page">
                 <!-- Navbar -->
 
-                <nav
-                    class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                <nav class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
                         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
@@ -241,7 +240,8 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
 
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
                                         <img src="../assets/sneat_pro/assets/img/front-pages/icons/user.svg" alt
                                             class="w-px-40 h-auto rounded-circle" />
@@ -253,12 +253,13 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="../assets/sneat_pro/assets/img/front-pages/icons/user.svg" alt
-                                                            class="w-px-40 h-auto rounded-circle" />
+                                                        <img src="../assets/sneat_pro/assets/img/front-pages/icons/user.svg"
+                                                            alt class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block"><?php echo $_SESSION['user']; ?></span>
+                                                    <span
+                                                        class="fw-semibold d-block"><?php echo $_SESSION['user']; ?></span>
                                                     <small class="text-muted">Admin</small>
                                                 </div>
                                             </div>
@@ -271,7 +272,8 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                         <a class="dropdown-item" href="datasantri2">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">Data Santri</span>
-                                            <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">
+                                            <span
+                                                class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">
                                                 <?php
                                                 include '../koneksi.php';
                                                 $idkunci = 2;
@@ -292,7 +294,8 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                         <a class="dropdown-item" href="datasantri">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">Data Verifikasi</span>
-                                            <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">
+                                            <span
+                                                class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">
                                                 <?php
                                                 include '../koneksi.php';
                                                 $idkunci = 1;
@@ -368,7 +371,8 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </tr>
                                                 <tr>
                                                     <th>Tempat Tanggal Lahir</th>
-                                                    <td><?php echo $data['tempatlahirpd'] . ', ' . formatTanggal($data['tanggallahirpd']); ?></td>
+                                                    <td><?php echo $data['tempatlahirpd'] . ', ' . formatTanggal($data['tanggallahirpd']); ?>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Nomor Handphone</th>
@@ -417,7 +421,8 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </tr>
                                                 <tr>
                                                     <th>Tempat Tanggal Lahir Ayah</th>
-                                                    <td><?php echo $data['tempatlahirayah'] . ', ' . formatTanggal($data['tanggallahirayah']); ?></td>
+                                                    <td><?php echo $data['tempatlahirayah'] . ', ' . formatTanggal($data['tanggallahirayah']); ?>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Pendidikan Terakhir Ayah</th>
@@ -441,7 +446,8 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </tr>
                                                 <tr>
                                                     <th>Tempat Tanggal Lahir Ibu</th>
-                                                    <td><?php echo $data['tempatlahiribu'] . ', ' . formatTanggal($data['tanggallahiribu']); ?></td>
+                                                    <td><?php echo $data['tempatlahiribu'] . ', ' . formatTanggal($data['tanggallahiribu']); ?>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Pendidikan Terakhir Ibu</th>
@@ -524,13 +530,16 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_nisn'] == null) : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php else : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_nisn']; ?>')">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary"
+                                                        onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_nisn']; ?>')">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -550,13 +559,16 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_akte'] == null) : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php else : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_akte']; ?>')">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary"
+                                                        onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_akte']; ?>')">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -576,13 +588,16 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_ijasah'] == null) : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php else : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_ijasah']; ?>')">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary"
+                                                        onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_ijasah']; ?>')">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -602,13 +617,16 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_kk'] == null) : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php else : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_kk']; ?>')">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary"
+                                                        onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_kk']; ?>')">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -628,13 +646,16 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['upload_ktp_ortu'] == null) : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php else : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_ktp_ortu']; ?>')">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary"
+                                                        onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['upload_ktp_ortu']; ?>')">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -654,13 +675,16 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                                 </div>
                                                 <div class="col-2  text-end">
                                                     <?php if ($data['pkh'] == null) : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary disabled">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary disabled">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php else : ?>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-outline-primary" onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['pkh']; ?>')">
-                                                            <i class='bx bx-printer'></i>
-                                                        </button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-outline-primary"
+                                                        onclick="printFile('<?php echo '../uploads/' . $namaFolder . '/' . $data['pkh']; ?>')">
+                                                        <i class='bx bx-printer'></i>
+                                                    </button>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -668,9 +692,13 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                         <!-- /Social Accounts -->
                                     </div>
                                 </div>
-                                <div class="d-flex mb-3 gap-3">
-                                    <a href="datasantri2" class="btn btn-primary">Kembali</a>
-                                    <a href="/santribaru/admin/print?id=<?php echo $data['id']; ?>" class="btn btn-info" target="_blank">Cetak Formulir</a>
+                                <div class="d-flex mb-3 gap-2">
+                                    <a href="/santribaru/admin/print?id=<?php echo $data['id']; ?>"
+                                        class="btn btn-primary text-center" target="_blank">Cetak Formulir</a>
+                                    <a href="/santribaru/admin/kwitansi?id=<?php echo $data['id']; ?>"
+                                        class="btn btn-info text-center" target="_blank">Cetak Kuitansi</a>
+                                    <!-- <a href="datasantri2"
+                                        class="btn btn-sm btn-primary text-center align-middle">Back</a> -->
                                 </div>
                             </div>
                         </div>
@@ -680,14 +708,16 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
 
                     <!-- Footer -->
                     <footer class="content-footer footer bg-footer-theme">
-                        <div class="container-fluid d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                        <div
+                            class="container-fluid d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
                             <div class="mb-2 mb-md-0">
                                 ©
                                 <script>
-                                    document.write(new Date().getFullYear());
+                                document.write(new Date().getFullYear());
                                 </script>
                                 , made with ❤️ by
-                                <a href="https://www.instagram.com/mezaafsopsepoken" target="_blank" class="footer-link fw-bolder">Mezaaf</a>
+                                <a href="https://www.instagram.com/mezaafsopsepoken" target="_blank"
+                                    class="footer-link fw-bolder">Mezaaf</a>
                             </div>
                         </div>
                     </footer>
@@ -729,41 +759,45 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $.getJSON('https://alamat.thecloudalert.com/api/provinsi/get/', function(data) {
-                var defaultProvinsi = "<?php echo $data['provinsipd']; ?>";
-                var provinsiName = '';
+    $(document).ready(function() {
+        $.getJSON('https://alamat.thecloudalert.com/api/provinsi/get/', function(data) {
+            var defaultProvinsi = "<?php echo $data['provinsipd']; ?>";
+            var provinsiName = '';
+
+            $.each(data.result, function(index, item) {
+                if (item.id == defaultProvinsi) {
+                    provinsiName = item.text;
+                }
+            });
+
+
+            $('#provinsiText').text(provinsiName);
+        });
+
+        var provinsiId = "<?php echo $data['provinsipd']; ?>";
+        if (provinsiId) {
+            $.getJSON('https://alamat.thecloudalert.com/api/kabkota/get/?d_provinsi_id=' + provinsiId, function(
+                data) {
+                var defaultKabupaten =
+                    "<?php echo $data['kabupatenpd']; ?>"; // ID Kabupaten dari database
+                var kabupatenName = '';
 
                 $.each(data.result, function(index, item) {
-                    if (item.id == defaultProvinsi) {
-                        provinsiName = item.text;
+                    if (item.id == defaultKabupaten) {
+                        kabupatenName = item.text;
                     }
                 });
 
-
-                $('#provinsiText').text(provinsiName);
+                $('#kabupatenText').text(kabupatenName);
             });
+        }
 
-            var provinsiId = "<?php echo $data['provinsipd']; ?>";
-            if (provinsiId) {
-                $.getJSON('https://alamat.thecloudalert.com/api/kabkota/get/?d_provinsi_id=' + provinsiId, function(data) {
-                    var defaultKabupaten = "<?php echo $data['kabupatenpd']; ?>"; // ID Kabupaten dari database
-                    var kabupatenName = '';
-
-                    $.each(data.result, function(index, item) {
-                        if (item.id == defaultKabupaten) {
-                            kabupatenName = item.text;
-                        }
-                    });
-
-                    $('#kabupatenText').text(kabupatenName);
-                });
-            }
-
-            var kabupatenId = "<?php echo $data['kabupatenpd']; ?>";
-            if (kabupatenId) {
-                $.getJSON('https://alamat.thecloudalert.com/api/kecamatan/get/?d_kabkota_id=' + kabupatenId, function(data) {
-                    var defaultKecamatan = "<?php echo $data['kecamatanpd']; ?>"; // ID Kabupaten dari database
+        var kabupatenId = "<?php echo $data['kabupatenpd']; ?>";
+        if (kabupatenId) {
+            $.getJSON('https://alamat.thecloudalert.com/api/kecamatan/get/?d_kabkota_id=' + kabupatenId,
+                function(data) {
+                    var defaultKecamatan =
+                        "<?php echo $data['kecamatanpd']; ?>"; // ID Kabupaten dari database
                     var kecamatanName = '';
 
                     $.each(data.result, function(index, item) {
@@ -774,11 +808,12 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
 
                     $('#kecamatanText').text(kecamatanName);
                 });
-            }
+        }
 
-            var kecamatanId = "<?php echo $data['kecamatanpd']; ?>";
-            if (kecamatanId) {
-                $.getJSON('https://alamat.thecloudalert.com/api/kelurahan/get/?d_kecamatan_id=' + kecamatanId, function(data) {
+        var kecamatanId = "<?php echo $data['kecamatanpd']; ?>";
+        if (kecamatanId) {
+            $.getJSON('https://alamat.thecloudalert.com/api/kelurahan/get/?d_kecamatan_id=' + kecamatanId,
+                function(data) {
                     var defaultDesa = "<?php echo $data['desapd']; ?>";
                     var desaName = '';
 
@@ -790,19 +825,19 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
 
                     $('#desaText').text(desaName);
                 });
-            }
+        }
 
-        });
+    });
     </script>
 
 
     <script>
-        function printFile(fileUrl) {
-            var printWindow = window.open(fileUrl, '_blank'); // Buka file di tab baru
-            printWindow.onload = function() {
-                printWindow.print(); // Panggil print otomatis setelah file dimuat
-            };
-        }
+    function printFile(fileUrl) {
+        var printWindow = window.open(fileUrl, '_blank'); // Buka file di tab baru
+        printWindow.onload = function() {
+            printWindow.print(); // Panggil print otomatis setelah file dimuat
+        };
+    }
     </script>
 
 
