@@ -261,7 +261,7 @@ $namaPenerima = ($atasNama === 'ibu') ?"Ibu " . $data['namaibu'] : "Bpk. " .  $d
                               <div class="value">: Administrasi Pendaftaran Santri Baru Tahun Pelajaran 2025/2026 PP. Tarbiyatul Mutathowi'in</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="bg-primary rounded text-white px-4 py-2 fw-bold">Rp. <?php echo number_format($totalBiaya, 0, ',', '.'); ?>,-</div>
+                                <div class="bg-primary rounded text-white px-3 py-2 fw-bold">Rp. <?php echo number_format($totalBiaya, 0, ',', '.'); ?>,-</div>
                                 <div class="text-center">
                                   <br><br><br>
                                     <div>................................</div>
