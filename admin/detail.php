@@ -727,7 +727,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                 </script>
                                 , made with ❤️ by
                                 <a href="https://www.instagram.com/mezaafsopsepoken" target="_blank"
-                                    class="footer-link fw-bolder">Mezaaf</a>
+                                    class="footer-link fw-bolder">Mezaaff</a>
                             </div>
                         </div>
                     </footer>
