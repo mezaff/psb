@@ -854,7 +854,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
         cetakBtn.addEventListener("click", function(event) {
             event.preventDefault(); // Mencegah link langsung terbuka
 
-            // Cek apakah modal sudah ada
+            // Cek apakah modal sudah ada, jika iya, jangan buat lagi
             if (document.getElementById("overlay")) return;
 
             // Buat elemen modal custom
@@ -881,11 +881,11 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
             </div>
             <div style="text-align: center;">
               <button id="confirmBtn" class="btn-primary" style="
-                color: white; border: none; padding: 8px 15px;
+                color: white; background: #007bff; border: none; padding: 8px 15px;
                 border-radius: 5px; cursor: pointer; margin-right: 10px; font-size: 14px;
               ">Cetak</button>
               <button id="cancelBtn" class="btn-danger" style="
-                color: white; border: none; padding: 8px 15px;
+                color: white; background: #dc3545; border: none; padding: 8px 15px;
                 border-radius: 5px; cursor: pointer; font-size: 14px;
               ">Batal</button>
             </div>
@@ -902,22 +902,26 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                 }
             }
 
-            // Event untuk tombol OK
+            // Event untuk tombol Cetak
             document.getElementById("confirmBtn").addEventListener("click", function() {
                 const selectedValue = document.querySelector('input[name="atas_nama"]:checked')
                     .value;
-                let url = cetakBtn.href + "&atas_nama=" + selectedValue;
 
-                // Buka link kwitansi di tab baru
-                window.open(url, "_blank");
+                // Buat URL dengan parameter yang aman
+                let url = new URL(cetakBtn.href, window.location.origin);
+                url.searchParams.set("atas_nama", selectedValue);
 
-                // Tutup modal langsung setelah klik OK
+                // Buka link kwitansi di tab baru dengan cara yang lebih aman
+                const newTab = window.open("", "_blank");
+                newTab.location.href = url.href;
+
+                // Tutup modal setelah klik OK
                 closeModal();
             });
 
             // Event untuk tombol Batal
             document.getElementById("cancelBtn").addEventListener("click", function() {
-                closeModal(); // Pastikan modal langsung tertutup
+                closeModal(); // Tutup modal
             });
         });
     });
