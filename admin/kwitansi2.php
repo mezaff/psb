@@ -114,6 +114,9 @@ function terbilang($angka) {
       return "Angka terlalu besar";
   }
 }
+
+$atasNama = $_GET['atas_nama'] ?? 'bapak';
+$namaPenerima = ($atasNama === 'ibu') ?"Ibu " . $data['namaibu'] : "Bpk. " .  $data['namaayah'];
 ?>
 
 
@@ -195,6 +198,9 @@ function terbilang($angka) {
 
   .right {
       position: relative;
+      border-left: 2px dashed rgba(0, 0, 0, 0.3);
+      height: 100%;
+      padding-left: 20px;
   }
 
   .right::before {
@@ -231,7 +237,7 @@ function terbilang($angka) {
                           <hr>
                             <p>No : <span class="fw-semibold"><?php echo $registrationId; ?></span></p>
                             <p>Tanggal : <span class="fw-semibold"><?php echo $tanggalPembayaran ?></span></p>
-                            <p>Telah Terima Dari : <span class="fw-semibold"><?php echo $data['namaayah'] ?></span></p>
+                            <p>Telah Terima Dari : <span class="fw-semibold"><?php echo $namaPenerima ?></span></p>
                             <p>Jumlah : <span class="fw-semibold">Rp. <?php echo number_format($totalBiaya, 0, ',', '.'); ?>,-</span></p>
                             <p>Untuk Pembayaran : <span class="fw-semibold">Administrasi Pendaftaran Santri Baru Tahun Pelajaran 2025/2026 PP. Tarbiyatul Mutathowi'in</span></p>
                         </div>
@@ -244,7 +250,7 @@ function terbilang($angka) {
                             <hr>
                             <div class="label-value">
                               <div class="label">Telah Terima Dari </div>
-                              <div class="value">: <?php echo $data['namaayah'] ?></div>
+                              <div class="value">: <?php echo $namaPenerima ?></div>
                             </div>
                             <div class="label-value">
                                   <span class="label">Uang Sejumlah </span> 
@@ -259,12 +265,12 @@ function terbilang($angka) {
                                 <div class="text-center">
                                   <br><br><br>
                                     <div>................................</div>
-                                    <div>Penerima</div>
+                                    <div>Panitia PSB</div>
                                 </div>
                                 <div class="text-center">
                                   <br><br><br>
                                     <div>................................</div>
-                                    <div>Orangtua/Wali Santri</div>
+                                    <div><?php echo $namaPenerima ?></div>
                                 </div>
                             </div>
                         </div>

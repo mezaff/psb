@@ -155,6 +155,15 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
         color: #6c757d;
         cursor: not-allowed;
     }
+
+    .disabled-link {
+        pointer-events: none;
+        /* Tidak bisa diklik */
+        opacity: 0.5;
+        /* Tampilan lebih redup */
+        cursor: not-allowed;
+        /* Ubah kursor */
+    }
     </style>
 
 </head>
@@ -696,7 +705,8 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                     <a href="/santribaru/admin/print?id=<?php echo $data['id']; ?>"
                                         class="btn btn-primary text-center" target="_blank">Cetak Formulir</a>
                                     <a href="/santribaru/admin/kwitansi2?id=<?php echo $data['id']; ?>"
-                                        class="btn btn-info text-center" target="_blank">Cetak Kuitansi</a>
+                                        class="btn btn-info text-center <?php echo ($data['status'] === "1") ? 'disabled-link' : ''; ?>"
+                                        target="_blank">Cetak Kwitansi</a>
                                     <!-- <a href="datasantri2"
                                         class="btn btn-sm btn-primary text-center align-middle">Back</a> -->
                                 </div>
@@ -838,6 +848,80 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
             printWindow.print(); // Panggil print otomatis setelah file dimuat
         };
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const cetakBtn = document.querySelector(".btn-info");
+
+        cetakBtn.addEventListener("click", function(event) {
+            event.preventDefault(); // Mencegah link langsung terbuka
+
+            // Cek apakah modal sudah ada
+            if (document.getElementById("overlay")) return;
+
+            // Buat elemen modal custom
+            const modal = document.createElement("div");
+            modal.innerHTML = `
+        <div id="overlay" style="
+          position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+          background: rgba(0, 0, 0, 0.5); z-index: 999;
+          display: flex; align-items: center; justify-content: center;
+        ">
+          <div id="customAlert" style="
+            background: white; padding: 20px; border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 320px; padding: 20px;
+          ">
+            <h4 style="text-align: center; margin-bottom: 15px;">Cetak Atas Nama :</h4>
+            <div style="text-align: left;">
+              <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                <input type="radio" name="atas_nama" value="bapak" checked> <b>Bapak</b>
+              </label>
+              <label style="display: block; margin-bottom: 20px; cursor: pointer;">
+                <input type="radio" name="atas_nama" value="ibu"> <b>Ibu</b>
+              </label>
+            </div>
+            <div style="text-align: center;">
+              <button id="confirmBtn" class="btn-primary" style="
+                color: white; border: none; padding: 8px 15px;
+                border-radius: 5px; cursor: pointer; margin-right: 10px; font-size: 14px;
+              ">Cetak</button>
+              <button id="cancelBtn" class="btn-danger" style="
+                color: white; border: none; padding: 8px 15px;
+                border-radius: 5px; cursor: pointer; font-size: 14px;
+              ">Batal</button>
+            </div>
+          </div>
+        </div>
+      `;
+            document.body.appendChild(modal);
+
+            // Fungsi untuk menutup modal
+            function closeModal() {
+                const overlay = document.getElementById("overlay");
+                if (overlay) {
+                    overlay.remove(); // Hapus modal dari DOM
+                }
+            }
+
+            // Event untuk tombol OK
+            document.getElementById("confirmBtn").addEventListener("click", function() {
+                const selectedValue = document.querySelector('input[name="atas_nama"]:checked')
+                    .value;
+                let url = cetakBtn.href + "&atas_nama=" + selectedValue;
+
+                // Buka link kwitansi di tab baru
+                window.open(url, "_blank");
+
+                // Tutup modal langsung setelah klik OK
+                closeModal();
+            });
+
+            // Event untuk tombol Batal
+            document.getElementById("cancelBtn").addEventListener("click", function() {
+                closeModal(); // Pastikan modal langsung tertutup
+            });
+        });
+    });
     </script>
 
 
