@@ -705,7 +705,7 @@ $ktpOrtuFile = $targetDir . $data['upload_ktp_ortu'];
                                     <a href="/santribaru/admin/print?id=<?php echo $data['id']; ?>"
                                         class="btn btn-primary text-center" target="_blank">Cetak Formulir</a>
                                     <a href="/santribaru/admin/kwitansi2?id=<?php echo $data['id']; ?>"
-                                        class="btn btn-info text-center <?php echo ($data['status' === 1] ? 'disabled-link': '') ?>"
+                                        class="btn btn-info text-center <?php echo ($data['status'] === "1") ? 'disabled-link' : ''; ?>"
                                         target="_blank">Cetak Kwitansi</a>
                                     <!-- <a href="datasantri2"
                                         class="btn btn-sm btn-primary text-center align-middle">Back</a> -->
