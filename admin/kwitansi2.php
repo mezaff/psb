@@ -136,7 +136,7 @@ $namaPenerima = ($atasNama === 'ibu') ?"Ibu " . $data['namaibu'] : "Bpk. " .  $d
     name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Cetak Data | <?php echo $data['namapd']; ?></title>
+  <title>Kwitansi | <?php echo $data['namapd']; ?></title>
 
   <meta name="description" content="" />
 
